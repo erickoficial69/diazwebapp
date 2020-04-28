@@ -1,0 +1,26 @@
+{
+  "appId": "com.dwa.app",
+<<<<<<< HEAD
+  "appName": "dwa",
+  "bundledWebRuntime": true,
+  "linuxAndroidStudioPath": "/home/dwa/Documents/android-studio/bin/studio.sh",
+  "npmClient": "npm",
+  "webDir": "out",
+  "cordova": {},
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 5000,
+      "launchAutoHide": true,
+      "backgroundColor": "#0000",
+      "androidSplashResourceName": "splash"
+    }
+  }
+=======
+  "appName": "dap",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "out",
+  "linuxAndroidStudioPath": "/home/dwa/Documents/android-studio/bin/studio.sh",
+  "cordova": {}
+>>>>>>> fc2cadc0b74186fb991b002aed4cc67b156c51f4
+}
