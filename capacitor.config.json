@@ -1,7 +1,6 @@
 {
   "appId": "com.dwa.app",
-<<<<<<< HEAD
-  "appName": "dwa",
+  "appName": "Diaz Web App",
   "bundledWebRuntime": true,
   "linuxAndroidStudioPath": "/home/dwa/Documents/android-studio/bin/studio.sh",
   "npmClient": "npm",
@@ -15,12 +14,4 @@
       "androidSplashResourceName": "splash"
     }
   }
-=======
-  "appName": "dap",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "out",
-  "linuxAndroidStudioPath": "/home/dwa/Documents/android-studio/bin/studio.sh",
-  "cordova": {}
->>>>>>> fc2cadc0b74186fb991b002aed4cc67b156c51f4
 }

@@ -10,7 +10,10 @@ import { Plugins } from '@capacitor/core';
 
 const { Network } = Plugins;
 
-const network = (setNet)=>{
+const network = async (setNet)=>{
+    await Network.getStatus().then(status=>{
+        setNet(status)
+    })
     Network.addListener("networkStatusChange", rs=>{
         setNet(rs)
     })
@@ -44,7 +47,7 @@ function Navbar(props) {
     },[])
     useEffect(() => {
         network(setNet)
-    },[])
+    })
     
     return <>
             <Head>
