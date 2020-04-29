@@ -3,6 +3,9 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import { HomeOutlined, DeveloperModeOutlined, WebOutlined} from '@material-ui/icons'
+import {
+    faHome
+} from '@fortawesome/free-solid-svg-icons'
 import Chat from '../components/chat/chat'
 import {Backdrop, Icon, IconButton } from '@material-ui/core'
 //Capatitor import 
@@ -47,7 +50,7 @@ function Navbar(props) {
     },[])
     useEffect(() => {
         network(setNet)
-    })
+    },[])
     
     return <>
             <Head>
@@ -79,7 +82,7 @@ function Navbar(props) {
                     {
                         status === 'home' ?(
                             <p style={inactive} className="inactive" >
-                                <IconButton style={inactive} ><HomeOutlined style={inactive} color='secondary' /></IconButton>
+                                <HomeOutlined style={inactive} />
                                 {
                                     width > 641 ? 'home' : null
                                 }
@@ -87,7 +90,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/">
                             <a onClick={()=>setShow(true)} href="/">
-                            <IconButton><HomeOutlined/></IconButton>
+                            <HomeOutlined />
                                 {
                                     width > 641 ? 'home' : null
                                 }
@@ -99,9 +102,7 @@ function Navbar(props) {
                     {
                         status === 'web apps' ?(
                             <p style={inactive} className="inactive" >
-                                <IconButton style={inactive} width="32px" height="32px">
-                                    <WebOutlined style={inactive}/>
-                                </IconButton>
+                                <WebOutlined style={inactive}/>
                                 {
                                     width > 641 ? 'web apps' : null
                                 }
@@ -109,10 +110,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/webapps">
                             <a onClick={()=>setShow(true)} href="/webapps.html">
-                                <IconButton width="32px" height="32px">
-                                    <WebOutlined/>
-                                    
-                                </IconButton>
+                               <WebOutlined/>
                                 {
                                     width > 641 ? 'web apps' : null
                                 }
@@ -124,7 +122,7 @@ function Navbar(props) {
                     {
                         status === 'movil apps' ?(
                             <p style={inactive} className="inactive" >
-                                <IconButton style={inactive}><DeveloperModeOutlined style={inactive}/></IconButton>
+                                <DeveloperModeOutlined style={inactive}/>
                                 {
                                     width > 641 ? 'movil apps' : null
                                 }
@@ -132,7 +130,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/movilapps">
                             <a onClick={()=>setShow(true)} href="/movilapps.html">
-                            <IconButton><DeveloperModeOutlined/></IconButton>
+                            <DeveloperModeOutlined/>
                                 {
                                     width > 641 ? 'movil apps' : null
                                 }
@@ -197,7 +195,7 @@ function Navbar(props) {
                     header span a svg{
                         color:var(--iconColor);
                     }
-                    header span a img{
+                    header span img{
                         margin-right:5px;
                     }
                     header span p{

@@ -22,6 +22,7 @@
     "@material-ui/icons": "^4.9.1",
     "cross-env": "^7.0.2",
     "graphql-request": "^1.8.2",
+    "ionicons": "^5.0.1",
     "next": "^9.3.5",
     "next-pwa": "^2.3.3",
     "react": "^16.13.1",
@@ -32,7 +33,14 @@
   "devDependencies": {
     "@capacitor/cli": "^1.5.2"
   },
-  "keywords": ["pwa","next js","capacitor","React","diaz web app","dwa"],
+  "keywords": [
+    "pwa",
+    "next js",
+    "capacitor",
+    "React",
+    "diaz web app",
+    "dwa"
+  ],
   "author": "Erick Diaz",
   "license": "MIT"
 }
