@@ -18,22 +18,11 @@ const Chat = (props)=>{
         setStatusSend('Enviando...')
         e.preventDefault()
 
-        function end() {
-            setStatusSend(false)
-          }
-
-        function timeout() {
-          setStatusSend('Tiempo agotado')
-          setTimeout(end, 2000)
-          return
-        }
-
         const gql = `
         {
             sendEmail(para:"${user.correo}" cuerpo:"${user.mensaje}")
         }
         `
-        setTimeout(timeout, 25000)
         sendEmail(gql,setStatusSend)        
        
     }
