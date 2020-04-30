@@ -2,12 +2,16 @@ import {defineCustomElements} from '@ionic/pwa-elements/loader'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-import { HomeOutlined, DeveloperModeOutlined, WebOutlined} from '@material-ui/icons'
+
 import {
-    faHome
-} from '@fortawesome/free-solid-svg-icons'
+    AiOutlineHome,
+    AiOutlineCode,
+    AiOutlineHtml5,
+    AiOutlineMobile
+} from 'react-icons/ai'
+
 import Chat from '../components/chat/chat'
-import {Backdrop, Icon, IconButton } from '@material-ui/core'
+import {Backdrop } from '@material-ui/core'
 //Capatitor import 
 import { Plugins } from '@capacitor/core';
 
@@ -82,7 +86,7 @@ function Navbar(props) {
                     {
                         status === 'home' ?(
                             <p style={inactive} className="inactive" >
-                                <HomeOutlined style={inactive} />
+                                <AiOutlineHome style={inactive} />
                                 {
                                     width > 641 ? 'home' : null
                                 }
@@ -90,7 +94,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/">
                             <a onClick={()=>setShow(true)} href="/">
-                            <HomeOutlined />
+                            <AiOutlineHome />
                                 {
                                     width > 641 ? 'home' : null
                                 }
@@ -102,7 +106,7 @@ function Navbar(props) {
                     {
                         status === 'web apps' ?(
                             <p style={inactive} className="inactive" >
-                                <WebOutlined style={inactive}/>
+                                <AiOutlineHtml5 style={inactive}/>
                                 {
                                     width > 641 ? 'web apps' : null
                                 }
@@ -110,7 +114,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/webapps">
                             <a onClick={()=>setShow(true)} href="/webapps.html">
-                               <WebOutlined/>
+                               <AiOutlineHtml5/>
                                 {
                                     width > 641 ? 'web apps' : null
                                 }
@@ -122,7 +126,7 @@ function Navbar(props) {
                     {
                         status === 'movil apps' ?(
                             <p style={inactive} className="inactive" >
-                                <DeveloperModeOutlined style={inactive}/>
+                                <AiOutlineMobile style={inactive}/>
                                 {
                                     width > 641 ? 'movil apps' : null
                                 }
@@ -130,7 +134,7 @@ function Navbar(props) {
                         ):(
                         <Link href="/movilapps">
                             <a onClick={()=>setShow(true)} href="/movilapps.html">
-                            <DeveloperModeOutlined/>
+                            <AiOutlineMobile/>
                                 {
                                     width > 641 ? 'movil apps' : null
                                 }
@@ -213,7 +217,7 @@ function Navbar(props) {
                  }
                  } 
                  open={show} >
-                    <img src="/img/loading-chulo.gif" />
+                    <img width="150vmin" height="150vmin" src="/img/loading-chulo.gif" />
             </Backdrop>
         </>
 }

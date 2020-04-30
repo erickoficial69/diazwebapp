@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Mail, Send, WifiOff } from '@material-ui/icons'
+import { WifiOff } from '@material-ui/icons'
 import { MenuItem } from '@material-ui/core'
 import { sendEmail } from '../graphql-querys/index'
-
+import {
+    AiOutlineCloseCircle,
+    AiOutlineMail,
+    AiOutlineSend
+} from 'react-icons/ai'
 const Chat = (props)=>{
     const [user, setUser] = useState({})
     const [openQuestion, setOpenQuestion] = useState(false)
@@ -11,14 +15,26 @@ const Chat = (props)=>{
     const {net} = props
 
     const sendMessage =  (e)=>{
-        setStatusSend('sending')
+        setStatusSend('Enviando...')
         e.preventDefault()
+
+        function end() {
+            setStatusSend(false)
+          }
+
+        function timeout() {
+          setStatusSend('Tiempo agotado')
+          setTimeout(end, 2000)
+          return
+        }
+
         const gql = `
         {
             sendEmail(para:"${user.correo}" cuerpo:"${user.mensaje}")
         }
         `
-       sendEmail(gql,setStatusSend)
+        setTimeout(timeout, 25000)
+        sendEmail(gql,setStatusSend)        
        
     }
     const notificacion = async(net)=>{
@@ -82,19 +98,15 @@ const Chat = (props)=>{
                         right:'4%',
                         cursor:'pointer',
                         zIndex:9,
-                        bottom:'65px',
+                        bottom:'61px',
                         width:'52px', 
                         height:'52px'
                     }
                 } >
-            <Mail style={
-                {
-                    width:'52px', 
-                    height:'52px'
-                }
-            } />
+                    {!openQuestion?<AiOutlineMail style={{width:'52px',height:'52px' }} />:<AiOutlineCloseCircle style={{width:'52px',height:'52px' }}/>}
+            
             </button>
-        <form message={statusSend==='sending'?'enviando':statusSend==='enviado'?'Enviado!!!':'error'} className='chat' onSubmit={e=>sendMessage(e)} >
+        <form message={statusSend?statusSend:''} className='chat' onSubmit={e=>sendMessage(e)} >
                 
             <h3>Dudas...?</h3>
 
@@ -110,7 +122,7 @@ const Chat = (props)=>{
                     disabled={net.connected === false? true : false} >
                     
                     <MenuItem>
-                    {net.connected === false? <><WifiOff/></>: <><Send/> send</>}
+                    {net.connected === false? <><WifiOff/></>: <><AiOutlineSend/> send</>}
                     
                     </MenuItem>
             </button>
@@ -127,13 +139,13 @@ const Chat = (props)=>{
                 }
                 .chat{
                     z-index:8;
-                    height:${!openQuestion?'44px;' : '315px;'} 
+                    height:${!openQuestion?'44px;' : '345px;'} 
                     opacity:${!openQuestion?'0;' : '1;'};
-                    width:${!openQuestion?'44px;' : '220px;'}
+                    width:${!openQuestion?'44px;' : '280px;'}
                     background:#2d2d2d;
                     position:fixed;
                     right:4%;
-                    bottom:65px;
+                    bottom:61px;
                     overflow:hidden;
                     transition:all .3s cubic-bezier(0.215, 1.410, 0.355, 1);
                     display:flex;
@@ -151,7 +163,7 @@ const Chat = (props)=>{
                     position:absolute;
                     top:0;
                     left:0;
-                    display:${statusSend==='sending' || statusSend==='error' || statusSend==='enviado'?'flex;':'none;'}
+                    display:${statusSend?'flex;':'none;'}
                     flex-flow:column;
                     justify-content:center;
                     align-items:center;
@@ -174,7 +186,7 @@ const Chat = (props)=>{
                     text-transform:uppercase;
                 }
                 .chat textarea{
-                    height:155px;
+                    height:185px;
                     resize:none;
                     background:#2d2d2d;
                     border:1px solid white;

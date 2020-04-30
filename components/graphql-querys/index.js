@@ -16,18 +16,30 @@ export const devTools = (query,estado,estado2,estado3)=>{
 export const sendEmail = async (query, setStatusSend)=>{
   
         const data = await request(apis.uri,query)
+        console.log(data)
         function end() {
             setStatusSend(false)
+            return 
           }
+
+          function timeout() {
+            setStatusSend('Tiempo agotado')
+            setTimeout(end, 2000)
+            return 
+          }
+
+          setTimeout(timeout, 25000)
 
         if(data.sendEmail === true ){
             setStatusSend('enviado')
             setTimeout(end, 2222)
+            return
         }
 
         if(data.sendEmail === false ){
             setStatusSend('error')
             setTimeout(end, 2222)
+            return
         }
         
       }

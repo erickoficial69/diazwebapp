@@ -5,6 +5,7 @@ import Block2 from '../components/home/block2-home'
 import Block3 from '../components/home/block3-home'
 import {Footer} from '../components/footer'
 
+
 function Home() {
   const title = 'home'
   
