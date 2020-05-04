@@ -61,6 +61,7 @@ function Navbar(props) {
             <Head>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel='stylesheet' href='/css/dark.css' />
+                <meta name="keywords" content="HTML, dwa, JS, diaz web app, mobile development,web development, web apps, mobile apps, diseño, desarrollo" />
                 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1 user-scalable=no" />
             </Head>
 

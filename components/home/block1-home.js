@@ -7,10 +7,10 @@ function Block1() {
           <article itemprop="provider" itemscope itemtype="http://schema.org/LocalBusiness">
           <h1 itemprop="name">Desarrollo de sotfware </h1>
           <p>
-              Desarrollamos sitios web, aplicaciones, para Android / Ios y otros tipos de sofware adaptados a la necesidad del cliente.
+              Desarrollo de aplicaciones, para Android / Ios y otros tipos de sofware adaptados a la necesidad del cliente.
           </p>
           <p>
-              Extiende tu negocio y llega a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión. 
+              Diaz Web App o dwa, Extiende tu negocio y llega a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión. 
           </p>
           <p>
               Ofrecemos consultoría tecnológica necesaria, previo al desarrollo de cualquier proyecto. 

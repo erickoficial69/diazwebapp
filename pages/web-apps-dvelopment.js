@@ -29,14 +29,14 @@ function WebApps() {
   return <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="web apps development, o desarrollo de aplicaciones web ." />
+        <meta name="description" content="Diaz Web App, tambien conocido como dwa, web apps development, o desarrollo de aplicaciones web." />
       </Head>
       <Navbar navStatus={title} />
   <main >
       <div className='webstyle intro1' itemscope itemtype="http://schema.org/Service">
         <h1 itemprop="name">Desarrollo de aplicaciones web</h1>
         <p itemprop="description">
-            Diseño y desarrollo de aplicaciones web para particulares, comerciales y empresariales, Optimizamos webs en HTML5 para adaptarlas al responsive design que requiere la demanda de tráfico en internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA) y webassembly (wasm) aspectos SEO, server side rendering.
+            DWA desarrolla de aplicaciones web para particulares, comerciales y empresariales, Optimizamos webs en HTML5 para adaptarlas al responsive design que requiere la demanda de tráfico en internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA) y webassembly (wasm) aspectos SEO, server side rendering.
         </p>
       </div> 
       

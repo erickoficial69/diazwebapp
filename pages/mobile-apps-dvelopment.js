@@ -29,7 +29,7 @@ function MovilApp() {
   return <>
           <Head>
             <title>{title}</title>
-            <meta name="description" content="movil apps development, o desarrollo de aplicaciones móviles ." />
+            <meta name="description" content="Diaz Web App, tambien conocido como dwa, movil apps development, o desarrollo de aplicaciones móviles ." />
           </Head>
           <Navbar navStatus={title} />
   <main >
@@ -41,7 +41,7 @@ function MovilApp() {
             
             <h2 itemprop="name">Android Apps</h2>
             <p itemprop="description">
-                Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con ma mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo de Android. Descubre todas las funcionalidades que Android ofrece programando en lenguaje nativo.
+                Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con ma mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo para Android. Descubre todas las funcionalidades que Android ofrece con Diaz Web App.
             </p>
         </article> 
         <article>
@@ -49,7 +49,7 @@ function MovilApp() {
             
             <h2 itemprop="name">IOS Apps</h2>
             <p itemprop="description">
-                Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados siendo de los smartphones más potentes del mercado hemos desarrollado aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
+                Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados siendo de los smartphones más potentes del mercado, DWA desarrolla aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
             </p>
         </article>
       </div>
