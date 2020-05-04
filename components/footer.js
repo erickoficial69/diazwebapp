@@ -1,3 +1,9 @@
+import {
+    AiOutlineFacebook,
+    AiOutlineInstagram,
+    AiOutlineTwitter,
+    AiOutlineMail
+} from 'react-icons/ai'
 function Footer() {
     return <>
             <footer>
@@ -13,24 +19,16 @@ function Footer() {
                     <b>contácto</b>
                     <ul className="tecnologies" >
                         <li>
-                            
+                            <a target='blank' href="https://facebook.com/diazwebapp">
+                                <AiOutlineFacebook/>
                                 facebook
-                            
+                            </a> 
                         </li>
                         <li>
-                            
-                                instagram
-                            
-                        </li>
-                        <li>
-                            
+                            <a target='blank' href="mailto:diazwebapp@gmail.com">
+                                <AiOutlineMail/>
                                 gmail
-                            
-                        </li>
-                        <li>
-                            
-                                twitter
-                            
+                            </a>
                         </li>
                     </ul>
                 </article>
@@ -45,19 +43,22 @@ function Footer() {
 
                     <ul className="tecnologies">
                         <li>
-                            
+                            <a target='blank' href="https://facebook.com/erickoficial69">
+                                <AiOutlineFacebook/>
                                 facebook
-                            
+                            </a> 
                         </li>
                         <li>
-                            
+                            <a target='blank' href="https://instagram.com/erickoficial69">
+                                <AiOutlineInstagram/>
                                 instagram
-                            
+                            </a>
                         </li>
                         <li>
-                            
+                            <a target='blank' href="mailto:erickoficial69@gmail.com">
+                                <AiOutlineMail/>
                                 gmail
-                            
+                            </a>
                         </li>
                     </ul>
                 </article>

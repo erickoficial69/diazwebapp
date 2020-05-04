@@ -10,18 +10,17 @@ const { Device } = Plugins;
 /** api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={your api key}
 
  d64267005e28744785d5111a417b7f4f */
-const query = `{tools(nombre:"web"){
-      nombre
-    }}
-  `
 
 function WebApps() {
-  const title = 'web apps'
+  const title = 'web apps development'
   const [tools, setTools] = useState([])
   const [tools2, setTools2] = useState([])
   const [tools3, setTools3] = useState([]) 
 
-
+  const query = `{tools(nombre:"web apps"){
+    nombre
+  }}
+`
   useEffect(() => {
     devTools(query,setTools,setTools2,setTools3)
 
@@ -30,13 +29,13 @@ function WebApps() {
   return <>
       <Head>
         <title>{title}</title>
-
+        <meta name="description" content="web apps development, o desarrollo de aplicaciones web ." />
       </Head>
       <Navbar navStatus={title} />
   <main >
-      <div className='webstyle intro1'>
-        <h1>Desarrollo de aplicaciones web</h1>
-        <p>
+      <div className='webstyle intro1' itemscope itemtype="http://schema.org/Service">
+        <h1 itemprop="name">Desarrollo de aplicaciones web</h1>
+        <p itemprop="description">
             Diseño y desarrollo de aplicaciones web para particulares, comerciales y empresariales, Optimizamos webs en HTML5 para adaptarlas al responsive design que requiere la demanda de tráfico en internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA) y webassembly (wasm) aspectos SEO, server side rendering.
         </p>
       </div> 
@@ -48,13 +47,28 @@ function WebApps() {
       <section>
         <ul className='tecnologies'>
                {
-                 tools.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools.map((t,i)=><li key={i}>
+                   <p>
+                    <img src={"/svg/"+t.nombre+".svg"} />
+                    {t.nombre}
+                   </p>
+                 </li>)
                }
                {
-                 tools2.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools2.map((t,i)=><li key={i}>
+                   <p>
+                    <img src={"/svg/"+t.nombre+".svg"} />
+                    {t.nombre}
+                   </p>
+                 </li>)
                }
                {
-                 tools3.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools3.map((t,i)=><li key={i}>
+                   <p>
+                    <img src={"/svg/"+t.nombre+".svg"} />
+                    {t.nombre}
+                   </p>
+                 </li>)
                } 
         </ul>
       </section>

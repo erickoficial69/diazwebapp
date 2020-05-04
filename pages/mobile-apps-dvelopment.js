@@ -9,17 +9,18 @@ import {
 
 import {devTools} from '../components/graphql-querys/index'
 
-const query = `{tools(nombre:"movil"){
-  nombre
-}} 
-`
 
 function MovilApp() {
-  const title = 'movil apps'
+  const title = 'mobile apps development'
   const [tools, setTools] = useState([])
   const [tools2, setTools2] = useState([])
   const [tools3, setTools3] = useState([])
 
+  const query = `{tools(nombre:"mobile apps"){
+    nombre
+  }} 
+  `
+  
   useEffect(() => {
     devTools(query,setTools,setTools2,setTools3)
   },[])
@@ -28,27 +29,26 @@ function MovilApp() {
   return <>
           <Head>
             <title>{title}</title>
-
+            <meta name="description" content="movil apps development, o desarrollo de aplicaciones móviles ." />
           </Head>
           <Navbar navStatus={title} />
   <main >
-          
 
-      <div className='movilstyle intro1'>
+      <div className='movilstyle intro1' itemscope itemtype="http://schema.org/Service">
         <h1>Desarrollo de aplicaciones moviles</h1>
         <article>
             <div style={{textAlign:"center"}}><AndroidTwoTone style={{color:"green", width:"100px"}} className='androidIcon' /></div>
             
-            <h2>Android</h2>
-            <p>
+            <h2 itemprop="name">Android Apps</h2>
+            <p itemprop="description">
                 Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con ma mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo de Android. Descubre todas las funcionalidades que Android ofrece programando en lenguaje nativo.
             </p>
         </article> 
         <article>
             <div style={{textAlign:"center"}} ><Apple className='appelIcon' /></div>
             
-            <h2>IOS</h2>
-            <p>
+            <h2 itemprop="name">IOS Apps</h2>
+            <p itemprop="description">
                 Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados siendo de los smartphones más potentes del mercado hemos desarrollado aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
             </p>
         </article>
@@ -59,13 +59,28 @@ function MovilApp() {
       <section>
           <ul className='tecnologies'>
               {
-                 tools.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools.map((t,i)=><li key={i}>
+                 <p>
+                  <img src={"/svg/"+t.nombre+".svg"} />
+                  {t.nombre}
+                 </p>
+               </li>)
                }
                {
-                 tools2.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools2.map((t,i)=><li key={i}>
+                   <p>
+                    <img src={"/svg/"+t.nombre+".svg"} />
+                    {t.nombre}
+                   </p>
+                 </li>)
                }
                {
-                 tools3.map((t,i)=><li key={i}>{t.nombre}</li>)
+                 tools3.map((t,i)=><li key={i}>
+                   <p>
+                    <img src={"/svg/"+t.nombre+".svg"} />
+                    {t.nombre}
+                   </p>
+                 </li>)
                }
           </ul>
       </section>

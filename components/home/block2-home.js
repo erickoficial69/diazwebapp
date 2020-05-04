@@ -3,62 +3,57 @@ import {MenuItem} from '@material-ui/core'
 
 function Block2() {
   return <>
-  <ul className='block2'>
-        <article>
-            <h2>Web apps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/webResponsive.gif' alt="frontend apps" />
+  <ul itemprop="hasOfferCatalog" itemscope itemtype="http://schema.org/OfferCatalog" className='block2'>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
+        
+            <h2 itemprop="name">Web apps</h2>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/webResponsive.gif' alt="frontend apps" itemprop="image"/>
             
-            <p>
+            <p itemprop="description">
               Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wassm)</b>
             </p>
-            <Link href="/webapps">
-              <MenuItem style={{background:"var(--themeColor)"}} >
-              
-                <a href="/webapps.html">
+            <Link href="/web-apps-dvelopment">
+                <a style={{background:"var(--themeColor)"}} href="/web-apps-dvelopment.html">
                   Ver más
                 </a>
-              
-              </MenuItem>
             </Link>
-        </article> 
-        <article>
-            <h2>Movil apps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/movilapp.gif' alt="devOps" />
-            <p>
+        </li> 
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
+        
+            <h2 itemprop="name">Movil apps</h2>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/movilapp.gif' alt="devOps" itemprop="image"/>
+            <p itemprop="description">
               Desarrollamos aplicaciones moviles particulares y comercios con tecnología de punta y el mejor rendimiento del mercado.
             </p>
-            <Link href="/movilapps">
-              <MenuItem style={{background:"var(--themeColor)"}} >
+            <Link href="/mobile-apps-dvelopment">
               
-                <a href="/movilapps.html">
+                <a style={{background:"var(--themeColor)"}} href="/mobile-apps-dvelopment.html">
                   Ver más
                 </a>
-              
-              </MenuItem>
             </Link>
-        </article>
-        <article>
-            <h2>Servicios devOps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/support.gif' alt="devOps" />
-            <p>
-              Manten en linea, protege la base de datos, gana rendimiento, crea respaldos despliega y actualiza continuamente tu aplicación en nuestros cloud servers.
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
+        
+            <h2 itemprop="name">Servicios devOps</h2>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/support.gif' alt="devOps" itemprop="image"/>
+            <p itemprop="description">
+              Mejora la experiancia de tus clientes optimizando velocidad y seguridad, reduce costos de servicios en tus aplicaciones, entre muchas ventajas que ofrece un DevOps.
             </p>
-            <Link href="/devops">
-              <MenuItem style={{background:"var(--themeColor)"}} >
+            
               
-                <a href="/devops.html">
+              <Link href="/devops">
+                <a style={{background:"var(--themeColor)"}} href="/devops.html">
                   Ver más
                 </a>
-              
-              </MenuItem>
-            </Link>
-        </article>
+              </Link>
+            
+        </li>
       </ul>
         <style>
            { `
             .block2{
                 grid-column: 1 / span 16 ;
-                grid-gap:7vmin;
+                grid-gap:2vmin;
                 padding: 5vmin;
                 display:grid;
                 grid-template-columns:repeat(1,1fr);
@@ -66,7 +61,7 @@ function Block2() {
                 align-content:center;
                 align-items:center;
               }
-              .block2 article{
+              .block2 li{
                 background:white;
                 border-radius:5px;
                 box-shadow:0px 0px 1px white;
@@ -78,23 +73,27 @@ function Block2() {
                 flex-flow:column;
                 justify-content:space-between;              
               }
-              .block2 article h2{
+              .block2 li h2{
                   text-align:center;
                   line-height:2;
                   color:grey;
               }
-              .block2 article p{
+              .block2 li p{
                 color:grey;
               }
-              .block2 article b{
+              .block2 li b{
                 color:grey;
               }
-              .block2 article img{
+              .block2 li img{
                 object-fit:cover;
                 width:32vmin;
                 height:39vmin;
                 margin-bottom:3vmin;
             }
+            .block2 li a{
+              padding:2vmin;
+              text-align:center;
+          }
             
               @media (min-width:512px){
                   .block2{

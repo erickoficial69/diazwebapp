@@ -12,6 +12,7 @@ function Home() {
   return <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content="Desarrollo de Software, mobile and web apps development, markeing online and seo strategies todo lo que necesitas para hacer crecer tu negocio ." />
       </Head>
       <Navbar navStatus={title} />
 

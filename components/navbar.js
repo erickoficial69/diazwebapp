@@ -5,9 +5,13 @@ import { useState, useEffect } from 'react'
 
 import {
     AiOutlineHome,
-    AiOutlineCode,
     AiOutlineHtml5,
-    AiOutlineMobile
+    AiOutlineMobile,
+    AiOutlineTool,
+
+    AiFillHome,
+    AiFillMobile,
+    AiFillTool,
 } from 'react-icons/ai'
 
 import Chat from '../components/chat/chat'
@@ -25,9 +29,6 @@ const network = async (setNet)=>{
         setNet(rs)
     })
 }
-const inactive = {
-    color:"darkgoldenrod"
-  }
 
 function Navbar(props) {
     const { navStatus } = props
@@ -48,7 +49,7 @@ function Navbar(props) {
         window.removeEventListener('resize', () => {
             setWidth(window.innerWidth)
         })
-    })
+    },[])
     useEffect(() => {
         setStatus(navStatus)
     },[])
@@ -68,15 +69,15 @@ function Navbar(props) {
                     {
                         width > 720 ? (
                             status === 'home'?(
-                                <p style={inactive} className="inactive" >
+                                <p  >
                                         <img src="/img/logo.png" width="32px" />
-                                        diaz web app
+                                        <span>diaz web app</span>
                                 </p>
                             ):(
                                 <Link href="/" >
                                     <a href="/">
                                         <img src="/img/logo.png" width="32px" />
-                                        diaz web app
+                                        <span>diaz web app</span>
                                     </a>
                                 </Link>
                             )
@@ -85,63 +86,66 @@ function Navbar(props) {
                     <nav>
                     {
                         status === 'home' ?(
-                            <p style={inactive} className="inactive" >
-                                <AiOutlineHome style={inactive} />
-                                {
-                                    width > 641 ? 'home' : null
-                                }
+                            <p >
+                                <AiFillHome/>
+                                <span>home</span>
                             </p>
                         ):(
                         <Link href="/">
                             <a onClick={()=>setShow(true)} href="/">
                             <AiOutlineHome />
-                                {
-                                    width > 641 ? 'home' : null
-                                }
+                                <span>home</span>
                             </a>
                         </Link> 
                         )
                     }
 
                     {
-                        status === 'web apps' ?(
-                            <p style={inactive} className="inactive" >
-                                <AiOutlineHtml5 style={inactive}/>
-                                {
-                                    width > 641 ? 'web apps' : null
-                                }
+                        status === 'web apps development' ?(
+                            <p  >
+                                <AiOutlineHtml5/>
+                                <span>web apps</span>
                             </p>
                         ):(
-                        <Link href="/webapps">
-                            <a onClick={()=>setShow(true)} href="/webapps.html">
+                        <Link href="/web-apps-dvelopment">
+                            <a onClick={()=>setShow(true)} href="/web-apps-dvelopment.html">
                                <AiOutlineHtml5/>
-                                {
-                                    width > 641 ? 'web apps' : null
-                                }
+                                <span>web apps</span>
                             </a>
                         </Link> 
                         )
                     }
 
                     {
-                        status === 'movil apps' ?(
-                            <p style={inactive} className="inactive" >
-                                <AiOutlineMobile style={inactive}/>
-                                {
-                                    width > 641 ? 'movil apps' : null
-                                }
+                        status === 'mobile apps development' ?(
+                            <p  >
+                                <AiFillMobile/>
+                                <span>mobile apps</span>
                             </p>
                         ):(
-                        <Link href="/movilapps">
-                            <a onClick={()=>setShow(true)} href="/movilapps.html">
+                        <Link href="/mobile-apps-dvelopment">
+                            <a onClick={()=>setShow(true)} href="/mobile-apps-dvelopment.html">
                             <AiOutlineMobile/>
-                                {
-                                    width > 641 ? 'movil apps' : null
-                                }
+                              <span>mobile apps</span>
                             </a>
                         </Link> 
                         )
                     }
+                    {/*
+                        status === 'servicio tecnico' ?(
+                            <p  >
+                                <AiFillTool/>
+                                <span>serv. tecnico</span> 
+                            </p>
+                        ):(
+                        <Link href="/serviciotecnico">
+                            <a onClick={()=>setShow(true)} href="/serviciotecnico.html">
+                            <AiOutlineTool/>
+                                <span>serv. tecnico</span>
+                            </a>
+                        </Link> 
+                        )
+                        */}
                     </nav>
                 </span>
             </header>
@@ -174,7 +178,6 @@ function Navbar(props) {
                         flex-flow:row nowrap;
                         align-items:center;
                         justify-content:${width <720?'center;':'space-between;'}
-                        height:52px;
                         overflow:hidden;
                     }
                     header span nav{
@@ -189,8 +192,8 @@ function Navbar(props) {
 
                     header span a{
                         display:flex;
-                        flex-flow:row nowrap;
-                        justify-content:space-between;
+                        flex-flow:${width <720?'column;':"row nowrap;"}
+                        justify-content:${width <720?'space-between;':"center;"}
                         align-items:center;
                         padding:0 2vmin;
                         text-transform:capitalize;
@@ -198,14 +201,26 @@ function Navbar(props) {
                     
                     header span a svg{
                         color:var(--iconColor);
+                        width:24px;
+                        height:24px;
+                    }
+                    header span p svg{
+                        width:24px;
+                        height:24px;
+                    }
+                    header span a span{
+                        font-size:${width <720?'11px;':"18px;"};
+                    }
+                    header span p span{
+                        font-size:${width <720?'11px;':"18px;"};
                     }
                     header span img{
                         margin-right:5px;
                     }
                     header span p{
                         display:flex;
-                        flex-flow:row nowrap;
-                        justify-content:space-between;
+                        flex-flow:${width <720?'column;':"row nowrap;"}
+                        justify-content:${width <720?'space-between;':"center;"};
                         align-items:center;
                         text-transform:capitalize;
                     }

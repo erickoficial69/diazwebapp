@@ -2,9 +2,10 @@
 function Block1() {
 
   return <>
-  <div className="paralax intro1">
-          <article>
-          <h1>Desarrollo de sotfware </h1>
+  <div className="paralax intro1" itemscope itemtype="http://schema.org/Service">
+    <meta itemprop="serviceType" content="Home cleaning" />
+          <article itemprop="provider" itemscope itemtype="http://schema.org/LocalBusiness">
+          <h1 itemprop="name">Desarrollo de sotfware </h1>
           <p>
               Desarrollamos sitios web, aplicaciones, para Android / Ios y otros tipos de sofware adaptados a la necesidad del cliente.
           </p>
@@ -17,7 +18,7 @@ function Block1() {
           
           </article>
 
-          <img src="/img/logo.png" alt="diaz web app"/>
+          <img src="/img/logo.png" alt="diaz web app" itemProp="image"/>
       </div>
 
 
@@ -26,7 +27,7 @@ function Block1() {
            `  
               .paralax{
                 grid-column: 1 / span 16;
-                background-image:url(/img/codes-white.jpg);
+                background-image:url(/img/pwa.jpg);
                 background-color:#111;
                 background-size:cover;
                 background-position:center center;

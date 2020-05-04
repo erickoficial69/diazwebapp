@@ -16,7 +16,7 @@ module.exports = withPWA({
                 cacheName: 'google-fonts',
                 expiration: {
                     maxEntries: 4,
-                    maxAgeSeconds: 365 * 24 * 60 * 60 // 365 days
+                    maxAgeSeconds: 255 * 24 * 60 * 60 // 255 days
                 }
                 }
             },
@@ -27,7 +27,7 @@ module.exports = withPWA({
                 cacheName: 'font-awesome',
                 expiration: {
                     maxEntries: 1,
-                    maxAgeSeconds: 365 * 24 * 60 * 60 // 365 days
+                    maxAgeSeconds: 255 * 24 * 60 * 60 // 25 days
                 }
                 }
             },
@@ -38,7 +38,7 @@ module.exports = withPWA({
                 cacheName: 'static-font-assets',
                 expiration: {
                     maxEntries: 4,
-                    maxAgeSeconds: 7 * 24 * 60 * 60 // 7 days
+                    maxAgeSeconds: 255 * 24 * 60 * 60 // 255 days
                 }
                 }
             },
@@ -49,7 +49,7 @@ module.exports = withPWA({
                 cacheName: 'static-image-assets',
                 expiration: {
                     maxEntries: 64,
-                    maxAgeSeconds: 24 * 60 * 60 // 24 hours
+                    maxAgeSeconds: 24 * 24 * 60 * 60 // 24 days
                 }
                 }
             },
@@ -60,7 +60,7 @@ module.exports = withPWA({
                 cacheName: 'static-js-assets',
                 expiration: {
                     maxEntries: 16,
-                    maxAgeSeconds: 24 * 60 * 60 // 24 hours
+                    maxAgeSeconds: 24 * 24 * 60 * 60 // 24 days
                 }
                 }
             },
@@ -71,7 +71,7 @@ module.exports = withPWA({
                 cacheName: 'static-style-assets',
                 expiration: {
                     maxEntries: 16,
-                    maxAgeSeconds: 24 * 60 * 60 // 24 hours
+                    maxAgeSeconds: 24 * 24 * 60 * 60 // 24 days
                 }
                 }
             },
@@ -104,7 +104,7 @@ module.exports = withPWA({
                 cacheName: 'all',
                 expiration: {
                     maxEntries: 4,
-                    maxAgeSeconds: 365 * 24 * 60 * 60 // 365 days
+                    maxAgeSeconds: 25 * 24 * 60 * 60 // 25 days
                 }
                 }
             },

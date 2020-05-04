@@ -4,8 +4,7 @@ import { MenuItem } from '@material-ui/core'
 import { sendEmail } from '../graphql-querys/index'
 import {
     AiOutlineCloseCircle,
-    AiOutlineMail,
-    AiOutlineSend
+    AiOutlineMail
 } from 'react-icons/ai'
 const Chat = (props)=>{
     const [user, setUser] = useState({})
@@ -26,75 +25,28 @@ const Chat = (props)=>{
         sendEmail(gql,setStatusSend)        
        
     }
-    const notificacion = async(net)=>{
-        const sw = await navigator.serviceWorker.getRegistration()
-        await Notification.requestPermission()
-        
-        if(net.connected === false){
-            if(sw){
-                sw.showNotification('offline',{
-                    icon:'/img/logo.png',
-                    body:'no tienes conexión a internet'
-                })
-            }else{
-                new Notification('offline',{
-                    icon:'/img/logo.png',
-                    body:'no tienes conexión a internet'
-                })
-            }
-        }
-
-        
-    }
-
-    useEffect(()=>{
-        notificacion(net)
-    })
 
     return <>
+    <aside className='lateralIndicators'>
     {
         net.connected === false?(
-            <button  
-            className="wifiOff"
-                style={
-                    {
-                        position:'fixed',
-                        right:'4%',
-                        cursor:'hand',
-                        zIndex:8,
-                        bottom:'115px',
-                        width:'52px', 
-                        height:'52px'
-                    }
-                } >
-            <WifiOff style={
-                {
-                    width:'52px', 
-                    height:'52px'
-                }
-            } />
-
-            </button>
+            <WifiOff
+            className="shadow"
+            />
         ):null
     }
             
-            <button  
-                className="butonEmail"
-                onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
-                style={
-                    {
-                        position:'fixed',
-                        right:'4%',
-                        cursor:'pointer',
-                        zIndex:9,
-                        bottom:'61px',
-                        width:'52px', 
-                        height:'52px'
-                    }
-                } >
-                    {!openQuestion?<AiOutlineMail style={{width:'52px',height:'52px' }} />:<AiOutlineCloseCircle style={{width:'52px',height:'52px' }}/>}
-            
-            </button>
+    {!openQuestion?
+        <AiOutlineMail
+        className="ayuda"
+        onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
+        />:
+        <AiOutlineCloseCircle
+        onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
+        />}
+
+    </aside>
+
         <form message={statusSend?statusSend:''} className='chat' onSubmit={e=>sendMessage(e)} >
                 
             <h3>Dudas...?</h3>
@@ -111,7 +63,7 @@ const Chat = (props)=>{
                     disabled={net.connected === false? true : false} >
                     
                     <MenuItem>
-                    {net.connected === false? <><WifiOff/></>: <><AiOutlineSend/> send</>}
+                    {net.connected === false? <WifiOff/>: "Enviar" }
                     
                     </MenuItem>
             </button>
@@ -133,7 +85,7 @@ const Chat = (props)=>{
                     width:${!openQuestion?'44px;' : '280px;'}
                     background:#2d2d2d;
                     position:fixed;
-                    right:4%;
+                    right:calc(55px + 4%);
                     bottom:61px;
                     overflow:hidden;
                     transition:all .3s cubic-bezier(0.215, 1.410, 0.355, 1);
