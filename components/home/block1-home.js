@@ -5,7 +5,7 @@ function Block1() {
   <div className="paralax intro1" itemscope itemtype="http://schema.org/Service">
     <meta itemprop="serviceType" content="Home cleaning" />
           <article itemprop="provider" itemscope itemtype="http://schema.org/LocalBusiness">
-          <h1 itemprop="name">Desarrollo de sotfware </h1>
+          <h1 itemprop="name">Desarrollo de software </h1>
           <p>
               Desarrollo de aplicaciones, para Android / Ios y otros tipos de software adaptados a la necesidad del cliente.
           </p>
