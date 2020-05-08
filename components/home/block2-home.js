@@ -7,7 +7,7 @@ function Block2() {
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
         
             <h2 itemprop="name">Web apps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/webResponsive.gif' alt="frontend apps" itemprop="image"/>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/webResponsive.gif' alt="frontend apps" itemprop="image"/>
             
             <p itemprop="description">
               Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wassm)</b>
@@ -21,7 +21,7 @@ function Block2() {
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
         
             <h2 itemprop="name">Movil apps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/movilapp.gif' alt="devOps" itemprop="image"/>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/mobile-animated.webp' alt="devOps" itemprop="image"/>
             <p itemprop="description">
               Desarrollamos aplicaciones moviles particulares y comercios con tecnología de punta y el mejor rendimiento del mercado.
             </p>
@@ -35,7 +35,7 @@ function Block2() {
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog" >
         
             <h2 itemprop="name">Servicios devOps</h2>
-            <img style={{ width: '90%', maxWidth: '100vmin', }} src='/img/support.gif' alt="devOps" itemprop="image"/>
+            <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/support.gif' alt="devOps" itemprop="image"/>
             <p itemprop="description">
               Mejora la experiancia de tus clientes optimizando velocidad y seguridad, reduce costos de servicios en tus aplicaciones, entre muchas ventajas que ofrece un DevOps.
             </p>

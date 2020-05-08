@@ -198,6 +198,7 @@ function Navbar(props) {
                         align-items:center;
                         padding:0 2vmin;
                         text-transform:capitalize;
+                        text-shadow: 1px 1px black;
                     }
                     
                     header span a svg{
@@ -224,6 +225,7 @@ function Navbar(props) {
                         justify-content:${width <720?'space-between;':"center;"};
                         align-items:center;
                         text-transform:capitalize;
+                        text-shadow: 1px 1px black;
                     }
                 `}
             </style>

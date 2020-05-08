@@ -37,14 +37,17 @@ const Chat = (props)=>{
     }
             
     {!openQuestion?
+    <span 
+    className="ayuda"
+    >
         <AiOutlineMail
-        className="ayuda"
         onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
-        />:
+        />
+    </span>:
         <AiOutlineCloseCircle
         onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
         />}
-
+    
     </aside>
 
         <form message={statusSend?statusSend:''} className='chat' onSubmit={e=>sendMessage(e)} >
@@ -132,6 +135,12 @@ const Chat = (props)=>{
                     background:#2d2d2d;
                     border:1px solid white;
                     padding:2vmin;
+                    color:white;
+                }
+                @media (min-width:512px){
+                    .chat{
+                        width:${!openQuestion?'44px;' : '75vmin;'}
+                    }
                 }
                 `
             }
