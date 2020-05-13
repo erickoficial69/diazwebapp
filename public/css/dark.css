@@ -54,6 +54,8 @@
   }
   main{
     overflow-y: auto;
+    height:calc(100% - 52px);
+    padding-bottom: 1vmin;
   }
   header{
     left:0;

@@ -28,8 +28,8 @@ function MovilApp() {
  
   return <>
           <Head>
-            <title>{title}</title>
-            <meta name="description" content="Diaz Web App, tambien conocido como dwa, movil apps development, o desarrollo de aplicaciones móviles ." />
+            <title>{title} - Diaz web App</title>
+            <meta name="description" content="Movil apps development, o desarrollo de aplicaciones móviles para particulares, empresariales y comercios con tecnología de punta y el mejor rendimiento del mercado." />
           </Head>
           <Navbar navStatus={title} />
   <main >

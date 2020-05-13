@@ -10,7 +10,7 @@ function Block2() {
             <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/webResponsive.gif' alt="frontend apps" itemprop="image"/>
             
             <p itemprop="description">
-              Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wassm)</b>
+              Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wasm)</b>
             </p>
             <Link href="/web-apps-dvelopment">
                 <a style={{background:"var(--themeColor)"}} href="/web-apps-dvelopment.html">
@@ -23,7 +23,7 @@ function Block2() {
             <h2 itemprop="name">Movil apps</h2>
             <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/mobile-animated.webp' alt="devOps" itemprop="image"/>
             <p itemprop="description">
-              Desarrollamos aplicaciones moviles particulares y comercios con tecnología de punta y el mejor rendimiento del mercado.
+              Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.
             </p>
             <Link href="/mobile-apps-dvelopment">
               
@@ -37,7 +37,7 @@ function Block2() {
             <h2 itemprop="name">Servicios devOps</h2>
             <img style={{ width: '90%', maxWidth: '100vmin', }} src='img/support.gif' alt="devOps" itemprop="image"/>
             <p itemprop="description">
-              Mejora la experiancia de tus clientes optimizando velocidad y seguridad, reduce costos de servicios en tus aplicaciones, entre muchas ventajas que ofrece un DevOps.
+              Mejora la experiencia de tus clientes optimizando velocidad y seguridad, reduce costos de servicios en tus aplicaciones, entre muchas ventajas que ofrece un DevOps service.
             </p>
             
               

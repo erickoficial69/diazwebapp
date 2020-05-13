@@ -11,8 +11,9 @@ function Home() {
   
   return <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content="Diaz Web App, tambien conocido como dwa, desarrollo de Software, mobile and web apps development, marketing online and seo strategies todo lo que necesitas para hacer crecer tu negocio ." />
+        <title>Diaz web App - {title}</title>
+        <meta name="description" content="Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente. Marketing online y estrategias seo."/>
+        
       </Head>
       <Navbar navStatus={title} />
 

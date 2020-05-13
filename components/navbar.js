@@ -61,7 +61,10 @@ function Navbar(props) {
             <Head>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel='stylesheet' href='/css/dark.css' />
-                <meta name="keywords" content="HTML, dwa, JS, diaz web app, mobile development,web development, web apps, mobile apps, diseño, desarrollo" />
+                <meta name="keywords" content="apps development, desarrollo de aplicaciones, diaz web app, mobile development,web development, dwa, web apps, mobile apps, html, JS, diseño web, desarrollo web" />
+
+                <meta name="author" content="Diaz web app" />
+
                 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1 user-scalable=no" />
             </Head>
 
@@ -155,7 +158,7 @@ function Navbar(props) {
                 {`
 
                     :root{
-                        --font-size:16px;
+                        --font-size:${width < 721 ? '14px;' : '16px;'}
                         --iconColor:rgb(0, 135, 224);
                         --iconColorButton:rgb(255, 255, 255);
                         --textColor:lightgrey;
@@ -170,7 +173,6 @@ function Navbar(props) {
                         z-index:999;
                     }
                     main{
-                        height:calc(100vh - 52px);
                         ${width < 721 ? 'top:0;' : 'top:52px;'}
                     }
                     header span{

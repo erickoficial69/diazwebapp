@@ -88,7 +88,7 @@ const Chat = (props)=>{
                     width:${!openQuestion?'44px;' : '280px;'}
                     background:#2d2d2d;
                     position:fixed;
-                    right:calc(55px + 4%);
+                    right:4%;
                     bottom:61px;
                     overflow:hidden;
                     transition:all .3s cubic-bezier(0.215, 1.410, 0.355, 1);
@@ -140,6 +140,7 @@ const Chat = (props)=>{
                 @media (min-width:512px){
                     .chat{
                         width:${!openQuestion?'44px;' : '75vmin;'}
+                        right:calc(55px + 4%);
                     }
                 }
                 `

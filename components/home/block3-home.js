@@ -17,9 +17,9 @@ function Block3(){ return(
     </li>
     <li>
     
-        <h2 itemprop="name">SEO/SEM</h2>
+        <h2 itemprop="name">SEO</h2>
         <p itemprop="description">
-          Elaboramos estrategias SEO/SEM para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsquedas.
+          Elaboramos estrategias SEO para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsquedas.
         </p>
     </li> 
     <li>
