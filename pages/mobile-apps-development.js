@@ -34,21 +34,21 @@ function MovilApp() {
           <Navbar navStatus={title} />
   <main >
 
-      <div className='movilstyle intro1' itemscope itemtype="http://schema.org/Service">
+      <div className='movilstyle intro1' itemScope itemType="http://schema.org/Service">
         <h1>Desarrollo de aplicaciones moviles</h1>
         <article>
             <div style={{textAlign:"center"}}><AndroidTwoTone style={{color:"green", width:"100px"}} className='androidIcon' /></div>
             
-            <h2 itemprop="name">Android Apps</h2>
-            <p itemprop="description">
+            <h2 itemProp="name">Android Apps</h2>
+            <p itemProp="description">
                 Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con ma mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo para Android. Descubre todas las funcionalidades que Android ofrece con Diaz Web App.
             </p>
         </article> 
         <article>
             <div style={{textAlign:"center"}} ><Apple className='appelIcon' /></div>
             
-            <h2 itemprop="name">IOS Apps</h2>
-            <p itemprop="description">
+            <h2 itemProp="name">IOS Apps</h2>
+            <p itemProp="description">
                 Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados siendo de los smartphones más potentes del mercado, DWA desarrolla aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
             </p>
         </article>

@@ -1,5 +1,10 @@
 import Head from 'next/head'
-import {Navbar} from '../components/navbar'
+import {
+  Navbar,
+  AiFillHtml5,
+  AiOutlineMobile,
+  AiFillTool
+} from '../components/navbar'
 import Block1 from '../components/home/block1-home'
 import Block2 from '../components/home/block2-home'
 import Block3 from '../components/home/block3-home'
@@ -19,7 +24,11 @@ function Home() {
 
       <main>
       <Block1/>
-      <Block2/>
+      <Block2
+      Html5={AiFillHtml5}
+      Mobile={AiOutlineMobile}
+      Tool={AiFillTool}
+      />
       <Block3/>
       <Footer/>
       </main>

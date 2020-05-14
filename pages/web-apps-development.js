@@ -29,17 +29,24 @@ function WebApps() {
   return <>
       <Head>
         <title>{title} - Diaz web App</title>
-        <meta name="description" content="Web apps Development o desarrollo de aplicaciones web particulares, tiendas online y empresariales, Optimizadas en seo y performance" />
+        <meta name="description" content="Web apps Development o desarrollo de aplicaciones web particulares, tiendas online y empresariales, optimizadas en seo y performance" />
       </Head>
       <Navbar navStatus={title} />
   <main >
-      <div className='webstyle intro1' itemscope itemtype="http://schema.org/Service">
-        <h1 itemprop="name">Desarrollo de aplicaciones web</h1>
-        <p itemprop="description">
+      <div className='webstyle intro1' itemScope itemType="http://schema.org/Service">
+        <h1 itemProp="name">Desarrollo de aplicaciones web</h1>
+        <p itemProp="description">
             Diaz Web App desarrollo de aplicaciones web particulares, tiendas online y empresariales, Optimizamos webs en HTML5 para adaptarlas al responsive design. La demanda de tráfico en internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA), webassembly (wasm) y server side rendering para aspectos SEO y performance.
         </p>
       </div> 
-      
+      <section>
+        <h2 itemProp="name">SEO y Datos estructurados</h2>
+        <p itemProp="description">
+          Integramos técnicas <b>SEO y Datos Estructurados</b> en todos nuestros proyectos para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsquedas.
+          <br/>
+          De esta manera podras agregar un plan o estrategias de marketing sin necesidad deconfigurar o editar el codigo fuente.
+        </p>
+      </section>
       <section>
           <h2 >Tecnologías De desarrollo</h2>
       </section>

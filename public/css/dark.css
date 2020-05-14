@@ -181,6 +181,7 @@
       left: -315% ;
       z-index:-1;
       background-color: var(--iconColor);
+      border: 1px solid #1d1d1d;
       border-radius: 22px;
       line-height: 2;
       text-shadow: 1px 1px black;
@@ -201,5 +202,33 @@
       95%,100%{
         width: 0;
         left: 0;
+      }
+    }
+.flow{
+  position:relative;
+  margin:0 auto;
+  width:32vmin; 
+  height:32vmin;
+  border-radius:50%;
+  animation: animated1 2s infinite;  
+}
+.flow2{ 
+  animation-delay: 5s;
+}
+    @keyframes animated1{
+      0%,3%{
+        width:32vmin;  
+        height:32vmin;
+        box-shadow: 0px 0px 0px var(--effectColor);
+      }
+      3%,97%{
+        width:34vmin;  
+        height:34vmin;
+        box-shadow: 0px 0px 27px var(--effectColor);
+      }
+      97%,100%{
+        width:32vmin;  
+        height:32vmin;
+        box-shadow: 0px 0px 0px var(--effectColor);
       }
     }

@@ -12,6 +12,7 @@ import {
     AiFillHome,
     AiFillMobile,
     AiFillTool,
+    AiFillHtml5
 } from 'react-icons/ai'
 
 import Chat from '../components/chat/chat'
@@ -60,7 +61,7 @@ function Navbar(props) {
     return <>
             <Head>
                 <link rel="manifest" href="/manifest.json" />
-                <link rel='stylesheet' href='/css/dark.css' />
+                <link rel='stylesheet' href='css/dark.css' />
                 <meta name="keywords" content="apps development, desarrollo de aplicaciones, diaz web app, mobile development,web development, dwa, web apps, mobile apps, html, JS, diseño web, desarrollo web" />
 
                 <meta name="author" content="Diaz web app" />
@@ -107,12 +108,12 @@ function Navbar(props) {
                     {
                         status === 'web apps development' ?(
                             <p  >
-                                <AiOutlineHtml5/>
+                                <AiFillHtml5/>
                                 <span>web apps</span>
                             </p>
                         ):(
-                        <Link href="/web-apps-dvelopment">
-                            <a onClick={()=>setShow(true)} href="/web-apps-dvelopment.html">
+                        <Link href="/web-apps-development">
+                            <a onClick={()=>setShow(true)} href="/web-apps-development.html">
                                <AiOutlineHtml5/>
                                 <span>web apps</span>
                             </a>
@@ -127,8 +128,8 @@ function Navbar(props) {
                                 <span>mobile apps</span>
                             </p>
                         ):(
-                        <Link href="/mobile-apps-dvelopment">
-                            <a onClick={()=>setShow(true)} href="/mobile-apps-dvelopment.html">
+                        <Link href="/mobile-apps-development">
+                            <a onClick={()=>setShow(true)} href="/mobile-apps-development.html">
                             <AiOutlineMobile/>
                               <span>mobile apps</span>
                             </a>
@@ -160,7 +161,7 @@ function Navbar(props) {
                     :root{
                         --font-size:${width < 721 ? '14px;' : '16px;'}
                         --iconColor:rgb(0, 135, 224);
-                        --iconColorButton:rgb(255, 255, 255);
+                        --effectColor:yellow;
                         --textColor:lightgrey;
                         --backgroundColor:#1d1d1d;
                         --themeColor:#2d2d2d;
@@ -242,4 +243,4 @@ function Navbar(props) {
         </>
 }
 
-export {Navbar}
+export {Navbar, AiFillHtml5, AiOutlineMobile, AiFillTool}

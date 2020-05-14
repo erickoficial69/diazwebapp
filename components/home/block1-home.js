@@ -2,10 +2,10 @@
 function Block1() {
 
   return <>
-  <div className="paralax intro1" itemscope itemtype="http://schema.org/Service">
-    <meta itemprop="serviceType" content="Home cleaning" />
-          <article itemprop="provider" itemscope itemtype="http://schema.org/LocalBusiness">
-          <h1 itemprop="name">Desarrollo de software </h1>
+  <div className="paralax intro1" itemScope itemType="http://schema.org/Service">
+    <meta itemProp="serviceType" content="Home cleaning" />
+          <article itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
+          <h1 itemProp="name">Desarrollo de software </h1>
           <p>
               Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
           </p>
@@ -28,7 +28,7 @@ function Block1() {
               .paralax{
                 grid-column: 1 / span 16;
                 background-image:url(/img/pwa.jpg);
-                background-color:#111;
+                background-color:#333;
                 background-size:cover;
                 background-position:center center;
                 background-attachment:fixed;
