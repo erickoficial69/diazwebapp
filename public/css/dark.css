@@ -210,23 +210,29 @@
   width:32vmin; 
   height:32vmin;
   border-radius:50%;
-  animation: animated1 2s infinite;  
+  animation: animated1 7s infinite;  
 }
 .flow2{ 
   animation-delay: 5s;
 }
     @keyframes animated1{
-      0%,3%{
+      0%,4%{
         width:32vmin;  
         height:32vmin;
         box-shadow: 0px 0px 0px var(--effectColor);
       }
-      3%,97%{
+      4%,8%{
         width:34vmin;  
         height:34vmin;
         box-shadow: 0px 0px 27px var(--effectColor);
       }
-      97%,100%{
+      8%,12%{
+        width:32vmin;  
+        height:32vmin;
+        box-shadow: 0px 0px 0px var(--effectColor);
+      }
+
+      12%,100%{
         width:32vmin;  
         height:32vmin;
         box-shadow: 0px 0px 0px var(--effectColor);

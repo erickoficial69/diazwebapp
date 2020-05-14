@@ -40,7 +40,7 @@ function WebApps() {
         </p>
       </div> 
       <section>
-        <h2 itemProp="name">SEO y Datos estructurados</h2>
+        <h2 itemProp="name">SEO y Datos Estructurados</h2>
         <p itemProp="description">
           Integramos técnicas <b>SEO y Datos Estructurados</b> en todos nuestros proyectos para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsquedas.
           <br/>
