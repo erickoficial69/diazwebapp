@@ -67,10 +67,10 @@ function Block2({Tool,Html5,Mobile}) {
               }
               .block2 li{
                 border-radius:5px;
-                box-shadow:0px 0px 1px white;
+                box-shadow:0px 0px 2px white;
                 padding:2vmin;
                 color:grey;
-                height:91vmin;
+                height:83vmin;
                 overflow:hidden;
                 display:flex;
                 flex-flow:column;
@@ -81,7 +81,7 @@ function Block2({Tool,Html5,Mobile}) {
               }
               .block2 li h2{
                   text-align:center;
-                  line-height:2;
+                  line-height:1.3;
                   color:grey;
               }
               .block2 li p{
