@@ -74,7 +74,7 @@ function Navbar(props) {
             <header>
                 <span>
                     {
-                        width > 720 ? (
+                        width > 916 ? (
                             status === 'home'?(
                                 <p  >
                                         <img src="/img/logo.png" width="32px" />
@@ -142,13 +142,13 @@ function Navbar(props) {
                         status === 'administracion de sistemas' ?(
                             <p  >
                                 <AiFillSafetyCertificate/>
-                                <span>adm. sistemas</span> 
+                                <span>A. sistemas</span> 
                             </p>
                         ):(
                         <Link href="/administracion-sistemas">
                             <a onClick={()=>setShow(true)} href="/administracion-sistemas.html">
                             <AiOutlineSafety/>
-                                <span>adm. sistemas</span>
+                                <span>A. sistemas</span>
                             </a>
                         </Link> 
                         )
@@ -157,17 +157,17 @@ function Navbar(props) {
                         status === 'serv. técnico' ?(
                             <p  >
                                 <AiFillTool/>
-                                <span>serv. técnico</span> 
+                                <span>S. técnico</span> 
                             </p>
                         ):(
                         <Link href="/servicio-tecnico">
                             <a onClick={()=>setShow(true)} href="/servicio-tecnico.html">
                             <AiOutlineTool/>
-                                <span>serv. técnico</span>
+                                <span>S. técnico</span>
                             </a>
                         </Link> 
                         )
-                    }
+                     }
                     </nav>
                 </span>
             </header>
@@ -176,7 +176,7 @@ function Navbar(props) {
                 {`
 
                     :root{
-                        --font-size:${width < 721 ? '14px;' : '16px;'}
+                        --font-size:${width < 916 ? '14px;' : '16px;'}
                         --iconColor:rgb(0, 135, 224);
                         --effectColor:yellow;
                         --textColor:lightgrey;
@@ -185,30 +185,30 @@ function Navbar(props) {
                     }
                     header{
                         position:fixed;
-                        ${width < 721 ? 'bottom:0;' : 'top:0;'}
+                        ${width < 916 ? 'bottom:0;' : 'top:0;'}
                         background:var(--themeColor);
                         height:52px;
                         z-index:999;
                     }
                     main{
-                        ${width < 721 ? 'top:0;' : 'top:52px;'}
+                        ${width < 916 ? 'top:0;' : 'top:52px;'}
                     }
                     header span{
                         grid-column: 2 / span 14;
                         display:flex;
                         flex-flow:row nowrap;
                         align-items:center;
-                        justify-content:${width <720?'center;':'space-between;'}
+                        justify-content:${width <916?'center;':'space-between;'}
                         overflow:hidden;
                     }
                     header span nav{
                         display:flex;
                         flex-flow:row nowrap;
                         align-items:center;
-                        justify-content:${width <720?'space-between;':"flex-end;"}
+                        justify-content:${width <916?'space-between;':"flex-end;"}
                         height:52px;
                         overflow:hidden;
-                        ${width <720?'width:100%;':null}
+                        ${width <916?'width:100%;':null}
                     }
 
                     header span a{
@@ -242,10 +242,12 @@ function Navbar(props) {
                         margin-right:1vmin;
                     }
                     header span a span{
-                        font-size:${width <720?'11px;':"18px;"};
+                        font-size:${width <720?'9px;':"18px;"};
+                        text-align:center;
                     }
                     header span p span{
-                        font-size:${width <720?'11px;':"18px;"};
+                        font-size:${width <720?'9px;':"18px;"};
+                        text-align:center;
                     }
                     header span img{
                         margin-right:1vmin;

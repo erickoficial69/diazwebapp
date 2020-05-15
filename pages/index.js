@@ -16,7 +16,7 @@ function Home() {
   
   return <>
       <Head>
-        <title>Diaz web App - {title}</title>
+        <title>Diaz Web App - {title}</title>
         <meta name="description" content="Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente. Marketing online y estrategias seo."/>
         
       </Head>
