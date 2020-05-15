@@ -162,6 +162,31 @@
     margin: 1vmin auto;
     padding: 2vmin;
   }
+  .whatsapp{
+    position: relative;
+    z-index:1;
+  }
+  .whatsapp > svg{
+    border: 1px solid #1d1d1d;
+  }
+  .whatsapp::before{
+    content: "Whatsapp!!";
+    position: absolute;
+    width:340%;
+    height:50%;
+    top:22%;
+    left: -315% ;
+    z-index:-1;
+    background-color: var(--iconColor);
+    border: 1px solid #1d1d1d;
+    border-radius: 22px;
+    line-height: 2;
+    text-shadow: 1px 1px black;
+    animation: help 9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    animation-delay: 3s;
+    overflow: hidden;
+    padding: 0 2vmin;
+  }
   .lateralIndicators .ayuda{
       position: relative;
       z-index:1;
