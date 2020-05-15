@@ -5,7 +5,8 @@ import { sendEmail } from '../graphql-querys/index'
 import {
     AiOutlineCloseCircle,
     AiOutlineMail,
-    AiFillRightCircle
+    AiFillRightCircle,
+    AiOutlineWhatsApp
 } from 'react-icons/ai'
 const Chat = (props)=>{
     const [user, setUser] = useState({})
@@ -48,7 +49,7 @@ const Chat = (props)=>{
         <AiOutlineCloseCircle
         onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
         />}
-    
+    <a href="https://api.whatsapp.com/send?phone=584148733690"><AiOutlineWhatsApp/></a>
     </aside>
 
         <form message={statusSend?statusSend:''} className='chat' onSubmit={e=>sendMessage(e)} >
