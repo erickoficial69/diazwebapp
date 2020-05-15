@@ -43,9 +43,9 @@ function WebApps() {
         <article>
         <h2 itemProp="name">SEO y Datos Estructurados</h2>
         <p itemProp="description">
-          Integramos técnicas <b>SEO y Datos Estructurados</b> en todos nuestros proyectos para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsquedas.
+          Integramos técnicas <b>SEO y Datos Estructurados</b> en todos nuestros proyectos para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsqueda.
           <br/>
-          De esta manera podras agregar un plan o estrategias de marketing sin necesidad deconfigurar o editar el codigo fuente.
+          De esta manera podras agregar un plan o estrategias de marketing sin necesidad de configurar o editar el codigo fuente.
         </p>
         </article>
       </section>
