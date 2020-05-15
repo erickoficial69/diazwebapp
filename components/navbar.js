@@ -213,8 +213,8 @@ function Navbar(props) {
 
                     header span a{
                         display:flex;
-                        flex-flow:${width <720?'column;':"row nowrap;"}
-                        justify-content:${width <720?'space-between;':"center;"}
+                        flex-flow:${width <916?'column;':"row nowrap;"}
+                        justify-content:${width <916?'space-between;':"center;"}
                         align-items:center;
                         padding:0 2vmin;
                         text-transform:capitalize;
@@ -229,8 +229,8 @@ function Navbar(props) {
                     }
                     header span p{
                         display:flex;
-                        flex-flow:${width <720?'column;':"row nowrap;"}
-                        justify-content:${width <720?'space-between;':"center;"};
+                        flex-flow:${width <916?'column;':"row nowrap;"}
+                        justify-content:${width <916?'space-between;':"center;"};
                         align-items:center;
                         padding:0 2vmin;
                         text-transform:capitalize;
@@ -242,11 +242,11 @@ function Navbar(props) {
                         margin-right:1vmin;
                     }
                     header span a span{
-                        font-size:${width <720?'9px;':"18px;"};
+                        font-size:${width <916?'9px;':"18px;"};
                         text-align:center;
                     }
                     header span p span{
-                        font-size:${width <720?'9px;':"18px;"};
+                        font-size:${width <916?'9px;':"18px;"};
                         text-align:center;
                     }
                     header span img{
