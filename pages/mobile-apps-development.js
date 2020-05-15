@@ -40,7 +40,7 @@ function MovilApp() {
             
             <h2 itemProp="name">Android Apps</h2>
             <p itemProp="description">
-                Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con ma mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo para Android. Descubre todas las funcionalidades que Android ofrece con Diaz Web App.
+                Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con la mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo para Android. Descubre todas las funcionalidades que Android ofrece con Diaz Web App.
             </p>
         </article> 
         <article>
