@@ -7,12 +7,14 @@ import {
     AiOutlineHome,
     AiOutlineHtml5,
     AiOutlineMobile,
+    AiOutlineSafety,
     AiOutlineTool,
 
     AiFillHome,
     AiFillMobile,
     AiFillTool,
-    AiFillHtml5
+    AiFillHtml5,
+    AiFillSafetyCertificate
 } from 'react-icons/ai'
 
 import Chat from '../components/chat/chat'
@@ -136,21 +138,36 @@ function Navbar(props) {
                         </Link> 
                         )
                     }
-                    {/*
-                        status === 'servicio tecnico' ?(
+                    {
+                        status === 'administracion de sistemas' ?(
                             <p  >
-                                <AiFillTool/>
-                                <span>serv. tecnico</span> 
+                                <AiFillSafetyCertificate/>
+                                <span>adm. sistemas</span> 
                             </p>
                         ):(
-                        <Link href="/serviciotecnico">
-                            <a onClick={()=>setShow(true)} href="/serviciotecnico.html">
-                            <AiOutlineTool/>
-                                <span>serv. tecnico</span>
+                        <Link href="/administracion-sistemas">
+                            <a onClick={()=>setShow(true)} href="/administracion-sistemas.html">
+                            <AiOutlineSafety/>
+                                <span>adm. sistemas</span>
                             </a>
                         </Link> 
                         )
-                        */}
+                    }
+                    {
+                        status === 'serv. técnico' ?(
+                            <p  >
+                                <AiFillTool/>
+                                <span>serv. técnico</span> 
+                            </p>
+                        ):(
+                        <Link href="/servicio-tecnico">
+                            <a onClick={()=>setShow(true)} href="/servicio-tecnico.html">
+                            <AiOutlineTool/>
+                                <span>serv. técnico</span>
+                            </a>
+                        </Link> 
+                        )
+                    }
                     </nav>
                 </span>
             </header>
@@ -208,10 +225,21 @@ function Navbar(props) {
                         color:var(--iconColor);
                         width:24px;
                         height:24px;
+                        margin-right:1vmin;
+                    }
+                    header span p{
+                        display:flex;
+                        flex-flow:${width <720?'column;':"row nowrap;"}
+                        justify-content:${width <720?'space-between;':"center;"};
+                        align-items:center;
+                        padding:0 2vmin;
+                        text-transform:capitalize;
+                        text-shadow: 1px 1px black;
                     }
                     header span p svg{
                         width:24px;
                         height:24px;
+                        margin-right:1vmin;
                     }
                     header span a span{
                         font-size:${width <720?'11px;':"18px;"};
@@ -220,15 +248,7 @@ function Navbar(props) {
                         font-size:${width <720?'11px;':"18px;"};
                     }
                     header span img{
-                        margin-right:5px;
-                    }
-                    header span p{
-                        display:flex;
-                        flex-flow:${width <720?'column;':"row nowrap;"}
-                        justify-content:${width <720?'space-between;':"center;"};
-                        align-items:center;
-                        text-transform:capitalize;
-                        text-shadow: 1px 1px black;
+                        margin-right:1vmin;
                     }
                 `}
             </style>
@@ -243,4 +263,4 @@ function Navbar(props) {
         </>
 }
 
-export {Navbar, AiFillHtml5, AiOutlineMobile, AiFillTool}
+export {Navbar, AiFillHtml5, AiOutlineMobile, AiFillTool, AiFillSafetyCertificate}

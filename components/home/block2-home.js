@@ -7,7 +7,7 @@ function Block2({Tool,Html5,Mobile}) {
         
             <h2 itemProp="name">Web apps</h2>
 
-            <Html5 className="flow" itemProp="image"/>
+            <Html5 className="flow" />
             
             <p itemProp="description">
               Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wasm)</b>
@@ -22,7 +22,7 @@ function Block2({Tool,Html5,Mobile}) {
         
             <h2 itemProp="name">Movil apps</h2>
 
-            <Mobile className="flow flow2" itemProp="image"/>
+            <Mobile className="flow flow2" />
 
             <p itemProp="description">
               Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.
@@ -38,7 +38,7 @@ function Block2({Tool,Html5,Mobile}) {
         
             <h2 itemProp="name">Adm. Sistemas</h2>
             
-            <Tool className="flow" itemProp="image"/>
+            <Tool className="flow" />
             
             <p itemProp="description">
               Mejora la experiencia de tus clientes optimizando velocidad y seguridad, reduce costos de servicios, migración y escalado de aplicaciones.
@@ -69,26 +69,14 @@ function Block2({Tool,Html5,Mobile}) {
                 border-radius:5px;
                 box-shadow:0px 0px 2px white;
                 padding:2vmin;
-                color:grey;
-                height:83vmin;
+                height:335px;
                 overflow:hidden;
                 display:flex;
                 flex-flow:column;
                 justify-content:space-between;              
               }
-              .block2 li svg{
-                color:var(--iconColor);       
-              }
               .block2 li h2{
                   text-align:center;
-                  line-height:1.3;
-                  color:grey;
-              }
-              .block2 li p{
-                color:grey;
-              }
-              .block2 li b{
-                color:grey;
               }
             .block2 li a{
               padding:2vmin;

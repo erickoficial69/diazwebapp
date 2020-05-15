@@ -3,7 +3,7 @@ import {
   Navbar,
   AiFillHtml5,
   AiOutlineMobile,
-  AiFillTool
+  AiFillSafetyCertificate
 } from '../components/navbar'
 import Block1 from '../components/home/block1-home'
 import Block2 from '../components/home/block2-home'
@@ -27,7 +27,7 @@ function Home() {
       <Block2
       Html5={AiFillHtml5}
       Mobile={AiOutlineMobile}
-      Tool={AiFillTool}
+      Tool={AiFillSafetyCertificate}
       />
       <Block3/>
       <Footer/>

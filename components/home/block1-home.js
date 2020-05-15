@@ -81,7 +81,7 @@ function Block1() {
                 .paralax img{
                   order:2;
                   height:50%;
-                  margin-top:-8%;
+                  margin-top:-4%;
                 }
                 .paralax article p{
                   font-size:4.2vh;

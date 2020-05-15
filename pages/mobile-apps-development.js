@@ -35,7 +35,6 @@ function MovilApp() {
   <main >
 
       <div className='movilstyle intro1' itemScope itemType="http://schema.org/Service">
-        <h1>Desarrollo de aplicaciones moviles</h1>
         <article>
             <div style={{textAlign:"center"}}><AndroidTwoTone style={{color:"green", width:"100px"}} className='androidIcon' /></div>
             
@@ -49,10 +48,20 @@ function MovilApp() {
             
             <h2 itemProp="name">IOS Apps</h2>
             <p itemProp="description">
-                Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados siendo de los smartphones más potentes del mercado, DWA desarrolla aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
+                Desarrollo de aplicaciones nativas para iPhone, uno de los dispositivos móviles más utilizados, Diaz Web App desarrolla aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
             </p>
         </article>
       </div>
+
+      <section>
+        <article>
+          <h2 itemProp="name">Promoción de apps</h2>
+          <p itemProp="description">
+          Nuestro equipo especializado ayudará en el proceso promoción optimizando tu app móvil para conseguir aparecer en los primeros resultados de búsqueda en los Market Places y lograr descargas.
+          </p>
+      </article>
+    </section>
+    
       <section>
           <h2>Tecnologías De desarrollo</h2>
       </section>
@@ -94,6 +103,12 @@ function MovilApp() {
               grid-column: 2 / span 14;
               margin: 2vmin auto;
             }
+            section article{
+              margin:2vmin auto;
+            }
+          section article h2{
+              text-align:center;
+            }
             .movilstyle{
               display:grid;
               grid-column: 1 / span 16 !important;
@@ -101,6 +116,7 @@ function MovilApp() {
               background-image:url(/img/codes.gif);
               background-size: cover;
               background-repeat:no-repeat;
+              background-attachment:fixed;
               background-position: center center;
               background-blend-mode:multiply;
               padding:5vmin 8vmin;

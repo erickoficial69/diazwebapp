@@ -37,14 +37,17 @@
   h1{
     font-size: calc(var(--font-size) * 2);
     font-weight: 400;
+    line-height:2;
   }
   h2{
     font-size: calc(var(--font-size) * 1.7);
     font-weight: 400;
+    line-height:2;
   }
   h3{
     font-size: calc(var(--font-size) * 1.5);
     font-weight: 400;
+    line-height:2;
   }
   main,header{
     display:grid;
@@ -86,12 +89,12 @@
     0%,50%{
       width:32px;
       height: 32px;
-      box-shadow: 0px 0px 2px red;
+      box-shadow: 0px 0px 1px red;
     }
     50%,100%{
       width:42px;
       height: 42px;
-      box-shadow: 0px 0px 22px red;
+      box-shadow: 0px 0px 32px red;
     }
   }
   .tecnologies{
@@ -133,12 +136,6 @@
     justify-content: space-between;
     align-items: center;
   }
-  .inactive{
-    color:darkgoldenrod
-  }
-  .inactive path{
-    color:darkgoldenrod;
-  }
   .movilstyle article svg path{
     color:lightgreen;
   }
@@ -177,7 +174,7 @@
       position: absolute;
       width:340%;
       height:50%;
-      top:23%;
+      top:22%;
       left: -315% ;
       z-index:-1;
       background-color: var(--iconColor);
@@ -207,8 +204,8 @@
 .flow{
   position:relative;
   margin:0 auto;
-  width:32vmin; 
-  height:32vmin;
+  width:72px; 
+  height:72px;
   border-radius:50%;
   animation: animated1 7s infinite;  
 }
@@ -217,24 +214,24 @@
 }
     @keyframes animated1{
       0%,4%{
-        width:32vmin;  
-        height:32vmin;
-        box-shadow: 0px 0px 0px var(--effectColor);
+        width:72px;  
+        height:72px;
+        box-shadow: 0px 0px 0px var(--iconColor);
       }
       4%,8%{
-        width:34vmin;  
-        height:34vmin;
-        box-shadow: 0px 0px 27px var(--effectColor);
+        width:78px;  
+        height:78px;
+        box-shadow: 0px 0px 27px var(--iconColor);
       }
       8%,12%{
-        width:32vmin;  
-        height:32vmin;
+        width:72px;  
+        height:72px;
         box-shadow: 0px 0px 0px var(--effectColor);
       }
 
       12%,100%{
-        width:32vmin;  
-        height:32vmin;
+        width:72px;  
+        height:72px;
         box-shadow: 0px 0px 0px var(--effectColor);
       }
     }

@@ -4,7 +4,8 @@ import { MenuItem } from '@material-ui/core'
 import { sendEmail } from '../graphql-querys/index'
 import {
     AiOutlineCloseCircle,
-    AiOutlineMail
+    AiOutlineMail,
+    AiFillRightCircle
 } from 'react-icons/ai'
 const Chat = (props)=>{
     const [user, setUser] = useState({})
@@ -66,7 +67,7 @@ const Chat = (props)=>{
                     disabled={net.connected === false? true : false} >
                     
                     <MenuItem>
-                    {net.connected === false? <WifiOff/>: "Enviar" }
+                    {net.connected === false? <WifiOff/>: <><AiFillRightCircle/> Enviar</> }
                     
                     </MenuItem>
             </button>
@@ -128,6 +129,7 @@ const Chat = (props)=>{
                     border:1px solid white;
                     border-radius:3px;
                     text-transform:uppercase;
+                    color:lightgrey;
                 }
                 .chat textarea{
                     height:185px;
