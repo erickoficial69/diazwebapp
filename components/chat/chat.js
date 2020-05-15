@@ -37,7 +37,11 @@ const Chat = (props)=>{
             />
         ):null
     }
-            
+    
+    <a className="whatsapp" target="new" href="https://api.whatsapp.com/send?phone=584148733690">
+        <AiOutlineWhatsApp/>
+    </a>
+
     {!openQuestion?
     <span 
     className="ayuda"
@@ -49,7 +53,7 @@ const Chat = (props)=>{
         <AiOutlineCloseCircle
         onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
         />}
-    <a className="whatsapp" target="new" href="https://api.whatsapp.com/send?phone=584148733690"><AiOutlineWhatsApp/></a>
+    
     </aside>
 
         <form message={statusSend?statusSend:''} className='chat' onSubmit={e=>sendMessage(e)} >
