@@ -33,18 +33,18 @@ const Chat = (props)=>{
     {
         net.connected === false?(
             <WifiOff
-            className="shadow"
+            className="alertWifi"
             />
         ):null
     }
-    
-    <a className="whatsapp" target="new" href="https://api.whatsapp.com/send?phone=584148733690">
+
+    <a className="whatsapp" target="new" href="https://wa.me/584148733690">
         <AiOutlineWhatsApp/>
     </a>
 
     {!openQuestion?
     <span 
-    className="ayuda"
+    className="gmail"
     >
         <AiOutlineMail
         onClick={()=>setOpenQuestion(openQuestion===true?false:true)} 
@@ -72,7 +72,7 @@ const Chat = (props)=>{
                     disabled={net.connected === false? true : false} >
                     
                     <MenuItem>
-                    {net.connected === false? <WifiOff/>: <><AiFillRightCircle/> Enviar</> }
+                    {net.connected === false? <WifiOff className="alertWifi"/>: <><AiFillRightCircle/> Enviar</> }
                     
                     </MenuItem>
             </button>
@@ -81,12 +81,6 @@ const Chat = (props)=>{
         <style>
             {
                 `
-                .wifiOff path{
-                    color:darkorange;
-                }
-                .butonEmail path{
-                    color:var(--iconColor);
-                }
                 .chat{
                     z-index:8;
                     height:${!openQuestion?'44px;' : '345px;'} 
@@ -103,7 +97,7 @@ const Chat = (props)=>{
                     justify-content: space-between;
                     border-radius:3px;
                     padding:1vmin;
-                    box-shadow: 0px 0px 2px white;
+                    box-shadow: 0px 0px 2px lightgrey;
                 }
                 .chat::after{
                     content:attr(message);
@@ -126,12 +120,13 @@ const Chat = (props)=>{
                 .chat input{
                     line-height:2;
                     background:#2d2d2d;
-                    border:1px solid white;
+                    border:1px solid lightgrey;
                     padding: 0 2vmin;
+                    color:lightgrey;
                 }
                 .chat button{
                     width:45%;
-                    border:1px solid white;
+                    border:1px solid lightgrey;
                     border-radius:3px;
                     text-transform:uppercase;
                     color:lightgrey;
@@ -140,9 +135,9 @@ const Chat = (props)=>{
                     height:185px;
                     resize:none;
                     background:#2d2d2d;
-                    border:1px solid white;
+                    border:1px solid lightgrey;
                     padding:2vmin;
-                    color:white;
+                    color:lightgrey;
                 }
                 @media (min-width:512px){
                     .chat{
