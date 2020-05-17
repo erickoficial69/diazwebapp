@@ -7,13 +7,13 @@ function Block1() {
           <article itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
           <h1 itemProp="name">Desarrollo de software </h1>
           <p>
-              Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
-          </p>
-          <p>
-               Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión. 
-          </p>
-          <p>
-              Ofrecemos consultoría tecnológica necesaria, previo al desarrollo de cualquier proyecto. 
+            Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
+
+            Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
+
+            Ofrecemos consultaría tecnológica necesaria, previo al desarrollo de cualquier proyecto.
+
+            Diaz web app ofrece servicio técnico de estructura de redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
           </p>
           
           </article>

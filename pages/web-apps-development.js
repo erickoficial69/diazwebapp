@@ -36,7 +36,7 @@ function WebApps() {
       <div className='webstyle intro1' itemScope itemType="http://schema.org/Service">
         <h1 itemProp="name">Desarrollo de aplicaciones web</h1>
         <p itemProp="description">
-            Diaz Web App desarrollo de aplicaciones web particulares, tiendas online y empresariales, optimizamos webs en HTML5 para adaptarlas al responsive design. La demanda de tráfico en internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA), webassembly (wasm) y server side rendering para aspectos SEO y performance.
+          Diaz Web App desarrollo de aplicaciones web particulares, tiendas online y empresariales, optimizamos webs en HTML5 para adaptarlas al responsive design. La demanda de tráfico en Internet desde móviles que supera el 70% actualmente. Dominamos las tecnologías de programación web; progressive web apps (PWA), webassembly (wasm) y server side rendering para aspectos SEO y performance.
         </p>
       </div> 
       <section>
@@ -44,8 +44,8 @@ function WebApps() {
         <h2 itemProp="name">SEO y Datos Estructurados</h2>
         <p itemProp="description">
           Integramos técnicas <b>SEO y Datos Estructurados</b> en todos nuestros proyectos para obtener los mejores resultados, para aumentar la visibilidad y tráfico orgánico para aparecer en las mejores posiciones en los motores de búsqueda.
-          <br/>
-          De esta manera podras agregar un plan o estrategias de marketing sin necesidad de configurar o editar el codigo fuente.
+          <br/><br/>
+          De esta manera podrás agregar un plan o estrategias de marketing sin necesidad de configurar o editar el código fuente.
         </p>
         </article>
       </section>

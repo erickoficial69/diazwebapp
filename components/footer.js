@@ -13,7 +13,7 @@ function Footer() {
                     
                     <b>Diaz web app</b>
                     <p>
-                    Plataforma dedicada al desarrollo de aplicaciones web, aplicaciones móviles y otros tipos de software, para gestionar e impulsar todo tipo de emprendimiento, negocios y empresas a travez del desarrollo técnologico.
+                    Plataforma dedicada al desarrollo de aplicaciones web, aplicaciones móviles y otros tipos de software, para gestionar e impulsar todo tipo de prendimiento, negocios y empresas a través del desarrollo tecnológico.
                     </p>
 
                     <b>contácto</b>
