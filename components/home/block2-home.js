@@ -66,8 +66,8 @@ function Block2({Tool,Html5,Mobile}) {
                 align-items:center;
               }
               .block2 li{
-                border-radius:5px;
-                box-shadow:0px 0px 2px white;
+                border-radius:3px;
+                box-shadow:0px 0px 2px var(--effectColor);
                 padding:2vmin;
                 height:335px;
                 overflow:hidden;

@@ -50,7 +50,12 @@ function WebApps() {
         </article>
       </section>
       <section>
-          <h2 >Tecnologías De desarrollo</h2>
+          
+        {
+          tools.length > 0?
+            <h2>Tecnologías De desarrollo</h2>:
+            null
+        }
       </section>
 
       <section>
@@ -99,13 +104,11 @@ function WebApps() {
               }
               .webstyle{
                 grid-column: 1 / span 16 ;
-                background-color:#222;
-                background-image:url(/img/pwa_wallpaper.jpg);
+                background-image:url(/img/pwa.jpg);
                 background-size: cover;
                 background-attachment:fixed;
                 background-repeat:no-repeat;
                 background-position: top center;
-                background-blend-mode:multiply;
                 padding:2vmin 8vmin;
                 display: flex;
                 flex-flow:column;

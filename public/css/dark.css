@@ -163,7 +163,7 @@
     z-index:1;
   }
   .whatsapp > svg{
-    border: 1px solid var(--themeColor);
+    border: 1px solid var(--effectColor);
     color:whitesmoke;
     background: rgb(52, 173, 52);
   }
@@ -176,7 +176,7 @@
     left: -315% ;
     z-index:-1;
     background-color: var(--themeColor);
-    border: 1px solid #1d1d1d;
+    border: 1px solid var(--effectColor);
     border-radius: 22px;
     line-height: 2;
     text-shadow: 1px 1px black;
@@ -190,7 +190,7 @@
       z-index:1;
     }
   .gmail > svg{
-      border: 1px solid var(--themeColor);
+      border: 1px solid var(--effectColor);
       background-color: whitesmoke;
       color:rgb(247, 49, 0);
     }
@@ -203,7 +203,7 @@
       left: -315% ;
       z-index:-1;
       background-color: var(--themeColor);
-      border: 1px solid #1d1d1d;
+      border: 1px solid var(--effectColor);
       border-radius: 22px;
       line-height: 2;
       text-shadow: 1px 1px black;
@@ -232,7 +232,8 @@
   width:72px; 
   height:72px;
   border-radius:50%;
-  animation: animated1 7s infinite;  
+  animation: animated1 7s infinite;
+  color:var(--effectColor2);  
 }
 .flow2{ 
   animation-delay: 5s;
@@ -257,6 +258,6 @@
       12%,100%{
         width:72px;  
         height:72px;
-        box-shadow: 0px 0px 0px var(--effectColor);
+        box-shadow: 0px 0px 0px var(--iconColor);
       }
     }

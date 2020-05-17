@@ -8,12 +8,12 @@ function Block1() {
           <h1 itemProp="name">Desarrollo de software </h1>
           <p>
             Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
-
+            <br/>
             Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
-
+            <br/>
             Ofrecemos consultaría tecnológica necesaria, previo al desarrollo de cualquier proyecto.
-
-            Diaz web app ofrece servicio técnico de estructura de redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
+            <br/>
+            Diaz web app ofrece servicio técnico en equipos y redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
           </p>
           
           </article>
@@ -27,8 +27,8 @@ function Block1() {
            `  
               .paralax{
                 grid-column: 1 / span 16;
-                background-image:url(/img/pwa.jpg);
-                background-color:#333;
+                background-image:url(/img/codes.gif);
+                background-color:#222;
                 background-size:cover;
                 background-position:center center;
                 background-attachment:fixed;
@@ -81,7 +81,7 @@ function Block1() {
                 .paralax img{
                   order:2;
                   height:50%;
-                  margin-top:-4%;
+                  margin-top:-2%;
                 }
                 .paralax article p{
                   font-size:4.2vh;

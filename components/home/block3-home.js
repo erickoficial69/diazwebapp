@@ -25,7 +25,7 @@ function Block3(){ return(
           <AiOutlineDesktop/>
         
         <p itemProp="description">
-          Diaz web app ofrece servicio servicio técnico especializado en computadores y laptops de todas las marcas y modelos existentes.
+          Diaz web app ofrece servicio técnico especializado en computadores y laptops de todas las marcas y modelos existentes.
         </p>
         <Link href="/servicio-tecnico">
                 <a style={{background:"var(--themeColor)"}} href="/servicio-tecnico.html">
@@ -55,7 +55,7 @@ function Block3(){ return(
           <TiWiFiOutline/>
         
         <p itemProp="description">
-          Diaz web app ofrece servico técnico de estructura de redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
+          Diaz web app ofrece servicio técnico de estructura de redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
         </p>
         <Link href="/servicio-tecnico">
                 <a style={{background:"var(--themeColor)"}} href="/servicio-tecnico.html">
@@ -75,8 +75,8 @@ function Block3(){ return(
         }
         .techSupport li{
           margin:2vmin 0;
-          border-radius:5px;
-          box-shadow:0px 0px 1px white;
+          border-radius:3px;
+          box-shadow:0px 0px 2px var(--effectColor);
           padding:2vmin;
           display:flex;
           flex-flow:column;
@@ -95,6 +95,7 @@ function Block3(){ return(
           height:12vmin;
           margin:1vmin auto;
           position:relative;
+          color:var(--iconColor);
         }
         @media(min-width:719px){
           .techSupport {

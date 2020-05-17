@@ -177,8 +177,9 @@ function Navbar(props) {
 
                     :root{
                         --font-size:${width < 916 ? '14px;' : '16px;'}
-                        --iconColor:rgb(0, 135, 224);
-                        --effectColor:yellow;
+                        --iconColor:rgb(248, 200, 2);
+                        --effectColor:rgb(68, 225, 25);
+                        --effectColor2:rgb(0, 195, 254);
                         --textColor:lightgrey;
                         --backgroundColor:#1d1d1d;
                         --themeColor:#2d2d2d;

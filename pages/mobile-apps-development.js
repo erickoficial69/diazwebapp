@@ -63,7 +63,11 @@ function MovilApp() {
     </section>
     
       <section>
-          <h2>Tecnologías De desarrollo</h2>
+        {
+          tools.length > 0?
+            <h2>Tecnologías De desarrollo</h2>:
+            null
+        }
       </section>
       <section>
           <ul className='tecnologies'>
