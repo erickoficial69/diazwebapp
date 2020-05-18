@@ -12,7 +12,7 @@ const { Device } = Plugins;
  d64267005e28744785d5111a417b7f4f */
 
 function WebApps() {
-  const title = 'web apps development'
+  const title = 'aplicaciones web'
   const [tools, setTools] = useState([])
   const [tools2, setTools2] = useState([])
   const [tools3, setTools3] = useState([]) 
@@ -30,7 +30,7 @@ function WebApps() {
       <Head>
         <title>{title} - Diaz web App</title>
         <link rel='stylesheet' href='css/effectos.css' />
-        <meta name="description" content="Web apps Development o desarrollo de aplicaciones web particulares, tiendas online y empresariales, optimizadas en seo y performance" />
+        <meta name="description" content="Desarrollo web particulares, tiendas online y empresas, optimizadas en seo y performance" />
       </Head>
       <Navbar navStatus={title} />
   <main >

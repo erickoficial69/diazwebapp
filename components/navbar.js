@@ -64,11 +64,11 @@ function Navbar(props) {
             <Head>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel='stylesheet' href='css/dark.css' />
-                <meta name="keywords" content="apps development, desarrollo de aplicaciones, diaz web app, mobile development,web development, dwa, web apps, mobile apps, html, JS, diseño web, desarrollo web" />
+                <meta name="keywords" content="desarrollo de aplicaciones, diaz web app, dwa, aplicaciones web, aplicaciones moviles, diseño web, desarrollo web" />
                 <meta name="theme-color" content="#2d2d2d"/>
                 <meta name="author" content="Diaz web app" />
 
-                <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1 user-scalable=no" />
+                <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,user-scalable=no" />
             </Head>
 
             <header>
@@ -108,14 +108,14 @@ function Navbar(props) {
                     }
 
                     {
-                        status === 'web apps development' ?(
+                        status === 'aplicaciones web' ?(
                             <p  >
                                 <AiFillHtml5/>
                                 <span>web apps</span>
                             </p>
                         ):(
-                        <Link href="/web-apps-development">
-                            <a onClick={()=>setShow(true)} href="/web-apps-development.html">
+                        <Link href="/aplicaciones-web">
+                            <a onClick={()=>setShow(true)} href="/aplicaciones-web.html">
                                <AiOutlineHtml5/>
                                 <span>web apps</span>
                             </a>
@@ -124,14 +124,14 @@ function Navbar(props) {
                     }
 
                     {
-                        status === 'mobile apps development' ?(
+                        status === 'aplicaciones moviles' ?(
                             <p  >
                                 <AiFillMobile/>
                                 <span>mobile apps</span>
                             </p>
                         ):(
-                        <Link href="/mobile-apps-development">
-                            <a onClick={()=>setShow(true)} href="/mobile-apps-development.html">
+                        <Link href="/aplicaciones-moviles">
+                            <a onClick={()=>setShow(true)} href="/aplicaciones-moviles.html">
                             <AiOutlineMobile/>
                               <span>mobile apps</span>
                             </a>
@@ -261,7 +261,7 @@ function Navbar(props) {
                  }
                  } 
                  open={show} >
-                    <img width="150vmin" height="150vmin" src="/img/loading-chulo.gif" />
+                    <img width="150vmin" height="150vmin" src="/img/loading-chulo.webp" />
             </Backdrop>
         </>
 }

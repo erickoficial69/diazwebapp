@@ -11,7 +11,7 @@ import {devTools} from '../components/graphql-querys/index'
 
 
 function MovilApp() {
-  const title = 'mobile apps development'
+  const title = 'aplicaciones moviles'
   const [tools, setTools] = useState([])
   const [tools2, setTools2] = useState([])
   const [tools3, setTools3] = useState([])
@@ -30,7 +30,7 @@ function MovilApp() {
           <Head>
             <title>{title} - Diaz web App</title>
             <link rel='stylesheet' href='css/effectos.css' />
-            <meta name="description" content="Movil apps development, o desarrollo de aplicaciones móviles para particulares, empresariales y comercios con tecnología de punta y el mejor rendimiento del mercado." />
+            <meta name="description" content="Desarrollo de aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado." />
           </Head>
           <Navbar navStatus={title} />
   <main >
