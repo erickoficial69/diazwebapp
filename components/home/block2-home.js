@@ -45,8 +45,8 @@ function Block2({Tool,Html5,Mobile}) {
             </p>
             
               
-              <Link href="/adm-sistemas">
-                <a style={{background:"var(--themeColor)"}} href="/sdm-sistemas.html">
+              <Link href="/administracion-sistemas">
+                <a style={{background:"var(--themeColor)"}} href="/administracion-sistemas.html">
                   Ver más
                 </a>
               </Link>
