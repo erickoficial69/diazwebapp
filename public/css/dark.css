@@ -60,6 +60,18 @@
     height:calc(100% - 52px);
     padding-bottom: 1vmin;
   }
+
+  main::-webkit-scrollbar {
+    width: 4px;     /* Tamaño del scroll en vertical */
+  }
+  main::-webkit-scrollbar-thumb {
+    background: var(--effectColor);
+    border-radius: 4px;
+  }
+  main::-webkit-scrollbar-track {
+    background: var(--themeColor);
+    border-radius: 4px;
+  }
   header{
     left:0;
     right:0;
