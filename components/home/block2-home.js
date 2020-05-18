@@ -12,8 +12,8 @@ function Block2({Tool,Html5,Mobile}) {
             <p itemProp="description">
               Desarrollamos plataformas web para particulares y comercios con tecnologías como <b>progressive web apps (pwa) y webasembly (wasm)</b>
             </p>
-            <Link href="/web-apps-development">
-                <a style={{background:"var(--themeColor)"}} href="/web-apps-development.html">
+            <Link href="/aplicaciones-web">
+                <a style={{background:"var(--themeColor)"}} href="/aplicaciones-web.html">
                   Ver más
                 </a>
             </Link>
@@ -27,9 +27,9 @@ function Block2({Tool,Html5,Mobile}) {
             <p itemProp="description">
               Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.
             </p>
-            <Link href="/mobile-apps-development">
+            <Link href="/aplicaciones-moviles">
               
-                <a style={{background:"var(--themeColor)"}} href="/mobile-apps-development.html">
+                <a style={{background:"var(--themeColor)"}} href="/aplicaciones-moviles.html">
                   Ver más
                 </a>
             </Link>
