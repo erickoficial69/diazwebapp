@@ -29,6 +29,7 @@ function MovilApp() {
   return <>
           <Head>
             <title>{title} - Diaz web App</title>
+            <link rel='stylesheet' href='css/effectos.css' />
             <meta name="description" content="Movil apps development, o desarrollo de aplicaciones móviles para particulares, empresariales y comercios con tecnología de punta y el mejor rendimiento del mercado." />
           </Head>
           <Navbar navStatus={title} />

@@ -29,6 +29,7 @@ function WebApps() {
   return <>
       <Head>
         <title>{title} - Diaz web App</title>
+        <link rel='stylesheet' href='css/effectos.css' />
         <meta name="description" content="Web apps Development o desarrollo de aplicaciones web particulares, tiendas online y empresariales, optimizadas en seo y performance" />
       </Head>
       <Navbar navStatus={title} />

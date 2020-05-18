@@ -17,6 +17,7 @@ function Home() {
   return <>
       <Head>
         <title>Diaz Web App - {title}</title>
+        <link rel='stylesheet' href='css/effectos.css' />
         <meta name="description" content="Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente. Marketing online y estrategias seo."/>
         
       </Head>
