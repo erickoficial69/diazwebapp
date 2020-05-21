@@ -6,12 +6,18 @@ import {
     AiOutlineCloseCircle,
     AiOutlineMail,
     AiFillRightCircle,
-    AiOutlineWhatsApp
+    AiOutlineWhatsApp,
+    AiOutlineAppstoreAdd,
 } from 'react-icons/ai'
+import Notifications from '../pwa-events/notifications'
+
 const Chat = (props)=>{
     const [user, setUser] = useState({})
     const [openQuestion, setOpenQuestion] = useState(false)
     const [statusSend, setStatusSend] = useState(false)
+    const [install,setStatusInstall] = useState(false)
+  
+    let prompt
 
     const {net} = props
 
@@ -27,6 +33,23 @@ const Chat = (props)=>{
         sendEmail(gql,setStatusSend)        
        
     }
+    const notWifi = ()=>{
+        net.connected === false?
+            new Notifications().wifiOff()
+        : null
+    }
+    useEffect(()=>{
+        notWifi()
+    },[])    
+    useEffect(()=>{
+      window.addEventListener("beforeinstallprompt", e =>{ 
+          e.preventDefault()
+      // log the platforms provided as options in an install prompt 
+      //console.log(e.platforms); // e.g., ["web", "android", "windows"] 
+       setStatusInstall(true)
+       prompt = e
+    })
+  })
 
     return <>
     <aside className='lateralIndicators'>
@@ -37,7 +60,12 @@ const Chat = (props)=>{
             />
         ):null
     }
-
+    {
+        install?
+            <span className="installApp">
+                <AiOutlineAppstoreAdd onClick={()=>prompt.prompt()}/>
+            </span>:null
+    }
     <a className="whatsapp" target="new" href="https://wa.me/584148733690">
         <AiOutlineWhatsApp/>
     </a>
@@ -145,6 +173,33 @@ const Chat = (props)=>{
                         right:calc(55px + 4%);
                     }
                 }
+                .installApp{
+                    position: relative;
+                    z-index:1;
+                  }
+                  .installApp > svg{
+                    border: 1px solid var(--effectColor);
+                    color:var(--iconColor);
+                    background: var(--themeColor);
+                  }
+                  .installApp::before{
+                    content: "Install App!!";
+                    position: absolute;
+                    width:340%;
+                    height:50%;
+                    top:22%;
+                    left: -315% ;
+                    z-index:-1;
+                    background-color: var(--themeColor);
+                    border: 1px solid var(--effectColor);
+                    border-radius: 22px;
+                    line-height: 2;
+                    text-shadow: 1px 1px black;
+                    animation: help 9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+                    animation-delay: 3s;
+                    overflow: hidden;
+                    padding: 0 2vmin;
+                  }
                 `
             }
         </style>

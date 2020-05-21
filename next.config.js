@@ -101,7 +101,7 @@ module.exports = withPWA({
                 urlPattern: /^https?:\/\/backenddwa.herokuapp.com\/graphql/,
                 handler: 'StaleWhileRevalidate',
                 options: {
-                cacheName: 'all',
+                cacheName: 'graphql',
                 expiration: {
                     maxEntries: 4,
                     maxAgeSeconds: 25 * 24 * 60 * 60 // 25 days
@@ -111,9 +111,9 @@ module.exports = withPWA({
             
             {
                 urlPattern: /^https?:\/\/backenddwa.herokuapp.com\/graphql\/.*/,
-                handler: 'NetworkFirst',
+                handler: 'StaleWhileRevalidate',
                 options: {
-                cacheName: 'all',
+                cacheName: 'graphql2',
                 expiration: {
                     maxEntries: 4,
                     maxAgeSeconds: 25 * 24 * 60 * 60 // 25 days

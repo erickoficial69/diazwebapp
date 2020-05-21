@@ -1,6 +1,7 @@
 import {defineCustomElements} from '@ionic/pwa-elements/loader'
 import Link from 'next/link'
 import Head from 'next/head'
+import Notifications from './pwa-events/notifications'
 import { useState, useEffect } from 'react'
 
 import {
@@ -39,8 +40,8 @@ function Navbar(props) {
     const [width, setWidth] = useState(null)
     const [status, setStatus] = useState('')
     const [show, setShow] = useState(false)
-    const [net,setNet] = useState({})
 
+    const [net,setNet] = useState({})
     useEffect(() => {
         
         defineCustomElements(window)
@@ -53,13 +54,18 @@ function Navbar(props) {
             setWidth(window.innerWidth)
         })
     },[])
+
     useEffect(() => {
         setStatus(navStatus)
     },[])
     useEffect(() => {
         network(setNet)
     },[])
-    
+    useEffect(()=>{
+        window.addEventListener('appinstalled', () => {
+            new Notifications().appInstalled()
+            });
+    })
     return <>
             <Head>
                 <link rel="manifest" href="/manifest.json" />
@@ -170,8 +176,9 @@ function Navbar(props) {
                      }
                     </nav>
                 </span>
+
             </header>
-            <Chat net={net}/>
+            <Chat net={net} />
             <style>
                 {`
 

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react'
 import {Navbar} from '../components/navbar'
 import {Footer} from '../components/footer'
@@ -15,7 +14,7 @@ function WebApps() {
   const title = 'aplicaciones web'
   const [tools, setTools] = useState([])
   const [tools2, setTools2] = useState([])
-  const [tools3, setTools3] = useState([]) 
+  const [tools3, setTools3] = useState([])
 
   const query = `{tools(nombre:"web apps"){
     nombre
@@ -23,7 +22,6 @@ function WebApps() {
 `
   useEffect(() => {
     devTools(query,setTools,setTools2,setTools3)
-
   },[])
   
   return <>
