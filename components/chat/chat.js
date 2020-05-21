@@ -44,7 +44,7 @@ const Chat = (props)=>{
         notWifi()
     },[])    
     useEffect(()=>{
-        installEvent(setStatusInstal,setPrompt)
+        installEvent(setStatusInstall,setPrompt)
   })
 
     return <>
