@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { WifiOff } from '@material-ui/icons'
 import { MenuItem } from '@material-ui/core'
 import { sendEmail } from '../graphql-querys/index'
+
 import {
     AiOutlineCloseCircle,
     AiOutlineMail,
@@ -9,15 +10,16 @@ import {
     AiOutlineWhatsApp,
     AiOutlineAppstoreAdd,
 } from 'react-icons/ai'
+
 import Notifications from '../pwa-events/notifications'
+import {installEvent} from '../pwa-events/installpromp'
 
 const Chat = (props)=>{
     const [user, setUser] = useState({})
     const [openQuestion, setOpenQuestion] = useState(false)
     const [statusSend, setStatusSend] = useState(false)
     const [install,setStatusInstall] = useState(false)
-  
-    let prompt
+    const [prompt,setPrompt] = useState(false)
 
     const {net} = props
 
@@ -42,13 +44,7 @@ const Chat = (props)=>{
         notWifi()
     },[])    
     useEffect(()=>{
-      window.addEventListener("beforeinstallprompt", e =>{ 
-          e.preventDefault()
-      // log the platforms provided as options in an install prompt 
-      //console.log(e.platforms); // e.g., ["web", "android", "windows"] 
-       setStatusInstall(true)
-       prompt = e
-    })
+        installEvent(setStatusInstal,setPrompt)
   })
 
     return <>

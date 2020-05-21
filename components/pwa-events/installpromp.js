@@ -7,7 +7,6 @@ const installEvent =(setStatusInstall,setPrompt)=>{
       })
 }
 
-
 export {
     installEvent
 }
