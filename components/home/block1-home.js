@@ -11,7 +11,6 @@ function Block1() {
             <br/>
             Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
             <br/>
-            Ofrecemos consultaría tecnológica necesaria, previo al desarrollo de cualquier proyecto.
             <br/>
             Diaz web app ofrece servicio técnico en equipos y redes informáticas como wifi, lan, modems y routers, de uso empresarial y domestico.
           </p>
@@ -42,17 +41,16 @@ function Block1() {
               }
               
               .paralax article{
-                  height:65%;
                   order:2;
                   overflow:hidden;
-                  margin: 3% 0 0 0;
+                  margin: 1% 0 0 0;
                 }
                 .paralax p{
-                  padding: 0 17vmin;
+                  padding: 0 7vmin;
                 }
                 .paralax img{
-                  margin-top:2.5%;
-                  height:35%;
+                  margin-top:2%;
+                  height:33%;
                   order:1
                 }
               .paralax article h1{
@@ -60,9 +58,9 @@ function Block1() {
                 color:white;
               }
               .paralax article p{
-                font-size:15px;
+                font-size:13px;
                 color:white ;
-                padding: 3vmin;
+                padding: 2vmin;
                 text-align:center;
                 text-shadow:0px 0px 1px black;
               }
@@ -72,19 +70,21 @@ function Block1() {
                   align-items:center;
                 }
                 .paralax article{
-                  height:85%;
                   width:55%;
                   order:1;
-                  padding-top:5%;
                   margin-right:7%;
+                  display:flex;
+                  flex-flow:column;
+                  align-items:center;
+                  align-content:center;
+                  justify-content:center;
                 }
                 .paralax img{
                   order:2;
                   height:50%;
-                  margin-top:-2%;
                 }
                 .paralax article p{
-                  font-size:4.2vh;
+                  font-size:3vh;
                   padding: 1vmin;
                   text-align:justify;
                 }

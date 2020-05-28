@@ -19,7 +19,10 @@ import {
 } from 'react-icons/ai'
 
 import Chat from '../components/chat/chat'
-import {Backdrop } from '@material-ui/core'
+import {Backdrop} from '@material-ui/core'
+
+import GetGeolocation from './pwa-events/geoLocation/wheaterApi'
+
 //Capatitor import 
 import { Plugins } from '@capacitor/core';
 
@@ -40,6 +43,7 @@ function Navbar(props) {
     const [width, setWidth] = useState(null)
     const [status, setStatus] = useState('')
     const [show, setShow] = useState(false)
+    const [location, setLocation] = useState(false)
 
     const [net,setNet] = useState({})
     useEffect(() => {
@@ -66,6 +70,11 @@ function Navbar(props) {
             new Notifications().appInstalled()
             });
     })
+    useEffect(()=>{
+        new GetGeolocation().getCurrentPosition(setLocation)
+        new GetGeolocation().watchPosition(setLocation)
+    },[])
+
     return <>
             <Head>
                 <link rel="manifest" href="/manifest.json" />
@@ -160,19 +169,23 @@ function Navbar(props) {
                         )
                     }
                     {
-                        status === 'serv. técnico' ?(
-                            <p  >
-                                <AiFillTool/>
-                                <span>S. técnico</span> 
-                            </p>
-                        ):(
-                        <Link href="/servicio-tecnico">
-                            <a onClick={()=>setShow(true)} href="/servicio-tecnico.html">
-                            <AiOutlineTool/>
-                                <span>S. técnico</span>
-                            </a>
-                        </Link> 
-                        )
+                       location ?
+                            location.sys.country === "VE"?
+                            status === 'serv. técnico' ?(
+                                <p  >
+                                    <AiFillTool/>
+                                    <span>S. técnico</span> 
+                                </p>
+                            ):(
+                            <Link href="/servicio-tecnico">
+                                <a onClick={()=>setShow(true)} href="/servicio-tecnico.html">
+                                <AiOutlineTool/>
+                                    <span>S. técnico</span>
+                                </a>
+                            </Link> 
+                            )
+                            :null
+                    :null
                      }
                     </nav>
                 </span>
