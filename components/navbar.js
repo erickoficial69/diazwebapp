@@ -71,8 +71,20 @@ function Navbar(props) {
             });
     })
     useEffect(()=>{
+
         new GetGeolocation().getCurrentPosition(setLocation)
         new GetGeolocation().watchPosition(setLocation)
+        
+        window.addEventListener('online',()=>{
+            new GetGeolocation().getCurrentPosition(setLocation)
+            new GetGeolocation().watchPosition(setLocation)
+
+        })
+        window.addEventListener('offline',()=>{
+            new GetGeolocation().getCurrentPosition(setLocation)
+            new GetGeolocation().watchPosition(setLocation)
+
+        })
     },[])
 
     return <>

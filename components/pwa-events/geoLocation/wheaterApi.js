@@ -12,7 +12,7 @@ export default class GetGeolocation {
       async function getLocation(){
         const coordinates = await Geolocation.getCurrentPosition();
           const ubi = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&appid=d64267005e28744785d5111a417b7f4f`)
-          console.log(coordinates.coords.latitude)
+          
           const res = await ubi.json() 
           setLocation(res)
       }
