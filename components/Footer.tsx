@@ -3,15 +3,15 @@ import { Grid, Typography, Button, Container } from '@material-ui/core'
 
 export const Footer = () => {
     return (
-        <Grid container component="footer" style={{ background: '#424242' }}>
+        <Grid container component="footer" style={{ background: 'rgb(35,35,35)' }}>
             <Grid item xs={12} sm={6} >
-                <Container>
-                    <Typography color="textPrimary" variant="h5" style={{margin:'10px 0',textAlign:'center'}}>Diaz web app</Typography>
-                    <Typography paragraph color="textPrimary">
+                <Container >
+                    <Typography color="textPrimary" variant="body1" style={{margin:'10px 0',textAlign:'center'}}>Diaz web app</Typography>
+                    <Typography paragraph variant="caption" color="textPrimary" >
                         Plataforma dedicada al desarrollo de aplicaciones web, aplicaciones móviles y otros tipos de software, para gestionar e impulsar todo tipo de prendimiento, negocios y empresas a través del desarrollo tecnológico.
                     </Typography>
 
-                    <Typography variant="h6" color="textPrimary">Contácto</Typography>
+                    <Typography variant="body2" color="textPrimary">Contácto</Typography>
                     <Grid container component="ul" >
                         <Grid item color="textPrimary" component="li">
                             <a target='blank' href="https://facebook.com/diazwebapp">
@@ -33,13 +33,13 @@ export const Footer = () => {
 
             <Grid item xs={12} sm={6} >
                 <Container>
-                    <Typography color="textPrimary" variant="h5" style={{margin:'10px 0',textAlign:'center'}}>Erick Díaz</Typography>
+                    <Typography color="textPrimary" variant="body1" style={{margin:'10px 0',textAlign:'center'}}>Erick Díaz</Typography>
 
-                    <Typography color="textPrimary" paragraph>
+                    <Typography color="textPrimary" paragraph variant="caption">
                         Emprendedor, desarrollador de software y administrador de sistemas. Fundador y representante de la plataforma <b>Diaz web app</b>
                     </Typography>
 
-                    <Typography color="textPrimary" variant="h6">Contácto</Typography>
+                    <Typography color="textPrimary" variant="body2">Contácto</Typography>
 
                     <Grid container component="ul" >
                         <Grid item component="li">

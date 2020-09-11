@@ -71,7 +71,7 @@ const ItemsMenu = ({variant}:any)=>{
                         </Grid>
 
                         <Grid item>
-                            <Link href="/mobileapps" >
+                            <Link href="/mobile-apps" >
                         <Button variant='text' size="large" startIcon={<DeveloperMode color="secondary"/>}>
                             Mobile apps
                         </Button>
@@ -79,7 +79,7 @@ const ItemsMenu = ({variant}:any)=>{
                         </Grid>
 
                         <Grid item>
-                            <Link href="/webapps" >
+                            <Link href="/web-apps" >
                         <Button variant='text' size="large" startIcon={<Devices color="secondary"/>}>
                             Web apps
                         </Button>

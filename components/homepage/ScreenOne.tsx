@@ -48,10 +48,10 @@ export const ScreenOne = ({deviceDimensions}:any)=>{
         order:device.width>=600?2:1,
         }}  itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
 
-          <Typography color="textPrimary" variant='h5' itemProp="name" style={{
+          <Typography color="textPrimary" variant='h3' itemProp="name" style={{
               textAlign:'center',
               position:'relative',
-              margin:'20px auto',
+              margin:'5px 0 10px 0px',
               fontSize:device.width >= 1080 || device.height >= 800 ?'32px':''
             }} >
               Desarollo de Software

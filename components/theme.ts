@@ -4,7 +4,7 @@ import {grey,pink,green,lightBlue} from '@material-ui/core/colors'
 export const theme = createMuiTheme({
     palette:{
         primary: {
-            main:grey[800],
+            main:'rgb(35,35,35)',
             contrastText:green[500]
         },
         secondary: {
@@ -12,7 +12,7 @@ export const theme = createMuiTheme({
         },
         background:{
             default:'rgba(15,15,15, .5)',
-            paper:grey[800]
+            paper:'rgb(35,35,35)'
         },
         text:{
             primary:grey[50],
