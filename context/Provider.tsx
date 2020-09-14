@@ -4,6 +4,8 @@ const {Provider,Consumer} = createContext({})
 
 function Store({children}:any){
     const [deviceDimensions,setDeviceDimensions]= useState<IDevice>({width:0,height:0})
+    const [loading,setLoading] = useState(true)
+    const [path,setPath] = useState('')
 
     useEffect(()=>{
         setDeviceDimensions({
@@ -18,9 +20,16 @@ function Store({children}:any){
         })
     },[])
 
+    useEffect(()=>{
+        setPath(document.location.pathname)
+        setLoading(false)
+    },[])
+
     return <Provider value={
             {
-                deviceDimensions
+                deviceDimensions,
+                loading,setLoading,
+                path,setPath
             }
         } >
         {children}

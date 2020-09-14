@@ -9,61 +9,47 @@ export const ScreenOne = ({deviceDimensions}:any)=>{
     <Grid style={{
       backgroundImage:'url("/img/code")',
       backgroundSize:'cover',
-      backgroundColor:'rgba(15,15,15, .9)',
+      backgroundColor:'rgba(15,15,15, .8)',
       backgroundBlendMode:'multiply',
       backgroundAttachment:'fixed',
-      minHeight:device.width >= 1024 && device.height >= 768 ?'500px':'calc(100vh - 60px)',
       alignItems:'center',
       alignContent:'center',
-      position:'relative'
+      position:'relative',
+      padding:'50px 0'
     }} container itemScope itemType="http://schema.org/Service">
       <meta itemProp="serviceType" content="Home cleaning" />
     <div style={{
       backgroundImage:device.width >= 600 ?'url("/img/mancha.svg")':'',
       backgroundRepeat:'no-repeat',
-      backgroundSize:'60% 100%',
+      backgroundSize:'65% 100%',
       backgroundAttachment:'fixed',
       position:'absolute',
       top:'0',
       left:'0',
       width:'100%',
       height:'100%'
-      }}>.</div>
-      <Grid item xs={12} sm={6} style={{
+      }}></div>
+      <Grid item xs={12} sm={7} md={5} lg={4} style={{
           order:device.width >=600?1:2,
           transition:'all .3s ease-in-out',
+          position:'relative'
           }} >
-        <span style={{width:'70%',height:'70%',background:'rgba(10,10,10, .1)',borderRadius:'50%',position:'relative',boxShadow:'0px 0px 5px rgba(1,1,1, .3)'}} >
-          <img style={{
-            position:'relative',
-            margin:device.width <= 640?'0 auto':'0 0 0 -3%',
-            width:device.width <= 480?'80%':device.width >= 480 && device.width <= 720?'100%':'80%',
-            maxHeight:device.width >=1080?'290px':'',
-            }}  src="/img/developer1.svg" alt="diaz web app" itemProp="image"/>
-        </span>
+
+        <img width="100%" src="/img/developer1.svg" alt="diaz web app" itemProp="image"/>
       </Grid>
 
-      <Grid item xs={12} sm={6} style={{
+      <Grid item xs={12} sm={5} md={7} lg={8} style={{
         transition:'all .6s ease-in-out',
         order:device.width>=600?2:1,
+        padding:'4vmin',
+        position:'relative'
         }}  itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
 
-          <Typography color="textPrimary" variant='h3' itemProp="name" style={{
-              textAlign:'center',
-              position:'relative',
-              margin:'5px 0 10px 0px',
-              fontSize:device.width >= 1080 || device.height >= 800 ?'32px':''
-            }} >
+          <Typography style={{width:'100%',textAlign:'center',marginBottom:'25px'}} color="textPrimary" variant='h4' itemProp="name" >
               Desarollo de Software
           </Typography>
 
-          <Typography color="textPrimary" itemProp="description" paragraph style={{
-            padding:'0 4vmin',
-            textAlign:'center',
-            position:'relative',
-            margin:'0 auto',
-            fontSize:device.width >= 1080 || device.height >= 800 ?'21px':''
-            }}>
+          <Typography style={{maxWidth:'800px',margin:'10px auto',textAlign:'center'}} color="textPrimary" itemProp="description" paragraph>
             Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
             <br/>
             <br/>
@@ -72,7 +58,7 @@ export const ScreenOne = ({deviceDimensions}:any)=>{
       </Grid>
 
       <Grid item xs={12} sm={12} style={{textAlign:'center',order:3}} >
-          <a href='/#screen-two' >
+          <a href='/#devProducts' >
             <Button color='secondary' startIcon={<ArrowDropDownCircle/>} >
               <Typography color='textSecondary' >
                 Más

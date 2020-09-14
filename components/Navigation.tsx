@@ -2,43 +2,40 @@ import {
     Toolbar,
     Button,
     Drawer,
-    Grid,
-    IconButton
+    Grid
 } from '@material-ui/core'
 
 import {
-    Home,
-    DeveloperMode,
-    Devices,
-    Menu
+    HomeOutlined,
+    DeveloperModeOutlined,
+    DevicesOutlined,
+   ContactSupportOutlined,
+   CloudOutlined,
 } from '@material-ui/icons'
 
 import Link from 'next/link'
 
 
-export const NavigationMobile = ({setOpenMenu,variant,open}:any) => {
+export const NavigationMobile = ({setOpenMenu,variant,open,setLoading,path}:any) => {
     return (
-        <Drawer variant={variant} anchor="left" open={open} >
+        <Drawer variant={variant} anchor="left" open={open} onClick={()=>setOpenMenu(false)} >
             
             <Toolbar>
                 <Link href="/" >
-                    <Button variant='text' >
+                    <Button variant='text' onClick={()=>setLoading(path==='/'?false:true)}>
                         <img width="32px" style={{ margin: "0 8px 0 0" }} src="/favicon.ico" alt="logo-dwa" />
                         Diaz Web app
                     </Button>
                 </Link>
-
-                <IconButton>
-                    <Menu />
-                </IconButton>
             </Toolbar>
-            <ItemsMenu setOpenMenu={setOpenMenu}/>
+
+            <ItemsMenu setLoading={setLoading} path={path}/>
             
         </Drawer>
     )
 }
 
-export const NavigationHD = ({variant}:any) => {
+export const NavigationHD = ({variant,setLoading,path}:any) => {
     return (
         <Drawer variant={variant} anchor="top">
             
@@ -50,40 +47,76 @@ export const NavigationHD = ({variant}:any) => {
                     </Button>
                 </Link>
                 
-                <ItemsMenu variant={variant} />
+                <ItemsMenu variant={variant} setLoading={setLoading} path={path}/>
             </Toolbar>
             
         </Drawer>
     )
 }
 
-const ItemsMenu = ({variant}:any)=>{
+const ItemsMenu = ({variant,setLoading,path}:any)=>{
     return (
         <>
                  
             <Grid container style={{width:variant==="permanent"?'auto':'240px' }}>
                 <Grid item>
-                            <Link href="/" >
-                    <Button variant='text' size="large" startIcon={<Home color="secondary" />} >
-                    Home
-                    </Button>
-                            </Link>
-                        </Grid>
+                    <Link href="/" >
+                        <Button 
+                        variant='text' 
+                        size="large" 
+                        startIcon={<HomeOutlined color="secondary" />}
+                        onClick={()=>setLoading(path==='/'?false:true)} >
+                            Home
+                        </Button>
+                    </Link>
+                </Grid>
 
-                        <Grid item>
-                            <Link href="/mobile-apps" >
-                        <Button variant='text' size="large" startIcon={<DeveloperMode color="secondary"/>}>
+                <Grid item>
+                    <Link href="/mobile-apps" >
+                        <Button 
+                        variant='text' 
+                        size="large" 
+                        startIcon={<DeveloperModeOutlined color="secondary"/>}
+                        onClick={()=>setLoading(path==='/mobile-apps'?false:true)} >
                             Mobile apps
                         </Button>
-                            </Link>
-                        </Grid>
+                    </Link>
+                </Grid>
 
-                        <Grid item>
-                            <Link href="/web-apps" >
-                        <Button variant='text' size="large" startIcon={<Devices color="secondary"/>}>
+                <Grid item>
+                    <Link href="/web-apps" >
+                        <Button 
+                        variant='text' 
+                        size="large" 
+                        startIcon={<DevicesOutlined color="secondary"/>}
+                        onClick={()=>setLoading(path==='/web-apps'?false:true)}>
                             Web apps
                         </Button>
-                            </Link>
+                    </Link>
+                </Grid>
+
+                <Grid item>
+                    <Link href="/dwa-functions" >
+                        <Button 
+                        variant='text' 
+                        size="large" 
+                        startIcon={<CloudOutlined color="secondary"/>}
+                        onClick={()=>setLoading(path==='/dwa-functions'?false:true)} >
+                            dwa functions
+                        </Button>
+                    </Link>
+                </Grid>
+
+                <Grid item>
+                    <Link href="#contact" >
+                        <Button 
+                        variant='text' 
+                        size="large" 
+                        startIcon={<ContactSupportOutlined color="secondary"/>}
+                        >
+                            Contacto
+                        </Button>
+                    </Link>
                 </Grid>
             </Grid>
         </>
