@@ -1,18 +1,21 @@
 {
   "name": "with-typescript",
   "version": "1.0.0",
+  "homepage": "https://erickoficial69.github.io/pwa-nextjs-ts",
   "scripts": {
     "dev": "next",
     "build": "next build && cp .next/service-worker.js public/",
     "export": "rm public/service-worker.js && next export",
     "start": "next start ",
-    "postinstall":"npm run build",
+    "postinstall": "npm run build",
+    "deploy":"gh-pages -d out",
     "type-check": "tsc"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "animate.css": "^4.1.1",
+    "gh-pages": "^3.1.0",
     "install": "^0.13.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "latest",
