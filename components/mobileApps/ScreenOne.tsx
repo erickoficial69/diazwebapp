@@ -25,6 +25,9 @@ export const ScreenOne = ()=>{
                     </Toolbar>
                     <Typography paragraph style={{maxWidth:'800px',margin:'10px auto'}} itemProp="description">
                         Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.
+                        <br/>
+                        <br/>
+                        Tenemos alto conocimiento en entornos de desarrollo <b>Android - IOS</b>
                     </Typography>
                 </Grid>
         </Grid>

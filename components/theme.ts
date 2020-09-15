@@ -1,24 +1,31 @@
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
-import {grey,pink,green,lightBlue} from '@material-ui/core/colors'
+import {grey,pink,lightBlue} from '@material-ui/core/colors'
 
 export const theme = createMuiTheme({
     palette:{
         primary: {
-            main:'rgb(35,35,35)',
-            contrastText:green[500]
+            main:grey[900],
+            contrastText:"rgb(255,255,255)",
+            dark:'rgb(10,10,10)',
+            light:grey[800]
         },
         secondary: {
-            main:lightBlue[900],
+            main:lightBlue[800],
+            contrastText:"rgb(255,255,255)",
+            dark:lightBlue[900],
+            light:lightBlue[500]
         },
         background:{
-            default:'rgba(15,15,15, .5)',
-            paper:'rgb(35,35,35)'
+            default:'rgba(10,10,10, .5)',
+            paper:grey[900]
         },
         text:{
-            primary:grey[50],
-            secondary:pink[500],
-            hint:lightBlue[400],
-            disabled:lightBlue[900]
+            primary:'rgb(255,255,255)',
+            secondary:lightBlue[900],
+            disabled:grey[900]
+        },
+        action:{
+            active:pink[800]
         }
     }
 })

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
-    "build": "next build | mv .next/service-worker.js ./public/",
+    "build": "next build && cp .next/service-worker.js ./public/",
     "start": "next start ",
     "type-check": "tsc"
   },

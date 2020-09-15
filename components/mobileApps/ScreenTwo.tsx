@@ -23,7 +23,7 @@ export const ScreenTwo = ()=>{
                 <Typography color="textPrimary" style={{textAlign:'center'}} variant="h6" itemProp="name">Android Apps</Typography>
 
                 <Typography color="textPrimary" paragraph itemProp="description" style={{padding:'5px',textAlign:'center'}}>
-                    Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial con la mejor cuota de mercado absoluta. Tenemos basta experiencia en el desarrollo para Android.
+                    Desarrollamos aplicaciones nativas para Android, plataforma líder a nivel mundial y con amplia gama de dispositivos.
                 </Typography>
               </Grid>
 
@@ -36,7 +36,7 @@ export const ScreenTwo = ()=>{
                 <Typography color="textPrimary" style={{textAlign:'center'}} variant="h6" itemProp="name">IOS Apps</Typography>
 
                 <Typography color="textPrimary" itemProp="description" style={{padding:'5px',textAlign:'center'}}>
-                    Desarrollo de aplicaciones nativas para iPhone, Diaz Web App desarrolla aplicaciones desde la primera versión iOS hasta la actual y tenemos un experto conocimiento de App Store.
+                    Desarrollo de aplicaciones nativas para iPhone, desarrollamos aplicaciones desde la primera versión iOS hasta la actual.
                 </Typography>
             
               </Grid>

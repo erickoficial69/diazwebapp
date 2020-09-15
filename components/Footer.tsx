@@ -3,7 +3,7 @@ import { Grid, Typography, Button, Container } from '@material-ui/core'
 
 export const Footer = () => {
     return (
-        <Grid id="contact" container component="footer" style={{ background: 'rgb(35,35,35)' }}>
+        <Grid id="contact" container component="footer">
             <Grid item xs={12} sm={6} >
                 <Container >
                     <Typography color="textPrimary" variant="body1" style={{margin:'10px 0',textAlign:'center'}}>Diaz web app</Typography>

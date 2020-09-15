@@ -1,6 +1,6 @@
 import {Typography, Grid, Button} from '@material-ui/core'
 import {IDevice} from '../../interfaces/app.interfaces'
-import {ArrowDropDownCircle} from '@material-ui/icons'
+import {ArrowDropDownCircle, PlayArrowOutlined} from '@material-ui/icons'
 
 
 export const ScreenOne = ({deviceDimensions}:any)=>{
@@ -52,17 +52,18 @@ export const ScreenOne = ({deviceDimensions}:any)=>{
           <Typography style={{maxWidth:'800px',margin:'10px auto',textAlign:'center'}} color="textPrimary" itemProp="description" paragraph>
             Desarrollo de aplicaciones móviles, aplicaciones web y otros tipos de software adaptados a la necesidad del cliente.
             <br/>
-            <br/>
             Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
           </Typography>
+
+          <Button variant="contained" color='secondary' startIcon={<PlayArrowOutlined color="inherit"/>} >
+              ¡Empieza gratis!
+          </Button>
       </Grid>
 
       <Grid item xs={12} sm={12} style={{textAlign:'center',order:3}} >
           <a href='/#devProducts' >
-            <Button color='secondary' startIcon={<ArrowDropDownCircle/>} >
-              <Typography color='textSecondary' >
+            <Button variant="contained" color='default' startIcon={<ArrowDropDownCircle/>} >
                 Más
-              </Typography>
             </Button>
           </a>
       </Grid>

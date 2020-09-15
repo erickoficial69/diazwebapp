@@ -6,19 +6,19 @@ export const WebOptimisation = ()=>(
       <meta itemProp="serviceType" content="Home cleaning" />
           <Box itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
 
-            <Typography style={{textAlign:'center',margin:'20px 0'}} variant='h4' itemProp="name">
+            <Typography style={{textAlign:'center',margin:'5px 0 0 0'}} variant='h4' itemProp="name">
                 SEO y Datos Estructurados
             </Typography>
 
           </Box> 
           
-          <Grid container style={{alignItems:'center',alignContent:'center',width:'100%'}} itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog" >
+          <Grid container style={{alignItems:'center',alignContent:'center',width:'100%',padding:'0 4vmin'}} itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog" >
 
-                  <Grid item xs={12} sm={6} md={4} style={{zIndex:2}}>
+                  <Grid item xs={12} sm={6} md={4} lg={2} style={{zIndex:2}}>
                     <img src="img/development1.svg" alt="seo" width="100%" />
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={4} style={{zIndex:2}} >
+                  <Grid item xs={12} sm={6} md={4} lg={5} style={{zIndex:2}} >
                     <Typography style={{textAlign:'center',margin:'20px 0'}} variant='h5'  itemProp="name">
                       Datos Estructurados
                     </Typography>
@@ -28,7 +28,7 @@ export const WebOptimisation = ()=>(
                     </ListItemText>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={4} style={{zIndex:2}}>
+                  <Grid item xs={12} sm={6} md={4} lg={5} style={{zIndex:2}}>
                     <Typography style={{textAlign:'center',margin:'20px 0'}} variant='h5' itemProp="name">
                       Estrategias SEO
                     </Typography>
