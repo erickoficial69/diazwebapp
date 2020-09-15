@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import App from '../components/App'
-import {WebOptimisation} from '../components/webApps/WebOptimisation'
 import {Typography,Grid,Toolbar} from '@material-ui/core'
 
 const WebApps = ()=>{
