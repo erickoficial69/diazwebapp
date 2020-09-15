@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/dwa-functions": "pages/dwa-functions.html",
+  "/": "pages/index.html",
+  "/mobile-apps": "pages/mobile-apps.html",
+  "/web-apps": "pages/web-apps.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
