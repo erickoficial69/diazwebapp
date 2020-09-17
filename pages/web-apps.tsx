@@ -27,7 +27,7 @@ const WebApps = ()=>{
 
                 <Grid item xs={12} sm={5} md={6} lg={8} itemProp="name" >
                     <Toolbar >
-                        <Typography style={{width:'100%',textAlign:'center'}} variant="h5">Desarrollo de aplicaciones web</Typography>
+                        <Typography style={{width:'100%',textAlign:'center'}} variant="h5">Web App Development</Typography>
                     </Toolbar>
                     <Typography style={{maxWidth:'1024px',margin:'0 auto'}} paragraph itemProp="description">
                       Desarrollamos plataformas web para particulares y comercios.

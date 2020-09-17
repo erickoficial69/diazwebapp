@@ -14,6 +14,46 @@ const nextConfig = {
   workboxOpts: {
     runtimeCaching: [
       {
+        urlPattern: '/',
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+            }
+          }
+      },
+      {
+        urlPattern: /\.js$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+            }
+          }
+      },
+      {
+        urlPattern: /\.css$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+            }
+          }
+      },
+      {
+        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+            }
+          }
+      },
+      {
       urlPattern: /^https?.*/,
       handler: 'NetworkFirst',
       options: {
@@ -22,17 +62,7 @@ const nextConfig = {
           maxEntries: 200
           }
         }
-      },
-      {
-        urlPattern: /^https?:\/\/vcointransfer.herokuapp.com\/static\/images\/.(?:png|jpg|jpeg|svg|gif|webp)$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'offlineCache',
-          expiration: {
-            maxEntries: 200
-            }
-          }
-        }
+      }
     ]
   }
   }

@@ -1,8 +1,10 @@
 import {createContext, useState, useEffect} from 'react'
 import {IDevice} from '../interfaces/app.interfaces'
+
 const {Provider,Consumer} = createContext({})
 
 function Store({children}:any){
+    
     const [deviceDimensions,setDeviceDimensions]= useState<IDevice>({width:0,height:0})
     const [loading,setLoading] = useState(true)
     const [path,setPath] = useState('')
@@ -35,5 +37,6 @@ function Store({children}:any){
         {children}
     </Provider>
 }
+
 export {Consumer}
 export default Store

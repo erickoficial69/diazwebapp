@@ -7,13 +7,13 @@ workbox.routing.registerNavigationRoute('/index.html')
 workbox.routing.registerRoute(
   //Use cache js files in this app
   /\.js$/,
-  new workbox.strategies.StaleWhileRevalidate()
+  new workbox.strategies.CacheFirst()
 );
 workbox.routing.registerRoute(
   // Cache CSS files in this app.
   /\.css$/,
   // Use cache but update in the background.
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.CacheFirst({
     // Use a custom cache name.
     cacheName: 'css-cache',
   })
@@ -40,7 +40,7 @@ workbox.routing.registerRoute(
   // Cache image files of external url.
   /^https?:\/\/vcointransfer.herokuapp.com\/static\/images\/.(?:png|jpg|jpeg|svg|gif|webp)$/,
   // Use the cache if it's available.
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.CacheFirst({
     // Use a custom cache name.
     cacheName: 'image-cache',
     plugins: [
