@@ -1,8 +1,9 @@
 import {Typography, Grid, Button} from '@material-ui/core'
 import {IDevice} from '../interfaces/app.interfaces'
-import {ArrowDropDownCircle, PlayArrowOutlined} from '@material-ui/icons'
+import {ArrowDropDownCircle} from '@material-ui/icons'
 import App from '../components/App'
 import { DevProducts } from '../components/homepage/DevProducts'
+import { ButtonStartNow } from '../components/StartNow.Component'
 
 const IndexPage = ({context:{deviceDimensions,setLoading}}:any) => {
 const device:IDevice = deviceDimensions
@@ -73,9 +74,7 @@ const device:IDevice = deviceDimensions
                     
                     <br/><br/>
 
-                    <Button variant="contained" color='secondary' startIcon={<PlayArrowOutlined color="inherit"/>} >
-                    ¡Empieza gratis!
-                    </Button>
+                    <ButtonStartNow />
 
                 </Typography>
         </Grid>

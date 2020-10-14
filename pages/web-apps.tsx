@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import App from '../components/App'
 import {WebOptimisation} from '../components/webApps/WebOptimisation'
-import {Typography,Grid,Toolbar} from '@material-ui/core'
+import {Typography,Grid,Toolbar,Button} from '@material-ui/core'
+import { ButtonStartNow } from '../components/StartNow.Component'
 
 const WebApps = ()=>{
   
@@ -32,11 +33,13 @@ const WebApps = ()=>{
                     <Typography style={{maxWidth:'1024px',margin:'0 auto'}} paragraph itemProp="description">
                       Desarrollamos plataformas web para particulares y comercios.
                       <br/>
-                      Optimizamos webs en HTML5 para adaptarlas al responsive design.
-                      <br/>
-                        Dominamos las tecnologías de programación web:
-                      <br/>
-                      progressive web apps (PWA), webassembly (wasm) y server side rendering para aspectos SEO y performance.
+                      Desarrollamos u optimizamos webs aplicando:
+                      <br />
+                       <b>progressive web apps (PWA), webassembly (wasm), server side rendering (SSR)</b>
+                      
+                      <br/><br/>
+
+                      <ButtonStartNow />
                     </Typography>
                 </Grid>
       </Grid>

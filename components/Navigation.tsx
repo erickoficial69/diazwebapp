@@ -2,15 +2,17 @@ import {
     Toolbar,
     Button,
     Drawer,
-    Grid
+    Grid,
+    Typography
 } from '@material-ui/core'
 
 import {
     HomeOutlined,
     DeveloperModeOutlined,
     DevicesOutlined,
-   ContactSupportOutlined,
-   CloudOutlined,
+    PersonOutlined,
+    ContactSupportOutlined,
+    CloudOutlined,
 } from '@material-ui/icons'
 
 import Link from 'next/link'
@@ -48,6 +50,20 @@ export const NavigationHD = ({variant,setLoading,path}:any) => {
                 </Link>
                 
                 <ItemsMenu variant={variant} setLoading={setLoading} path={path}/>
+                <Grid container style={{width:variant==="permanent"?'auto':'240px' }}>
+                    <Grid item xs={12} lg="auto">
+                        <Link href="/login" >
+                            <Button 
+                            style={{width:'100%'}}
+                            variant='text' 
+                            size="large" 
+                            startIcon={<PersonOutlined color="secondary" />}
+                            onClick={()=>setLoading(path==='/login'?false:true)} >
+                                <Typography style={{width:'100%',textAlign:'left'}}>Ingresar</Typography>
+                            </Button>
+                        </Link>
+                    </Grid>
+                </Grid>
             </Toolbar>
             
         </Drawer>
@@ -59,62 +75,67 @@ const ItemsMenu = ({variant,setLoading,path}:any)=>{
         <>
                  
             <Grid container style={{width:variant==="permanent"?'auto':'240px' }}>
-                <Grid item>
+                <Grid item xs={12} lg="auto">
                     <Link href="/" >
                         <Button 
+                        style={{width:'100%'}}
                         variant='text' 
                         size="large" 
                         startIcon={<HomeOutlined color="secondary" />}
                         onClick={()=>setLoading(path==='/'?false:true)} >
-                            Home
+                            <Typography style={{width:'100%',textAlign:'left'}}>Home</Typography>
                         </Button>
                     </Link>
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={12} lg="auto">
                     <Link href="/mobile-apps" >
                         <Button 
                         variant='text' 
-                        size="large" 
+                        size="large"
+                        style={{width:'100%'}} 
                         startIcon={<DeveloperModeOutlined color="secondary"/>}
                         onClick={()=>setLoading(path==='/mobile-apps'?false:true)} >
-                            Mobile apps
+                            <Typography style={{width:'100%',textAlign:'left'}}>Mobile apps</Typography>
                         </Button>
                     </Link>
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={12} lg="auto">
                     <Link href="/web-apps" >
                         <Button 
                         variant='text' 
                         size="large" 
+                        style={{width:'100%'}}
                         startIcon={<DevicesOutlined color="secondary"/>}
                         onClick={()=>setLoading(path==='/web-apps'?false:true)}>
-                            Web apps
+                            <Typography style={{width:'100%',textAlign:'left'}}>Web apps</Typography>
                         </Button>
                     </Link>
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={12} lg="auto">
                     <Link href="/dwa-functions" >
                         <Button 
                         variant='text' 
                         size="large" 
+                        style={{width:'100%'}}
                         startIcon={<CloudOutlined color="secondary"/>}
                         onClick={()=>setLoading(path==='/dwa-functions'?false:true)} >
-                            dwa functions
+                            <Typography style={{width:'100%',textAlign:'left'}}>dwa functions</Typography>
                         </Button>
                     </Link>
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={12} lg="auto">
                     <Link href="#contact" >
                         <Button 
                         variant='text' 
                         size="large" 
+                        style={{width:'100%'}}
                         startIcon={<ContactSupportOutlined color="secondary"/>}
                         >
-                            Contacto
+                            <Typography style={{width:'100%',textAlign:'left'}}>Contacto</Typography>
                         </Button>
                     </Link>
                 </Grid>

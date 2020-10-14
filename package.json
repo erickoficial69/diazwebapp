@@ -8,15 +8,17 @@
     "export": "rm public/service-worker.js && next export",
     "start": "next start ",
     "postinstall": "npm run build",
-    "deploy":"gh-pages -d .next",
+    "deploy": "gh-pages -d .next",
     "type-check": "tsc"
   },
   "dependencies": {
+    "@ionic/react": "^5.3.3",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "animate.css": "^4.1.1",
     "gh-pages": "^3.1.0",
     "install": "^0.13.0",
+    "ionicons": "^5.1.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "latest",
     "next-offline": "^5.0.2",
