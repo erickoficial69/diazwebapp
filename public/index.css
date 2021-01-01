@@ -7,9 +7,241 @@
     outline: none;
     list-style: none;
     border:none;
+    background: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color:var(--font-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-body{
-    background: rgb(10,10,10);
+:root{
+    --primary-color:rgb(252, 165, 3);
+    --secondary-color:rgb(92, 99, 158);
+    --font-color:rgb(40, 40, 40);
+}
+button{
+    cursor: pointer;
+}
+header,nav{
+    height:65px;
+    overflow: hidden;
+}
+header{
+    position: fixed;
+    top:0;
+    left: auto;
+    right:0;
+    background-color:rgba(255,255,255, .8);
+    box-shadow:0px 1px 2px var(--font-color);
+}
+header,footer{
+    width:100%;
+    z-index: 1000;
+    padding: 0 5vmin;
+}
+.container{
+    width:100%;
+    padding: 0 5vmin;
+}
+
+footer > div{
+    min-width:320px;
+}
+footer > div >p{
+    padding:5px;
+}
+
+footer > div > div > a{
+    padding:5px;
+    border:1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.icons{
+    width:32px;
+    height:32px;
+    background: transparent;
+}
+.flex-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-nowrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon-button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+.icon-button > b{
+    margin: 0 0 0 5px;
+    font-size: 17px;
+    display: none;
+}
+
+.intro{
+    position:relative;
+    width:100%;
+    padding-top: 60px;
+}
+
+.intro > span{
+    background-image:url("/img/mancha.svg");
+    background-repeat:no-repeat;
+    background-size:65% 100%;
+    background-attachment:fixed;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.intro > img{
+    width:300px;
+    height:300px;
+    object-fit: contain;
+    position: relative;
+}
+.intro > section{
+    max-width: 600px;
+    position: relative;
+    padding: 0 5px;
+}
+.intro > section > h1{
+    text-align: center;
+    margin:5px auto;
+    color: var(--secondary-color);
+}
+.intro > section > span{
+    max-width: 330px;
+    position: relative;
+    margin: 10px auto;
+}
+.intro > section > span > button{
+    width:100px;
+    margin: 0 1px;
+    text-align:center;
+}
+.intro > section > span > button > img{
+    width:48px;
+    height:48px;
+    object-fit: contain;
+}
+.intro > section > span > button > p{
+    margin:5px auto;
+    color: var(--primary-color);
+    text-shadow: 1px 1px var(--font-color);
+    letter-spacing: 1px;
+}
+
+.intro > div{
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+.intro > div > a{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    width:80px;
+}
+.web-optimisation > section{
+    width:100%;
+    text-align: center;
+}
+.web-optimisation > section > h3{
+    text-align: center;
+    padding: 5px 0;
+    color: var(--primary-color);
+}
+.web-optimisation > section > p{
+    padding: 5px;
+}
+.web-optimisation > section > img{
+    max-height: 200px;
+}
+.help{
+    position:relative;
+    animation: help 60s infinite;
+    margin: 0 3px;
+}
+
+.help::before{
+    content: '?';
+    width:9px;
+    height: 9px;
+    position: absolute;
+    top:-20%;
+    right:-8%;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    background: var(--font-color);
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 9px;
+}
+.loader{
+    background-color:rgba(255,255,255, .8);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left: auto;
+    right:0;
+    top:0;
+    z-index: 2000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.loader > img{
+    animation: loader 2s infinite;
+}
+@media(min-width:480px){
+    .icon-button > b{
+        display: block;
+    }
+}
+
+@media(min-width:720px){
+    footer > div{
+        width: 50%;
+    }
+    .web-optimisation > section{
+        width:33.33%;
+    }
+}
+@keyframes help{
+    0%,10%{
+        text-decoration: underline;
+    }
+    10%,20%{
+        text-decoration: none;
+    }
+    20%,30%{
+        text-decoration: underline;
+    }
+    31%,100%{
+        text-decoration:none;
+    }
+}
+
+@keyframes loader{
+    0%,50%{
+        transform: rotate(180deg);
+    }
+    50%,100%{
+        transform: rotate(360deg);
+    }
 }
