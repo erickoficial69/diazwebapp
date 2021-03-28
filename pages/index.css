@@ -22,7 +22,7 @@ button{
     cursor: pointer;
 }
 header,nav{
-    height:65px;
+    height:60px;
     overflow: hidden;
 }
 header{
@@ -33,18 +33,30 @@ header{
     background-color:rgba(255,255,255, .8);
     box-shadow:0px 1px 2px var(--font-color);
 }
+header > button{
+    display: none !important;
+}
+nav{
+    width:100%;
+}
+nav > button > b{
+    display:none;
+}
 header,footer{
     width:100%;
     z-index: 1000;
     padding: 0 5vmin;
 }
-.container{
+main{
     width:100%;
-    padding: 0 5vmin;
+    max-width: 1280px;
+    margin:0 auto;
+    padding: 60px 0 10px 0;
 }
 
 footer > div{
     min-width:320px;
+    text-align: center;
 }
 footer > div >p{
     padding:5px;
@@ -57,8 +69,8 @@ footer > div > div > a{
 }
 
 .icons{
-    width:32px;
-    height:32px;
+    width:24px;
+    height:24px;
     background: transparent;
 }
 .flex-wrap{
@@ -83,14 +95,12 @@ footer > div > div > a{
 }
 .icon-button > b{
     margin: 0 0 0 5px;
-    font-size: 17px;
-    display: none;
+    font-size: 14px;
 }
 
 .intro{
     position:relative;
     width:100%;
-    padding-top: 60px;
 }
 
 .intro > span{
@@ -208,18 +218,173 @@ footer > div > div > a{
 .loader > img{
     animation: loader 2s infinite;
 }
-@media(min-width:480px){
-    .icon-button > b{
+/* Editor styles*/
+    #editor{
+        width:100%;
+        position:relative;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-around;
+    }
+    
+    #container-btns{
+        position: fixed;
+        right:5px;
+        top:65px;
+        padding: 10px 2px;
+        border-radius: 20px;
+        z-index: 10;
+        background: rgba(245, 245, 245, 0.897);
+        box-shadow: 0px 0px 2px black;
+    }
+    #container-btns > button{
+        padding:5px;
         display: block;
     }
-}
-
+    #editor > div,#editor > section{
+        width:100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        position: relative;
+        min-height: 300px;
+    }
+    #editor > section{
+        justify-content: flex-start;
+    }
+    #editor > div > div{
+        position:absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom:0;
+        background:rgba(0, 0, 0, 0.548);
+    }
+    #editor > div > h1, #editor > div > p{
+        width:100%;
+        text-align:center;
+        color:whitesmoke;
+        position: relative;
+        padding:0 10px;
+        margin: 3px auto;
+    }
+    #editor > div > p{
+        width:70%;
+    }
+    #editor > div > p:last-child{
+        position: absolute;
+        right:5px;
+        bottom: 5px;
+        text-align: right;
+    }
+    #editor > section > *{
+        width:100%;
+        color:var(--font-color);
+        text-align: justify;
+        position:relative;
+    }
+    #editor > section > h2{
+        text-align:center;
+        padding:10px 5px;
+    }
+    #editor > section > p{
+        padding: 5px 10px;
+    }
+    #editor > aside{
+        width:100%;
+        border-radius: 5px;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.233);
+        position: relative;
+    }
+    #editor > aside > span{
+        height:40px;
+        display: flex;
+        flex-flow: column;
+        margin:10px 0 ;
+    }
+    #editor > aside > span > input,#editor > aside > span > label{
+        height:20px;
+        padding:3px;
+        border-bottom:1px solid var(--primary-color);
+        width:100%;
+        margin: 3px 0;
+        transition: all .2s linear;
+    }
+    #editor > aside > span > input{
+        order:2;
+    }
+    #editor > aside > span > label{
+        border:none;
+        order:1;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    #editor > aside > span > input:focus{
+        border-bottom:1px solid var(--secondary-color);
+    }
+    #editor > aside > span > input:focus + label{
+        font-size: 11px;
+        font-weight: lighter;
+    }
+    .remove-btn{
+        height: 20px;
+        width:20px;
+        position: absolute;
+        right:0;
+        top:-20px;
+        cursor: pointer;
+    }
+    #editor > aside, #editor > section{
+        margin: 5px auto;
+        box-shadow: 0px 0px 2px darkgrey;
+    }
+    
+/*End Editor styles*/
 @media(min-width:720px){
     footer > div{
         width: 50%;
     }
     .web-optimisation > section{
         width:33.33%;
+    }
+    header > button{
+        display: flex !important;
+    }
+    nav{
+        width:auto;
+    }
+    nav > button > b{
+        display:block;
+    }
+    #editor > section{
+        width:calc(100% - 350px);
+    }
+    #editor > aside{
+        max-width:320px;
+    }
+}
+
+@media(min-width:1080px){
+    main{
+        width:90%;
+        max-width: 1280px;
+    }
+}
+
+@media(min-width:1280px){
+    main{
+        width:80%;
+        max-width: 1280px;
+    }
+    header,footer{
+        padding: 0 8%;
+    }
+}
+
+@media(min-width:1920px){
+    header,footer{
+        padding: 0 15%;
     }
 }
 @keyframes help{

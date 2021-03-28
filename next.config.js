@@ -66,4 +66,9 @@ const nextConfig = {
     ]
   }
   }
-module.exports = withOffline()
+module.exports = withOffline({
+  env:{
+    api:process.env.API || 'http://localhost:5000',
+    wsapi:process.env.WSAPI || 'http://localhost:5000'
+  }
+})

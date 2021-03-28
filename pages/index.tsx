@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { useEffect } from 'react'
 import { Arrow_circle, Cube, Mobile, Pwa } from '../components/icons'
+import Link from 'next/link'
 
 const IndexPage = ({setLoading,navigation_controller}:any) => {
     
@@ -20,7 +21,7 @@ const IndexPage = ({setLoading,navigation_controller}:any) => {
 
             <section itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
 
-                    <h1 itemProp="name" >Aplicaciones responden a tus clientes</h1>
+                    <h1 itemProp="name" >Aplicaciones que responden a tus clientes</h1>
 
                     <p itemProp="description">
                         Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente.
@@ -29,18 +30,24 @@ const IndexPage = ({setLoading,navigation_controller}:any) => {
                         
                     </p>
                     <span className="flex-wrap" >
-                        <button onClick={()=>navigation_controller("/mobile-apps-development")}>
-                            <p>Mobile Apps</p>
-                            <Mobile/>
-                        </button>
-                        <button onClick={()=>navigation_controller("/web-apps-development")}>
-                            <p>Web Apps</p>
-                            <Pwa/>
-                        </button>
-                        <button onClick={()=>navigation_controller("/api-development")}>
-                            <p>Apis</p>
-                            <Cube/>
-                        </button>
+                        <Link href="/desarrollo-apps-moviles" >
+                            <button onClick={()=>navigation_controller("/desarrollo-apps-moviles")}>
+                                <p>Mobile Apps</p>
+                                <Mobile/>
+                            </button>
+                        </Link>
+                        <Link href="/desarrollo-web" >
+                            <button onClick={()=>navigation_controller("/desarrollo-web")}>
+                                <p>Web Apps</p>
+                                <Pwa/>
+                            </button>
+                        </Link>
+                        <Link href="/desarrollo-api" >
+                            <button onClick={()=>navigation_controller("/desarrollo-api")}>
+                                <p>Api's</p>
+                                <Cube/>
+                            </button>
+                        </Link>
                     </span>
             </section>
 

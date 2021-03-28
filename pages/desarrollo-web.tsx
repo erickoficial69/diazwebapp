@@ -10,7 +10,7 @@ const WebApps = ({setLoading}:any)=>{
   
   return <>
       <Head>
-        <title>Desarrolloo de Aplicaciones web - Diaz web app</title>
+        <title>Desarrollo de Aplicaciones web - Diaz web app</title>
         <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
         <meta name="description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
       </Head>
@@ -43,7 +43,7 @@ const WebApps = ({setLoading}:any)=>{
                       </span>
                 </section>
       </article>
-
+   
       <div id='screen-two' className="container" itemScope itemType="http://schema.org/Service">
       <meta itemProp="serviceType" content="Home cleaning" />
           <div itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">

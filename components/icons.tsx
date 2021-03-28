@@ -64,3 +64,8 @@ export const Login= ()=>{
         <img className="icons" src="/icons_svg/log-in-outline.svg" alt="login icon" />
     )
 }
+export const Home= ()=>{
+    return (
+        <img className="icons" src="/icons_svg/home-outline.svg" alt="home icon" />
+    )
+}
