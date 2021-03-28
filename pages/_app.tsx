@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import socket from 'socket.io-client'
+//import socket from 'socket.io-client'
 import './index.css'
 
-const io = socket(process.env.WSAPI || '') 
+//const io = socket(process.env.WSAPI || '') 
 
 function Myapp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true)
@@ -24,7 +24,7 @@ function Myapp({ Component, pageProps }: AppProps) {
   pageProps={...pageProps,
     loading, setLoading,
     navigation_controller,
-    path, setPath, io
+    path, setPath
   }
   return <>
     <Head>
