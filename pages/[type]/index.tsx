@@ -35,7 +35,7 @@ export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContex
     try{
         const res = await get_post_taxonomies('post')
         console.log(params)
-        return {props:{},revalidate:1}
+        return {props:{res},revalidate:1}
     }catch(err){
         console.log(err)
         return {props:{},revalidate:1}
