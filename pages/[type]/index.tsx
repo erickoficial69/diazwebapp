@@ -11,7 +11,7 @@ export const getStaticPaths:GetStaticPaths = async ()=>{
     try{
         const paths = [
             {params:{
-                type:""
+                type:"all"
             }}
         ]
         const posts = await get_all_posts()
@@ -22,7 +22,7 @@ export const getStaticPaths:GetStaticPaths = async ()=>{
         return {paths:[
             {
                 params:{
-                    type:''
+                    type:'all'
                 }
             }
     ],fallback:false}
