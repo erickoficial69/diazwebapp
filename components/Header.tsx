@@ -1,24 +1,25 @@
 import {Blog,Code_slash,Home,Login} from './icons'
 import Link from 'next/link'
+import Image from 'next/image'
 
-export const Header = ({navigation_controller}:any) => {
+export const Header = () => {
     return (
         <header className="flex-nowrap">
             <Link href="/" >
-                <button onClick={()=>navigation_controller('/')} className="icon-button" ><img src="/logo.png" width="32px" alt="logo diaz web app"/><b>Diaz web app</b></button>
+                <a className="logo-header" ><Image loading="lazy" src="/logo.png" width="32px" height="32px" alt="logo diaz web app"/><b>Diaz web app</b></a>
             </Link>
             <nav className="flex-nowrap">
                 <Link href="/" >
-                    <button onClick={()=>navigation_controller('/')} className="icon-button"><Home/> <b>Home</b></button>
+                    <a className="icon-button"><Home/> <b>Home</b></a>
                 </Link>
                 <Link href="/productos" >
-                    <button onClick={()=>navigation_controller('/productos')} className="icon-button" ><Code_slash/> <b>Productos</b></button>
+                    <a className="icon-button" ><Code_slash/> <b>Productos</b></a>
                 </Link>
                 <Link href="/blog" >
-                    <button onClick={()=>navigation_controller('/blog')} className="icon-button" ><Blog/> <b>Blog</b></button>
+                    <a className="icon-button" ><Blog/> <b>Blog</b></a>
                 </Link>
                 <Link href="/login" >
-                    <button onClick={()=>navigation_controller('/login')} className="icon-button" ><Login/> <b>Ingresar</b></button>
+                    <a className="icon-button" ><Login/> <b>Ingresar</b></a>
                 </Link>
             </nav>                   
         </header>

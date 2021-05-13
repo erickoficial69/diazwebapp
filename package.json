@@ -13,7 +13,6 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "isomorphic-fetch": "^3.0.0",
     "next": "latest",
     "next-offline": "^5.0.2",
     "react": "^17.0.1",
@@ -21,7 +20,6 @@
     "socket.io-client": "^3.0.5"
   },
   "devDependencies": {
-    "@types/isomorphic-fetch": "0.0.35",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",

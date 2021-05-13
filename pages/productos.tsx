@@ -1,19 +1,21 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
+import Image from 'next/image'
 import { useEffect } from 'react'
+const Products_page = () => {
+  useEffect(()=>{
+    (async()=>{
+      const rutes = await fetch(`${process.env.api}/categories`)
+      const res = await rutes.json()
+      console.log(res)
+    })()
+  },[])
 
-const Products_page = ({setLoading}:any) => {
-    
-    useEffect(()=>{
-        setLoading(false)
-    },[])
-
-
-    return <>
-        <article className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
+    return <main>
+        <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
                 
-                <img src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
+                <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
 
-                <section itemProp="name" >
+                <article itemProp="name" >
                     
                     <h1>Aplicaciones web que sí generan visitas</h1>
                     
@@ -28,19 +30,19 @@ const Products_page = ({setLoading}:any) => {
                       <span className="flex-wrap">
                         <button >
                           <p>Next js</p>
-                          <img className="icons" src="/icons_svg/next.js.svg" alt="next js" />
+                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/next.js.svg" alt="next js" />
                         </button>
                         <button >
                           <p >React js</p>
-                          <img className="icons" src="/icons_svg/react.js.svg" alt="react js" />
+                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react js" />
                         </button>
                       </span>
-                </section>
-      </article>
+                </article>
+      </section>
 
-      <article className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
+      <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
 
-                <section >
+                <article >
                     <h1 itemProp="name" >Desarrollo de aplicaciones móviles</h1>
                    
                     <p itemProp="description">
@@ -52,18 +54,18 @@ const Products_page = ({setLoading}:any) => {
                     <span className="flex-wrap">
                     <button >
                           <p>Ionic</p>
-                          <img className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
+                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
                         </button>
                         <button >
                           <p >React Native</p>
-                          <img className="icons" src="/icons_svg/react.js.svg" alt="react native" />
+                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react native" />
                         </button>
                     </span>
-                </section>
+                </article>
 
-                <img src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
-        </article>
-      </>
+                <Image width="200px" height="200px" loading="lazy" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
+        </section>
+      </main>
     }
 
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{

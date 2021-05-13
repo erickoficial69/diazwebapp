@@ -1,22 +1,19 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
-import { useEffect } from 'react'
 
-const Err500 = ({setLoading}:any)=>{
+const Err500 = ()=>{
+
   
-  useEffect(()=>{
-    setLoading(false)
-  },[])
-  
-  return <><article className="intro flex-wrap" >
-        <section>
+  return <main>
+    <section className="intro flex-wrap" >
+        <article>
         <h1>Error 500 in server</h1>
           <p style={{maxWidth:'1024px',margin:'0 auto',textAlign:'center'}} itemProp="description">
                 Error interno del servidor
           </p>
-        </section>
-      </article>
+        </article>
+    </section>
      
-  </>
+  </main>
   
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{

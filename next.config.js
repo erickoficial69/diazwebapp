@@ -67,8 +67,11 @@ const nextConfig = {
   }
   }
 module.exports = withOffline({
+  images: {
+    domains: ['0.0.0.0','localhost'],
+  },
   env:{
-    api:process.env.API || 'http://localhost:5000',
+    api:process.env.API || 'http://localhost:5000/wp-json/wp/v2',
     wsapi:process.env.WSAPI || 'http://localhost:5000'
   }
 })

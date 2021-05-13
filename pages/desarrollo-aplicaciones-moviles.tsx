@@ -1,14 +1,11 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import Image from 'next/image'
 
-const MobileApps=({setLoading}:any)=>{
+const MobileApps=()=>{
 
-  useEffect(()=>{
-    setLoading(false)
-  },[])
 
-  return <>
+  return <main>
           <Head>
             <title >Desarrollo de aplicaciones móviles - Diaz web app</title>
             <meta name="keywords" content="diaz web app, desarrollo de aplicaciones moviles, applicaciones para e-commerce, applicaciones para tiendas online"/>
@@ -17,9 +14,9 @@ const MobileApps=({setLoading}:any)=>{
 
           <article className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
 
-               <img src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
+               <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
 
-                <section >
+                <div>
                     <h1 itemProp="name" >Desarrollo de aplicaciones móviles</h1>
                    
                     <p itemProp="description">
@@ -31,16 +28,16 @@ const MobileApps=({setLoading}:any)=>{
                     <span className="flex-wrap">
                     <button >
                           <p>Ionic</p>
-                          <img className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
+                          <Image width="80px" height="80px" loading="lazy" className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
                         </button>
                         <button >
                           <p >React Native</p>
-                          <img className="icons" src="/icons_svg/react.js.svg" alt="react native" />
+                          <Image width="80px" height="80px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react native" />
                         </button>
                     </span>
-                </section>
+                </div>
         </article>
-    </>
+    </main>
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
   return {props:{},revalidate:1}
