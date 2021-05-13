@@ -9,20 +9,15 @@ const Current_Post = ()=>{
 
 export const getStaticPaths:GetStaticPaths = async ()=>{
     try{
-        const paths = [
-            {params:{
-                type:"all"
-            }}
-        ]
         const posts = await get_all_posts()
-        posts.map((post:Post)=>paths.push({params:{type:post.slug}}))
+        const paths = posts.map((post:Post)=>({params:{type:post.slug}}))
         return {paths,fallback:false}
     }catch(err){
         console.log(err)
         return {paths:[
             {
                 params:{
-                    type:'all'
+                    type:'home-page'
                 }
             }
     ],fallback:false}
