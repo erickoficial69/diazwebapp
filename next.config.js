@@ -78,7 +78,7 @@ const nextConfig = {
   }
 module.exports = withOffline({
   images: {
-    domains: ['0.0.0.0','localhost'],
+    domains: ['0.0.0.0','localhost','apuestanweb.com','apuestanweb.ml'],
   },
   env:{
     api:process.env.API || 'http://localhost:5000/wp-json/wp/v2',
