@@ -54,6 +54,16 @@ const nextConfig = {
           }
       },
       {
+        urlPattern: /^https?.*\/\/apuestanweb.com\/wp-content\/uploads\/.(?:png|jpg|jpeg|svg|gif|webp)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+            }
+          }
+      },
+      {
       urlPattern: /^https?.*/,
       handler: 'NetworkFirst',
       options: {
