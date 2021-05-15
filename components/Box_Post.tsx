@@ -12,7 +12,7 @@ type Props ={
 const Box_Post = ({post}:Props)=>{
     return <>
         <li>
-            <Link href={`/post/${post.slug}`} >
+            <Link href={`/${post.slug}`} >
                 <a>
                     <Post_Thumb id={post.featured_media} alt={post.title.rendered} />
                     <h3>{post.slug}</h3>
