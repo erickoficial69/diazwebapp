@@ -1,4 +1,4 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import { useEffect, useState} from 'react'
 import { get_one_file } from '../context/files/files_api_controllers'
 import { default_file } from '../context/files/File_context'
@@ -13,6 +13,7 @@ type Props={
 const Thumb = ({id,alt}:Props)=>{
     const [thumb,setThumb] = useState<WP_File>(default_file)
     const [load,setLoad] = useState(false)
+
     useEffect(()=>{
         (async()=>{
             setLoad(true)
@@ -20,9 +21,10 @@ const Thumb = ({id,alt}:Props)=>{
             setLoad(false)
         })()
     },[])
+    
     return load?(
         <Loader_app />
-    ):<Image width="100%" height="100%" src={thumb.source_url} alt={alt} />
+    ):<img width="100%" height="100%" src={thumb.source_url} alt={alt} />
 }
 
 export default Thumb
