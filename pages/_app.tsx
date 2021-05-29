@@ -2,16 +2,14 @@ import { AppProps } from "next/app";
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-//import socket from 'socket.io-client'
 import './index.css'
 import { Post_Provider } from "../context/posts/Post_Context";
-
-//const io = socket(process.env.WSAPI || '') 
+import { App_provider } from "../context/wp_context/app_context";
 
 function Myapp({ Component, pageProps }: AppProps) {
  
-  return <Post_Provider>
-    
+  return <App_provider>
+    <Post_Provider>
       <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
         <link rel="manifest" href="/site.webmanifest" />
@@ -27,7 +25,8 @@ function Myapp({ Component, pageProps }: AppProps) {
       <Component {...pageProps}/>
       <Footer />
     
-  </Post_Provider>;
+  </Post_Provider>
+  </App_provider>;
 }
 
 export default Myapp

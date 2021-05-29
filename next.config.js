@@ -54,7 +54,7 @@ const nextConfig = {
           }
       },
       {
-        urlPattern: /^https?.*\/\/apuestanweb.com\/wp-content\/uploads\/.(?:png|jpg|jpeg|svg|gif|webp)$/,
+        urlPattern: /^https?.*\/\/apuestanweb.ml\/wp-content\/uploads\/.(?:png|jpg|jpeg|svg|gif|webp)$/,
         handler: 'CacheFirst',
         options: {
           cacheName: 'offlineCache',

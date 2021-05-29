@@ -1,5 +1,4 @@
-import {useContext, useEffect} from 'react'
-import { get_all_posts } from '../context/posts/posts_api_controllers'
+import {useContext} from 'react'
 import { Post_Context } from '../context/posts/Post_Context'
 import { Post } from '../interfaces/post_interface'
 import Loader_app from './loader_app'
@@ -9,23 +8,10 @@ const Box_Post = dynamic(()=>import('./Box_Post'),{
     loading:()=><Loader_app />
 })
 const List_Posts = ()=>{
-    const {dispatch,state} = useContext(Post_Context)
-
-    const get_posts = async()=>{
-        dispatch({type:'req'})
-        const result = await get_all_posts()
-        dispatch({
-            type:'get_all_posts',
-            payload:result
-        })
-    }
-
-    useEffect(()=>{
-        get_posts()
-    },[])
+    const {state} = useContext(Post_Context)
     return <ul>
-        {
-            state.req ? <h4>Buscando noticias...</h4>:(
+        {   
+            state.req ? <h4>Cargando...</h4>:(
                 state.allPosts.map((post:Post)=>(
                     <Box_Post key={post.id} post={post}/>
                 ))

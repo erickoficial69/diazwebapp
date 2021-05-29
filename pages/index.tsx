@@ -2,15 +2,11 @@ import { Arrow_circle, Cube, Mobile, Pwa } from '../components/icons'
 import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import Loader_app from '../components/loader_app'
-//import { GetStaticProps, GetStaticPropsContext } from 'next'
 
-const List_posts = dynamic(
-    ()=>import('../components/List_Posts'),
-    {
-        loading:()=><Loader_app />
-    }
-)
+const List_Posts = dynamic(()=>import('../components/List_Posts'),{
+    loading:()=><p>Cargando...</p>
+})
+
 
 const IndexPage = () => {
     return <main>
@@ -61,7 +57,7 @@ const IndexPage = () => {
         </a>
     </div>
     <section id="news" >            
-        <List_posts/>
+        <List_Posts />
     </section>
   </main>
 }
