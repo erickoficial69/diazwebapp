@@ -3,13 +3,11 @@ import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import './index.css'
-import { Post_Provider } from "../context/posts/Post_Context";
 import { App_provider } from "../context/wp_context/app_context";
 
 function Myapp({ Component, pageProps }: AppProps) {
  
   return <App_provider>
-    <Post_Provider>
       <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
         <link rel="manifest" href="/site.webmanifest" />
@@ -21,11 +19,13 @@ function Myapp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="author" content="diaz web app" />
       </Head>
-      <Header {...pageProps} />
-      <Component {...pageProps}/>
-      <Footer />
-    
-  </Post_Provider>
+      <div className="container">
+        <Header {...pageProps} />
+        <main>
+          <Component {...pageProps}/>
+          <Footer />
+        </main>
+      </div>
   </App_provider>;
 }
 

@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect } from 'react'
 const Products_page = () => {
   useEffect(()=>{
@@ -10,7 +11,7 @@ const Products_page = () => {
     })()
   },[])
 
-    return <main>
+    return <>
         <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
                 
                 <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
@@ -28,14 +29,18 @@ const Products_page = () => {
                       y un entorno de desarrllo con tecnologia de vanguardia 
                     </p>
                       <span className="flex-wrap">
-                        <button >
-                          <p>Next js</p>
-                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/next.js.svg" alt="next js" />
-                        </button>
-                        <button >
-                          <p >React js</p>
-                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react js" />
-                        </button>
+                        <Link href="/">
+                          <a>
+                            <Image layout="responsive" width="32px" height="32px" loading="lazy" className="icons" src="/icons_svg/next.js.svg" alt="next js" />
+                            <p>Next js</p>
+                          </a>
+                        </Link>
+                        <Link href="/" >
+                          <a>
+                            <Image layout="responsive" width="32px" height="32px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react js" />
+                            <p >React js</p>
+                          </a>
+                        </Link>
                       </span>
                 </article>
       </section>
@@ -52,20 +57,24 @@ const Products_page = () => {
                       <br/>
                     </p>
                     <span className="flex-wrap">
-                    <button >
-                          <p>Ionic</p>
-                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
-                        </button>
-                        <button >
-                          <p >React Native</p>
-                          <Image width="200px" height="200px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react native" />
-                        </button>
+                        <Link href="/" >
+                          <a>
+                            <Image layout="responsive" width="32px" height="32px" loading="lazy" className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
+                            <p>Ionic</p>
+                          </a>
+                        </Link>
+                        <Link href="/" >
+                          <a>
+                            <Image layout="responsive" width="50px" height="50px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react native" />
+                            <p >React Native</p>
+                          </a>
+                        </Link>
                     </span>
                 </article>
 
-                <Image width="200px" height="200px" loading="lazy" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
+                <Image width="50px" height="250px" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
         </section>
-      </main>
+      </>
     }
 
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{

@@ -4,7 +4,8 @@ import Image from 'next/image'
 
 export const Header = () => {
     return (
-        <header className="flex-nowrap">
+        <header>
+            <div className="toolbar flex-nowrap">
             <Link href="/" >
                 <a className="logo-header" ><Image loading="lazy" src="/logo.png" width="32px" height="32px" alt="logo diaz web app"/><b>Diaz web app</b></a>
             </Link>
@@ -21,7 +22,7 @@ export const Header = () => {
                 <Link href="/login" >
                     <a className="icon-button" ><Login/> <b>Ingresar</b></a>
                 </Link>
-            </nav>                   
+            </nav></div>                   
         </header>
     )
 }

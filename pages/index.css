@@ -1,3 +1,12 @@
+
+:root{
+    --primary-color:#ffac00;
+    --secondary-color:rgb(80, 95, 228);
+    --font-color:rgb(78, 78, 78);
+    --shadow-color:rgba(240,240,240, 1);
+    --theme-color:rgba(0,0,0, 1);
+    --background-color:rgb(255, 255, 255);
+}
 *{
     margin:0;
     padding:0;
@@ -10,35 +19,44 @@
     background: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color:var(--font-color);
+    transition:all .2s ease;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-:root{
-    --primary-color:#ffac00;
-    --secondary-color:rgb(80, 95, 228);
-    --font-color:rgb(40, 40, 40);
+*::-webkit-scrollbar{
+    width:5px;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px calc(100vh - 60px);
+    height: 100vh;
+    overflow: hidden;
+}
+body{
+    background-color: var(--background-color);
+}
+body *{
+    color:var(--font-color);
 }
 button{
     cursor: pointer;
 }
 header,nav{
-    height:60px;
     overflow: hidden;
 }
 header{
-    position: fixed;
-    top:0;
-    left: auto;
-    right:0;
-    background-color:rgba(255,255,255, .8);
-    box-shadow:0px 1px 2px var(--font-color);
+    box-shadow:0px 1px 1px var(--font-color);
 }
 .logo-header{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
-header > a, header b{
+header > .toolbar > a, header b{
     display: none;
 }
 nav{
@@ -48,17 +66,23 @@ nav{
 header,footer{
     width:100%;
     z-index: 1000;
-    padding: 0 5vmin;
+}
+header .toolbar{
+    line-height: 3.5;
+}
+header .toolbar,footer > div, main{
+    max-width:960px;
+    margin:0 auto;
 }
 main{
     width:100%;
-    max-width: 1280px;
     margin:0 auto;
-    padding: 60px 0 10px 0;
+    padding: 0 ;
+    overflow-y: auto;
+    position: relative;
 }
-
 footer > div{
-    min-width:320px;
+    min-width:310px;
     text-align: center;
 }
 footer > div >p{
@@ -105,10 +129,7 @@ footer > div > div > a{
     width:100%;
     display:grid;
     grid-template-columns:1fr;
-    place-items:center;
-    align-content:flex-start;
-    align-items: flex-start;
-    padding:30px;
+    padding:15vmin 3px;
 }
 
 .intro > span{
@@ -123,13 +144,10 @@ footer > div > div > a{
     height:100%;
 }
 .intro .image_intro{
-    width:300px;
-    height:300px;
     object-fit: contain;
     position: relative;
 }
 .intro > article{
-    max-width: 600px;
     position: relative;
     padding: 0 5px;
 }
@@ -139,24 +157,35 @@ footer > div > div > a{
     color: var(--secondary-color);
 }
 .intro > article > span{
-    max-width: 330px;
+    max-width: 380px;
     position: relative;
     margin: 10px auto;
+    border-radius:5px;
+    padding: 5px 0;
 }
-.intro > article > span > button{
-    width:100px;
+.intro > article > span > a{
+    width:120px;
     margin: 0 1px;
     text-align:center;
+    border-bottom: 1px solid var(--primary-color);
 }
-.intro > article > span > button > img{
+.intro > article > span > a:hover{
+    border-bottom: 1px solid var(--secondary-color);
+}
+.intro > article > span > a:hover > p{
+    color:var(--primary-color);
+    text-shadow: 0px 1px var(--font-color);
+}
+.intro > article > span > a img{
     width:48px;
     height:48px;
     object-fit: contain;
 }
-.intro > article > span > button > p{
+.intro > article > span > a > p{
     margin:5px auto;
-    color: var(--primary-color);
-    letter-spacing: 1px;
+    color: var(--font-color);
+    font-weight: bold;
+    text-shadow: 0px 1px var(--shadow-color);
 }
 
 .intro > div{
@@ -217,7 +246,7 @@ footer > div > div > a{
     .web-optimisation > div{
         width:33.33%;
     }
-    header > a, header b{
+    header > .toolbar > a, header b{
         display: flex ;
     }
     nav{
@@ -225,31 +254,19 @@ footer > div > div > a{
     }
     .intro{
         grid-template-columns:300px 1fr;
+        justify-content: flex-end;
     }
-
-}
-@media(min-width:1080px){
-    main{
-        width:90%;
-        max-width: 1280px;
+    .intro:nth-child(2n){
+        grid-template-columns: 1fr 300px;
     }
 }
 
-@media(min-width:1280px){
-    main{
-        width:80%;
-        max-width: 1280px;
-    }
-    header,footer{
-        padding: 0 8%;
+@media(min-width:1360px){
+    header .toolbar,footer > div, main{
+        max-width:1280px;
     }
 }
 
-@media(min-width:1920px){
-    header,footer{
-        padding: 0 15%;
-    }
-}
 @keyframes help{
     0%,10%{
         text-decoration: underline;

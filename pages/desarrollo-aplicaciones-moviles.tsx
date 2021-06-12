@@ -5,7 +5,7 @@ import Image from 'next/image'
 const MobileApps=()=>{
 
 
-  return <main>
+  return <>
           <Head>
             <title >Desarrollo de aplicaciones móviles - Diaz web app</title>
             <meta name="keywords" content="diaz web app, desarrollo de aplicaciones moviles, applicaciones para e-commerce, applicaciones para tiendas online"/>
@@ -37,7 +37,7 @@ const MobileApps=()=>{
                     </span>
                 </div>
         </article>
-    </main>
+    </>
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
   return {props:{},revalidate:1}

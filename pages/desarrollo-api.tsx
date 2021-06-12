@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 const Apis = ()=>{
   
-  return <main>
+  return <>
       <Head>
         <meta name="description" content="Desarrollo de aplicaciones web particulares, tiendas online y corporativas, optimizadas en seo y performance" />
       </Head>
@@ -17,7 +17,7 @@ const Apis = ()=>{
           </p>
         </article>
       </section>
-  </main>
+  </>
   
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{

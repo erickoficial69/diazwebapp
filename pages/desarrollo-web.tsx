@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const WebApps = ()=>{
-  return <main>
+  return <>
       <Head>
         <title>Desarrollo de Aplicaciones web - Diaz web app</title>
         <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
@@ -77,7 +77,7 @@ const WebApps = ()=>{
           </article>
     </section>
      
-  </main>
+  </>
   
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
