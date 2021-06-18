@@ -11,7 +11,7 @@ type Props={
   posts:Post[]
   page_info:any
 }
-const Blog = ({posts,page_info}:Props)=>{
+const Blog = ({page_info}:Props)=>{
   const [show_cats,setShow_Cats] = useState<boolean>(false)
   const router = useRouter()
   if(router.isFallback) return <section><b>Loading...</b></section>
