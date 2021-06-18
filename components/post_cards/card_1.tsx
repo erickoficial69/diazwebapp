@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { File, Post } from "../../interfaces/app_interfaces"
+import { Post } from "../../interfaces/app_interfaces"
 
 type Props={
     post:Post,
