@@ -3,19 +3,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useContext } from 'react'
 import { App_context } from '../context/wp_context/app_context'
-import { File, Post } from '../interfaces/app_interfaces'
+import { Post } from '../interfaces/app_interfaces'
 import Card_1 from '../components/post_cards/card_1'
 
 
 const IndexPage = () => {
     const {app} = useContext(App_context)
     return <>
-    <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-            
-        <meta itemProp="serviceType" content="apps development" />
-
+    <section style={{maxWidth:'unset'}} className="intro" itemScope itemType="http://schema.org/Service">
         <span></span>
-
+        <div className="flex-wrap" >   
+        <meta itemProp="serviceType" content="apps development" />
         <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/developer3.webp" alt="Desarrollo de de aplicaciones y paginas web" itemProp="image"/>
 
         <article itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
@@ -49,6 +47,7 @@ const IndexPage = () => {
                     </Link>
                 </span>
         </article>
+        </div> 
     </section>
 
     <div style={{textAlign:'center',width:'100%'}} >
@@ -56,71 +55,15 @@ const IndexPage = () => {
             <Arrow_circle /> <b>Más</b>
         </a>
     </div>
-    <section id="news" className="container_news_home" >            
-       {app.posts?app.posts.map((post:Post)=>{
-            const image = app.files.find((file:File)=>post.featured_media==file.id)
-           
-            return <Card_1 post={post} key={post.id} image={image} />}):null}
+    
+    {app.posts?
+    <section id="news" >
+        <h2>Últimas noticias</h2>          
+       <div className="container_posts_1" >
+            {app.posts.map((post:Post)=><Card_1 post={post} key={post.id} />)}
+       </div>
     </section>
-    <style jsx >
-        {
-            `
-            .container_news_home{
-                display:grid;
-                grid-template-columns:95vw;
-                grid-auto-rows:95vw;
-                place-content:center;
-                place-items:center;
-                gap:10px;
-                padding:10px;
-                background:var(--shadow-color);
-                width:99%;
-                margin:0 auto;
-                border-radius:10px;
-            }
-            @media(min-width:480px){
-                .container_news_home{
-                    grid-template-columns:repeat(2,45vw);
-                    grid-auto-rows:45vw;
-                }
-            }
-            @media(min-width:640px){
-                .container_news_home{
-                    grid-template-columns:repeat(3,32vw);
-                    grid-auto-rows:32vw;
-                }
-            }
-            @media(min-width:812px){
-                .container_news_home{
-                    grid-template-columns:repeat(4,22vw);
-                    grid-auto-rows:22vw;
-                }
-            }
-            @media(min-width:960px){
-                .container_news_home{
-                    grid-template-columns:repeat(3,300px);
-                    grid-auto-rows:300px;
-                }
-            }
-            @media(min-width:1280px){
-                .container_news_home{
-                    grid-template-columns:repeat(4,225px);
-                    grid-auto-rows:225px;
-                    padding: 10px 0;
-                    border-radius:10px;
-                }
-            }
-            @media(min-width:1360px){
-                .container_news_home{
-                    grid-template-columns:repeat(4,295px);
-                    grid-auto-rows:295px;
-                    padding: 10px 0;
-                    border-radius:10px;
-                }
-            }
-            `
-        }
-    </style>
+    :null}
   </>
 }
 

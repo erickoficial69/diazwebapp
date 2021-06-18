@@ -11,7 +11,7 @@ const WebApps = ()=>{
       </Head>
 
       <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-                
+          <div className="flex-wrap">  
                 <Image className="image_intro" width="auto" height="auto" loading="lazy" src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
 
                 <article itemProp="name" >
@@ -37,6 +37,7 @@ const WebApps = ()=>{
                         </button>
                       </span>
                 </article>
+          </div>
       </section>
    
       <section id='screen-two' className="container" itemScope itemType="http://schema.org/Service">

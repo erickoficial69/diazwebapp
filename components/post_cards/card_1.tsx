@@ -3,13 +3,17 @@ import { File, Post } from "../../interfaces/app_interfaces"
 
 type Props={
     post:Post,
-    image:File | undefined
 }
-const Card_1 = ({post,image}:Props)=>{
+const Card_1 = ({post}:Props)=>{
     return (
         <Link href={`/blog/${post.slug}`} >
             <a className="card_1" >
-                <img src={image?.source_url} alt="" loading="lazy" />
+                {
+                    post._embedded["wp:featuredmedia"]?(
+                        <img src={post._embedded["wp:featuredmedia"][0].source_url} alt="" loading="lazy" />
+                        ):null
+                }
+                
                 <b>{post.title.rendered}</b>
 
                 <style jsx>

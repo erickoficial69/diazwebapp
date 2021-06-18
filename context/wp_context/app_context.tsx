@@ -21,12 +21,12 @@ export const initialApp:App = {
     files:[]
 }
 export const default_post:Post={
+    id:0,
     author:0,
     comment_status:'',
     content:{rendered:'',protected:false},
     date:'',
     format:'',
-    id:0,
     meta:[],
     modified:'',
     ping_status:'',
@@ -34,6 +34,11 @@ export const default_post:Post={
     status:'',
     title:{rendered:''},
     type:'',
+    _embedded:{
+        author: [{}],
+        "wp:featuredmedia":[],
+        "wp:term": []
+    }
 }
 export const default_file:File={
     id: 2146,
@@ -86,7 +91,7 @@ export const App_provider =({children}:any)=>{
         })
         app_dispatch({
             type:'get_all_posts',
-            payload: await get_all_posts({})
+            payload: await get_all_posts({rest_base:'posts'})
         })
     }
     useEffect(()=>{

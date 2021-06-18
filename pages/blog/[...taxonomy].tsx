@@ -1,9 +1,8 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
+import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
-import Card_1 from '../../components/post_cards/card_1'
 import { get_all_posts, get_post_type } from '../../controlers/app_controller'
 import { get_terms } from '../../controlers/taxonomies_controles'
 import { Post } from '../../interfaces/app_interfaces'
@@ -55,21 +54,8 @@ const Blog = ({posts,page_info}:Props)=>{
     </aside>
     <section>
          <article>
-           <p>
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quia corporis consectetur dicta doloremque libero voluptatum sit debitis ad suscipit?
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ex sit numquam laboriosam sed reiciendis dicta, dolores, molestias, atque nisi sequi eos maiores fuga. Quasi ullam praesentium nesciunt asperiores sapiente ut. Quibusdam, exercitationem ratione hic voluptatem eius sequi iusto repudiandae possimus tempore! Odio aliquam adipisci et facere nobis tenetur unde officia voluptatem, soluta, quasi in sequi eveniet sit officiis! Ratione dolores unde perspiciatis quaerat sequi eaque, voluptatem animi accusantium ullam quo illum eos nemo facilis architecto? Dolore tempore eius cupiditate quas fuga, quae modi velit, culpa perferendis officia soluta non error voluptatem corrupti neque a ipsam voluptas aliquid nam. Vel alias quam eum dolor perspiciatis aperiam corporis corrupti, id harum voluptates dolore. Ipsum, ipsam quae. Eveniet delectus laudantium odio aperiam hic soluta suscipit fuga nobis debitis. Quas earum vitae eos facilis. Esse laudantium voluptatem cumque, mollitia accusamus quibusdam nihil soluta, officiis enim nesciunt tempore sequi ad sed animi. Maiores, laborum?
-           </p>
+           
          </article>
-    </section>
-    <section>
-    {posts?
-    <section id="news" >
-        <h2>Últimas noticias</h2>          
-       <div className="container_posts_1" >
-            {posts.map((post:Post)=><Card_1 post={post} key={post.id} />)}
-       </div>
-    </section>
-    :null}
     </section>
     <style jsx global>
       {
@@ -138,13 +124,14 @@ const Blog = ({posts,page_info}:Props)=>{
          `
        } 
      </style>
+       
   </>
   
 }
 
-export const getStaticProps:GetStaticProps = async(_:GetStaticPropsContext)=>{
+export const getStaticProps:GetStaticProps = async(context:GetStaticPropsContext)=>{
   try{
-      
+      console.log(context)
       const posts = await get_all_posts({rest_base:'posts'})
       let page_info = await get_post_type({type:'post'}) 
       page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}

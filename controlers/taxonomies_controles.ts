@@ -1,20 +1,18 @@
-export const get_post_taxonomies = async(post_type:string)=>{
-    try {
-        const req = await fetch(`${process.env.API}/wp/v2/taxonomies`)
-        const result = await req.json()
-        const tax_array = Object.values(result)
-        const taxonomies = tax_array.filter((tax:any)=>tax.types==post_type)
-       
-        return taxonomies
-    } catch (error) {
-        return []
-    }
+export const get_taxonomies = async ()=>{
+    const req = await fetch(`${process.env.API}/wp/v2/taxonomies`)
+    const taxs = await req.json()
+    return taxs
 }
+export const get_terms = async (taxonomies:any[])=>{
+    let terms = []
+    for(let taxonomy of taxonomies){
+        const req = await fetch(`${process.env.API}/wp/v2/taxonomies?slug=${taxonomy.res}`)
+        const tax = await req.json()
+        
+        const req_ = await fetch(`${process.env.API}/wp/v2/${tax[taxonomy].rest_base}`)
+        const res = await req_.json()
 
-export const get_terms = (taxonomies:any[])=>{
-    taxonomies.map(async(tax:any)=>{
-      const req = await fetch(`${process.env.API}/wp/v2/${tax.rest_base}`)
-      const res = await req.json()
-      return res
-    })
-  }
+        terms.push({...tax[taxonomy],terms:res})
+    }
+    return terms
+}

@@ -9,7 +9,6 @@
     "build": "next build && cp .next/service-worker.js public/",
     "export": "rm public/service-worker.js && next export",
     "start": "next start ",
-    "postinstall": "npm run build",
     "type-check": "tsc"
   },
   "dependencies": {

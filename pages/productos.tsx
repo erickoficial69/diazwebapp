@@ -13,7 +13,7 @@ const Products_page = () => {
 
     return <>
         <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-                
+            <div className="flex-wrap">  
                 <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
 
                 <article itemProp="name" >
@@ -43,11 +43,12 @@ const Products_page = () => {
                         </Link>
                       </span>
                 </article>
+            </div>
       </section>
 
-      <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-
-                <article >
+      <section className="intro" itemScope itemType="http://schema.org/Service">
+          <div className="flex-wrap">
+                <article>
                     <h1 itemProp="name" >Desarrollo de aplicaciones móviles</h1>
                    
                     <p itemProp="description">
@@ -73,6 +74,7 @@ const Products_page = () => {
                 </article>
 
                 <Image width="50px" height="250px" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
+            </div>
         </section>
       </>
     }

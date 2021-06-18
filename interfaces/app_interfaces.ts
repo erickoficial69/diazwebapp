@@ -33,6 +33,11 @@ export type Post={
     slug: string
     status: string
     title: {rendered: string}
+    _embedded:{
+        "author":[{}]
+        "wp:featuredmedia":File[]
+        "wp:term":[]
+    }
     type: string
 }
 
