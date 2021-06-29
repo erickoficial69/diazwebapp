@@ -1,18 +1,44 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
 
 const WebApps = ()=>{
+  const {asPath} = useRouter()
   return <>
       <Head>
         <title>Desarrollo de Aplicaciones web - Diaz web app</title>
-        <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
+        <meta name="author" content="diaz web app" />
+        <meta name="keywords" content="diaz web app, desarrollo de aplicaciones moviles, applicaciones para e-commerce, applicaciones para tiendas online"/>
         <meta name="description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        {/** OG META */}
+        <meta property="og:title" content="Desarrollo de aplicaciones móviles - Diaz web app" />
+        <meta property="og:site_name" content={'diaz web app'} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:url" content={process.env.URL_START+asPath} />
+        <meta property="og:image" content={process.env.URL_START+"/logo.png"} />
+        <meta property="og:image:secure_url" content={process.env.URL_START+"/logo.png"} />
+        <meta property="og:image:width" content="320" />
+        <meta property="og:image:height" content="240" />
+        {/**TWITTER META */}
+        <meta name="twitter:title" content="Desarrollo de aplicaciones móviles - Diaz web app" /> 
+        <meta name="twitter:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={process.env.URL_START+"/logo.png"} />
+        <meta name="twitter:label1" content="Tiempo de lectura" />
+        <meta name="twitter:data1" content="3 minutos" />
+        {/**LINK META */}
+        <link rel="shortlink" href={process.env.URL_START+asPath} />
+        <link rel="canonical" href={process.env.URL_START+asPath} />
       </Head>
 
       <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
+        <span></span>
           <div className="flex-wrap">  
-                <Image className="image_intro" width="auto" height="auto" loading="lazy" src="/img/web-design.webp" alt="monile dev" itemProp="image"/>
+          <svg className="image_intro" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>HTML5</title><path fill="var(--primary-color)" d="M64,32,98.94,435.21,255.77,480,413,435.15,448,32ZM372,164H188l4,51H368L354.49,366.39,256,394.48l-98.68-28L150.54,289H198.8l3.42,39.29L256,343.07l53.42-14.92L315,264H148L135.41,114.41l240.79,0Z"/></svg>
 
                 <article itemProp="name" >
                     
@@ -21,26 +47,26 @@ const WebApps = ()=>{
                     <p itemProp="description">
                       Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing aplicando:
                       
-                      <button className="help" ><b>Ténicas SEO</b> </button> <button className="help"><b>Server Side Rendering (SSR)</b></button>
+                      <b>Ténicas SEO</b> <b>Server Side Rendering (SSR)</b>
                       
                       <br/>
                       y un entorno de desarrllo con tecnologia de vanguardia 
                     </p>
                       <span className="flex-wrap">
-                        <button >
-                          <p>Next js</p>
+                        <a href="#">
                           <Image width="70px" height="70px" loading="lazy" className="icons" src="/icons_svg/next.js.svg" alt="next js" />
-                        </button>
-                        <button >
-                          <p >React js</p>
+                          <p>Next js</p>
+                        </a>
+                        <a href="#">
                           <Image width="70px" height="70px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react js" />
-                        </button>
+                          <p >React js</p>
+                        </a>
                       </span>
                 </article>
           </div>
       </section>
    
-      <section id='screen-two' className="container" itemScope itemType="http://schema.org/Service">
+      <section id='screen-two' itemScope itemType="http://schema.org/Service">
       <meta itemProp="serviceType" content="Home cleaning" />
           <div itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
 
@@ -53,7 +79,7 @@ const WebApps = ()=>{
           <article className="flex-wrap web-optimisation" itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog" >
 
                   <div>
-                    <Image width="200px" height="200px" loading="lazy" src="/img/seo-skills.webp" alt="seo" />
+                    <Image width="250px" height="230px" loading="lazy" src="/img/seo-skills.webp" alt="seo" />
                   </div>
 
                   <div>

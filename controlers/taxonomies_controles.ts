@@ -6,7 +6,7 @@ export const get_taxonomies = async ()=>{
 export const get_terms = async (taxonomies:any[])=>{
     let terms = []
     for(let taxonomy of taxonomies){
-        const req = await fetch(`${process.env.API}/wp/v2/taxonomies?slug=${taxonomy.res}`)
+        const req = await fetch(`${process.env.API}/wp/v2/taxonomies?slug=${taxonomy}`)
         const tax = await req.json()
         
         const req_ = await fetch(`${process.env.API}/wp/v2/${tax[taxonomy].rest_base}`)

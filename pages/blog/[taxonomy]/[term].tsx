@@ -1,19 +1,20 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
-import { useContext, useState, useEffect } from 'react'
-import CatsMenu from '../../components/cats_menu'
-import Card_1 from '../../components/post_cards/card_1'
-import { App_context } from '../../context/wp_context/app_context'
-import { get_all_posts, get_post_type } from '../../controlers/app_controller'
-import { get_terms } from '../../controlers/taxonomies_controles'
-import { Post, WPResp } from '../../interfaces/app_interfaces'
+import { useContext, useEffect, useState } from 'react'
+import CatsMenu from '../../../components/cats_menu'
+import Card_1 from '../../../components/post_cards/card_1'
+import { App_context } from '../../../context/wp_context/app_context'
+import { get_posts_by_taxonomy, get_post_type } from '../../../controlers/app_controller'
+import { get_taxonomies, get_terms } from '../../../controlers/taxonomies_controles'
+import { Post, WPResp } from '../../../interfaces/app_interfaces'
 
 type Props={
   wpresp?:WPResp
   page_info:any
+  static_params:any
 }
-const Blog = ({wpresp,page_info}:Props)=>{
+const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
   const {app,app_dispatch} = useContext(App_context)
   const [show_cats,setShow_Cats] = useState<boolean>(false)
   const [currentPage,setCurrentPage] = useState<any>({
@@ -21,44 +22,46 @@ const Blog = ({wpresp,page_info}:Props)=>{
     total:24,
     posts:[]
   })
-  const {isFallback,asPath} = useRouter()
+  
+  const {asPath,isFallback} = useRouter()
+  
   if(isFallback) return <section><b>Loading...</b></section>
-  if(!wpresp || !page_info) return <section><b>No hay datos en este momento</b></section>
-
+  if(!page_info || !wpresp) return <section><b>No hay datos en este momento</b></section>
+  
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
     const ul_items = li.parentElement?.children[1]
     ul_items?.classList.toggle('view_items')
    
   }
-  
+
   const next = async(param?:number)=>{
     if(param){
       setCurrentPage({...currentPage, page:param})
     }
     if(currentPage.page == 1){
-        const wpresp = await get_all_posts({rest_base:'posts',per_page:currentPage.total,page:param})
+        const wpresp = await get_posts_by_taxonomy({rest_base:'posts',per_page:currentPage.total,page:param,taxonomy:static_params.taxonomy,term:static_params.term})
         app_dispatch({
-          type:'get_all_posts',
+          type:'get_posts_by_taxonomy',
           payload:wpresp
         })
         return
     }
     if(wpresp.total_pages && currentPage.page > 1 && currentPage.page <= parseInt(wpresp.total_pages)){
-        const wpresp = await get_all_posts({rest_base:'posts',per_page:currentPage.total,page:param})
+        const wpresp = await get_posts_by_taxonomy({rest_base:'posts',per_page:currentPage.total,page:param,taxonomy:static_params.taxonomy,term:static_params.term})
         app_dispatch({
-          type:'get_all_posts',
+          type:'get_posts_by_taxonomy',
           payload:wpresp
         })
     }
   }
+
   useEffect(()=>{
-    app_dispatch({type:'loader_app'})
-    next() 
-  },[])
+     next() 
+  },[asPath])
   return <>
       <Head>
-        <title>Blog - Diaz web app</title>
+      <title>Blog - Diaz web app</title>
         <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
         <meta name="description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -90,21 +93,17 @@ const Blog = ({wpresp,page_info}:Props)=>{
         <li onClick={()=>setShow_Cats(!show_cats)} ><b>{show_cats?'Close':'Categorias'}</b></li>
       </ul>
       <CatsMenu show_cats={show_cats} page_info={page_info} setShow_Cats={setShow_Cats} toggle_element={toggle_element} />
-      
-    </aside>
-   <section>
-    <h1>Blog de Diaz Web App</h1>          
 
-    <p>Lo que necesitas saber sobre desarrollo de software, comercio en linea y tecnología</p>          
-   </section>
-   {app.posts.total?(
-      <section id="news" >         
-       <div className="container_posts_1" >
-            {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
-       </div>
+    </aside>
+    <section id="news" >         
+       {
+         app.posts.total?(
+          <div className="container_posts_1" >
+              {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
+          </div>
+         ):null
+       }
     </section>
-    ):<section>No hay datos</section>
-    }
     <section>
       <div className="pagination_container">
           {
@@ -134,25 +133,43 @@ const Blog = ({wpresp,page_info}:Props)=>{
             :null
           }
       </div>
-    </section>
+    </section>     
   </>
   
 }
-
-export const getStaticProps:GetStaticProps = async(_:GetStaticPropsContext)=>{
-  try{
-      
-      const wpresp:WPResp = await get_all_posts({rest_base:'posts',per_page:24})
-      let page_info = await get_post_type({type:'post'}) 
-      page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
-      
-      return {props:{
-        wpresp,
-        page_info
-      },revalidate:1}
-  }catch(err){
-      return {props:{},revalidate:1}
+export const getStaticPaths:GetStaticPaths = async()=>{
+  let params = {taxonomy:'_',term:'_'}
+  const paths =[{params}]
+  const taxonomies = await get_taxonomies()
+  const tax_keys = Object.keys(taxonomies)
+  const terms = await get_terms(tax_keys)
+  for(let taxonomy of terms){
+    for(let term of taxonomy.terms){
+      paths.push({params:{taxonomy:taxonomy.rest_base,term:term.slug}})
+    }
+  }
+  
+  return {paths,fallback:true}
+}
+export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
+  
+  const {taxonomy,term}:any = params
+  if(taxonomy!=='_'){
+  const wpresp:WPResp = await get_posts_by_taxonomy({rest_base:'posts',taxonomy,term,per_page:24})
+  let page_info = await get_post_type({type:'post'}) 
+  page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
+  return {
+    props:{
+      wpresp,
+      page_info,
+      static_params:params,
+      term
+    },
+    revalidate:1
+  }
+  }else{
+    return {props:{},revalidate:1}
   }
 }
 
-export default Blog
+export default the_Posts_Term

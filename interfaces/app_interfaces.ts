@@ -1,20 +1,23 @@
 export type App ={
-    authentication: []
-    description: string
-    gmt_offset: string
-    home: string
-    name: string
-    namespaces: string[]
-    routes: {
-        "":{}
+    info:{
+        authentication: []
+        description: string
+        gmt_offset: string
+        home: string
+        name: string
+        namespaces: string[]
+        routes: {
+            "":{}
+        }
+        timezone_string: string
+        url: string
     }
-    timezone_string: string
-    url: string
-    loader_app:boolean,
-    posts:Post[]
+    loader_app:boolean
+    loader_request:boolean
+    posts:WPResp
     post?:Post
-    pages:Post[]
-    page?:Post,
+    pages:WPResp
+    page?:Post
     files:File[]
 }
 export type Post={
@@ -75,9 +78,15 @@ export type File={
     post: boolean | number
     source_url: string
 }
+export type WPResp={
+    data:Post[]
+    total: string |  null
+    total_pages: string | null
+    
+}
 export type AppAction = 
-| { type: 'get_app_info', payload:App }
+| { type: 'get_app_info', payload:any }
 | { type: 'loader_app' }
-| { type: 'get_all_posts', payload:Post[] }
-| { type: 'get_all_files', payload:File[] }
+| { type: 'get_all_posts', payload:WPResp }
+| { type: 'get_posts_by_taxonomy', payload:WPResp }
 | { type: 'get_post', payload:Post }

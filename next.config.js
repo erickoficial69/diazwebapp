@@ -1,16 +1,5 @@
-/* const withWorkbox = require("next-with-workbox");
- 
-module.exports = withWorkbox({
-  workbox:{
-    dest: "public",
-    swDest: "sw.js",
-    swSrc: "service-worker.js",
-    force: true
-  }
-}); */
-
 const withOffline = require('next-offline')
-const nextConfig = {
+/* const nextConfig = {
   workboxOpts: {
     runtimeCaching: [
       {
@@ -64,7 +53,7 @@ const nextConfig = {
           }
       },
       {
-      urlPattern: /^https?.*/,
+      urlPattern: /^https?.*\/,
       handler: 'NetworkFirst',
       options: {
         cacheName: 'offlineCache',
@@ -75,12 +64,13 @@ const nextConfig = {
       }
     ]
   }
-  }
+  } */
 module.exports = withOffline({
   images: {
     domains: ['0.0.0.0','localhost','apuestanweb.com','apuestanweb.ml'],
   },
   env:{
     API:process.env.API || 'http://localhost:5000/wp-json',
+    URL_START:process.env.URL_START || 'http://localhost:3000',
   }
 })
