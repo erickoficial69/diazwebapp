@@ -23,10 +23,7 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
     posts:[]
   })
   
-  const {asPath,isFallback} = useRouter()
-  
-  if(isFallback) return <section><b>Loading...</b></section>
-  if(!page_info || !wpresp) return <section><b>No hay datos en este momento</b></section>
+  const {asPath,isFallback,back} = useRouter()
   
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
@@ -35,6 +32,18 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
    
   }
 
+  if(isFallback) return <section><b>Loading...</b></section>
+  
+  if(!page_info || !wpresp){
+    useEffect(()=>{
+      app_dispatch({
+        type:'loader_app',
+        payload:false
+      })
+    },[])
+    return <section><b>No hay datos en este momento</b></section>
+  }
+  
   const next = async(param?:number)=>{
     if(param){
       setCurrentPage({...currentPage, page:param})
@@ -46,22 +55,24 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
           payload:wpresp
         })
         return
-    }
+      }
     if(wpresp.total_pages && currentPage.page > 1 && currentPage.page <= parseInt(wpresp.total_pages)){
-        const wpresp = await get_posts_by_taxonomy({rest_base:'posts',per_page:currentPage.total,page:param,taxonomy:static_params.taxonomy,term:static_params.term})
-        app_dispatch({
-          type:'get_posts_by_taxonomy',
-          payload:wpresp
-        })
+      const wpresp = await get_posts_by_taxonomy({rest_base:'posts',per_page:currentPage.total,page:param,taxonomy:static_params.taxonomy,term:static_params.term})
+      app_dispatch({
+        type:'get_posts_by_taxonomy',
+        payload:wpresp
+      })
     }
   }
 
   useEffect(()=>{
     app_dispatch({
-      type:'loader_app'
+      type:'loader_app',
+      payload:false
     })
-     next() 
-  },[asPath])
+    next() 
+  },[])
+
   return <>
       <Head>
       <title>Blog - Diaz web app</title>
@@ -155,10 +166,10 @@ export const getStaticPaths:GetStaticPaths = async()=>{
       }
     }
     
-    return {paths,fallback:true}
+    return {paths,fallback:false}
   }catch(err){
     console.error(err)
-    return {paths,fallback:true}
+    return {paths,fallback:false}
   }
 }
 export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
@@ -168,15 +179,18 @@ export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContex
   const wpresp:WPResp = await get_posts_by_taxonomy({rest_base:'posts',taxonomy,term,per_page:24})
   let page_info = await get_post_type({type:'post'}) 
   page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
-  return {
-    props:{
-      wpresp,
-      page_info,
-      static_params:params,
-      term
-    },
-    revalidate:1
-  }
+    if(wpresp.total != '0'){
+      return {
+        props:{
+          wpresp,
+          page_info,
+          static_params:params,
+          term
+        },
+        revalidate:1
+      }
+    }
+    return {props:{},revalidate:1}
   }else{
     return {props:{},revalidate:1}
   }

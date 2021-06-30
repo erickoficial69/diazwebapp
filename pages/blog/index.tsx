@@ -53,7 +53,7 @@ const Blog = ({wpresp,page_info}:Props)=>{
     }
   }
   useEffect(()=>{
-    app_dispatch({type:'loader_app'})
+    app_dispatch({type:'loader_app',payload:false})
     next() 
   },[])
   return <>

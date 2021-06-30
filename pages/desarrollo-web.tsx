@@ -2,9 +2,16 @@ import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useContext, useEffect } from 'react'
+import { App_context } from '../context/wp_context/app_context'
 
 const WebApps = ()=>{
   const {asPath} = useRouter()
+  const {app_dispatch} = useContext(App_context)
+
+  useEffect(()=>{
+    app_dispatch({type:'loader_app',payload:false})
+  },[])
   return <>
       <Head>
         <title>Desarrollo de Aplicaciones web - Diaz web app</title>

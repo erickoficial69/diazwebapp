@@ -9,7 +9,7 @@ const Products_page = () => {
     const {asPath} = useRouter()
     const {app_dispatch} = useContext(App_context)
     useEffect(()=>{
-      app_dispatch({type:'loader_app'})
+      app_dispatch({type:'loader_app',payload:false})
     },[])
     return <>
     <Head>

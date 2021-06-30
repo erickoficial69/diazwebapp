@@ -26,7 +26,7 @@ const The_Post = ({post,page_info}:Props)=>{
    
   }
   useEffect(()=>{
-    app_dispatch({type:'loader_app'})
+    app_dispatch({type:'loader_app',payload:false})
   },[asPath])
   return <>
       <Head>

@@ -86,7 +86,8 @@ export type WPResp={
 }
 export type AppAction = 
 | { type: 'get_app_info', payload:any }
-| { type: 'loader_app' }
+| { type: 'loader_app', payload:boolean }
+| { type: 'loader_request', payload:boolean }
 | { type: 'get_all_posts', payload:WPResp }
 | { type: 'get_posts_by_taxonomy', payload:WPResp }
 | { type: 'get_post', payload:Post }

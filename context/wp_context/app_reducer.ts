@@ -3,7 +3,7 @@ import { App, AppAction } from "../../interfaces/app_interfaces";
 function app_reducer(state:App,action:AppAction){
     switch (action.type) {
         case "loader_app":
-            return {...state, loader_app:state.loader_app?false:true}
+            return {...state, loader_app:action.payload}
         case "get_app_info":
             return {...state, info:action.payload}
         case "get_all_posts":
