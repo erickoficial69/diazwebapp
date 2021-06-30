@@ -57,6 +57,9 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
   }
 
   useEffect(()=>{
+    app_dispatch({
+      type:'loader_app'
+    })
      next() 
   },[asPath])
   return <>
