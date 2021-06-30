@@ -9,7 +9,7 @@ import { get_terms } from '../../controlers/taxonomies_controles'
 import { Post, WPResp } from '../../interfaces/app_interfaces'
 
 type Props={
-  post:Post
+  post?:Post
   page_info:any
 }
 const The_Post = ({post,page_info}:Props)=>{
@@ -17,7 +17,7 @@ const The_Post = ({post,page_info}:Props)=>{
   const [show_cats,setShow_Cats] = useState<boolean>(false)
   const {isFallback,asPath} = useRouter()
   if(isFallback) return <section><b>Loading...</b></section>
-  if(!page_info || post.id == 0) return <section><b>No hay datos en este momento</b></section>
+  if(!page_info || !post) return <section><b>No hay datos en este momento</b></section>
   
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
@@ -73,18 +73,25 @@ const The_Post = ({post,page_info}:Props)=>{
   
 }
 export const getStaticPaths:GetStaticPaths = async(_:GetStaticPathsContext)=>{
-  const {data}:WPResp = await get_all_posts({rest_base:'posts'})
-  const paths = data.map((post:Post)=>({params:{slug:post.slug}}))
-  return {paths,fallback:true}
+  try{
+    const {data}:WPResp = await get_all_posts({rest_base:'posts'})
+    const paths = data.map((post:Post)=>({params:{slug:post.slug}}))
+    return {paths,fallback:true}
+  }catch(err){
+    return {paths:[{params:{slug:'_'}}],fallback:true}
+  }
 }
 export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
   try{
       const {slug}:any = params
-      const post = await get_post({rest_base:'posts',slug})
-      let page_info = await get_post_type({type:'post'}) 
-      page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
-      
-      return {props:{post,page_info},revalidate:1}
+      if(slug !== '_'){
+        const post = await get_post({rest_base:'posts',slug})
+        let page_info = await get_post_type({type:'post'}) 
+        page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
+        
+        return {props:{post,page_info},revalidate:1}
+      }
+      return {props:{},revalidate:1}
   }catch(err){
       return {props:{},revalidate:1}
   }
