@@ -6,7 +6,7 @@ export const Styled_sidebar = ({show_cats}:Params)=>(
       {
          `
          main > section:nth-child(2){
-            margin-top: 45px;
+            padding: 45px 2px;
          }
          main > section > h1, main > section > p{
            text-align:center;
@@ -44,7 +44,7 @@ export const Styled_sidebar = ({show_cats}:Params)=>(
             }
         
             main > section:nth-child(2){
-                margin-top:10px;
+                padding:10px 2px;
               }
 
             main > aside .aside_cats{

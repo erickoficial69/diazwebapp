@@ -10,7 +10,7 @@ import Head from 'next/head'
 const IndexPage = () => {
     const {app,app_dispatch} = useContext(App_context)
     useEffect(()=>{
-        app_dispatch({type:'loader_app'})
+        app_dispatch({type:'loader_app',payload:false})
     },[])
     return <>
     <Head>
@@ -59,19 +59,19 @@ const IndexPage = () => {
                 </p>
                 <span className="flex-wrap box_products " >
                     <Link href="/desarrollo-aplicaciones-moviles" >
-                        <a>
+                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
                             <Mobile/>
                             <p>Mobile Apps</p>
                         </a>
                     </Link>
                     <Link href="/desarrollo-web" >
-                        <a onClick={()=>("/desarrollo-web")}>
+                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
                             <Pwa/>
                             <p>Web Apps</p>
                         </a>
                     </Link>
                     <Link href="/desarrollo-api" >
-                        <a onClick={()=>("/desarrollo-api")}>
+                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
                             <Cube/>
                             <p>Api's</p>
                         </a>

@@ -40,7 +40,7 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
         type:'loader_app',
         payload:false
       })
-    },[])
+    },[asPath])
     return <section><b>No hay datos en este momento</b></section>
   }
   
@@ -71,7 +71,7 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
       payload:false
     })
     next() 
-  },[])
+  },[asPath])
 
   return <>
       <Head>
