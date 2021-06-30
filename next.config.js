@@ -70,7 +70,7 @@ module.exports = withOffline({
     domains: ['0.0.0.0','localhost','apuestanweb.com','apuestanweb.ml'],
   },
   env:{
-    API:process.env.API || 'http://localhost:5000/wp-json',
+    API:process.env.API || 'http://localhost:4000/wp-json',
     URL_START:process.env.URL_START || 'http://localhost:3000',
   }
 })

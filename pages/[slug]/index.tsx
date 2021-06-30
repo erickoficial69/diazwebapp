@@ -27,7 +27,7 @@ const The_Post = ({post,page_info}:Props)=>{
   }
   useEffect(()=>{
     app_dispatch({type:'loader_app'})
-  },[])
+  },[asPath])
   return <>
       <Head>
         <title>{post.title.rendered} - Diaz web app</title>

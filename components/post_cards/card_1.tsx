@@ -1,13 +1,16 @@
 import Link from "next/link"
+import { useContext } from "react"
+import { App_context } from "../../context/wp_context/app_context"
 import { Post } from "../../interfaces/app_interfaces"
 
 type Props={
     post:Post,
 }
 const Card_1 = ({post}:Props)=>{
+    const {app_dispatch} = useContext(App_context)
     return (
         <Link href={`/${post.slug}`} >
-            <a className="card_1" >
+            <a onClick={()=>{document.location.pathname!=`/${post.slug}`?app_dispatch({type:'loader_app'}):null}} className="card_1" >
                 {
                     post._embedded["wp:featuredmedia"]?(
                         <img src={post._embedded["wp:featuredmedia"][0].source_url} alt="" loading="lazy" />
