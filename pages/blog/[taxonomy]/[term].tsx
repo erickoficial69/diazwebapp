@@ -140,16 +140,23 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
 export const getStaticPaths:GetStaticPaths = async()=>{
   let params = {taxonomy:'_',term:'_'}
   const paths =[{params}]
-  const taxonomies = await get_taxonomies()
-  const tax_keys = Object.keys(taxonomies)
-  const terms = await get_terms(tax_keys)
-  for(let taxonomy of terms){
-    for(let term of taxonomy.terms){
-      paths.push({params:{taxonomy:taxonomy.rest_base,term:term.slug}})
+  try{
+    const taxonomies = await get_taxonomies()
+    const tax_keys = Object.keys(taxonomies)
+    const terms = await get_terms(tax_keys)
+    for(let taxonomy of terms){
+      if(taxonomy.terms && taxonomy.terms.length > 0){
+        for(let term of taxonomy.terms){
+          paths.push({params:{taxonomy:taxonomy.rest_base,term:term.slug}})
+        }
+      }
     }
+    
+    return {paths,fallback:true}
+  }catch(err){
+    console.error(err)
+    return {paths,fallback:true}
   }
-  
-  return {paths,fallback:true}
 }
 export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
   
