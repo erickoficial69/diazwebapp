@@ -1,4 +1,4 @@
-const IntroStyle = ()=><style>{
+const IntroStyle = ()=><style jsx >{
     `
     
 .intro>div {
