@@ -46,7 +46,9 @@ export const Styled_sidebar = ({show_cats}:Params)=>(
             main > section:nth-child(2){
                 padding:10px 2px;
               }
-
+            main > aside{
+              z-index:99;
+            }
             main > aside .aside_cats{
               flex-flow:column;
               width:200px;

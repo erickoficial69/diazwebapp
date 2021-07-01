@@ -1,4 +1,4 @@
-const IntroStyle = ()=><style jsx >{
+const IntroStyle = ()=><style jsx global >{
     `
     
 .intro>div {
@@ -106,6 +106,15 @@ const IntroStyle = ()=><style jsx >{
     }
     100% {
         opacity: 1
+    }
+}
+@media(min-width:720px) {
+    .intro>div {
+        grid-template-columns: 300px 1fr;
+        justify-content: flex-end
+    }
+    .intro:nth-child(2n)>div {
+        grid-template-columns: 1fr 300px
     }
 }
 
