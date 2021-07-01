@@ -39,7 +39,7 @@ const The_Post = ({post,page_info}:Props)=>{
         {/** OG META */}
         <meta property="og:title" content={post.title.rendered +" - Diaz web app"} />
         <meta property="og:site_name" content={'diaz web app'} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta property="og:description" content={post.excerpt?.rendered.replace('<p>','').replace('</p>','')} />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START+asPath} />
