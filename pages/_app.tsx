@@ -15,6 +15,16 @@ function Myapp({ Component, pageProps }: AppProps) {
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="rgb(10,10,10)" />
+        <style dangerouslySetInnerHTML={{
+          __html: `</style>
+            <link
+              rel="stylesheet"
+              href="/css/index.css"
+              media="all"
+              onload="this.media = 'all';"
+            />
+            <style>`
+        }}></style>
         <style jsx global >
           {
             `
