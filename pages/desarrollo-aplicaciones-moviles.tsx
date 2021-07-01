@@ -26,15 +26,15 @@ const MobileApps=()=>{
             <meta property="og:description" content="Desarrollo de aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado." />
             <meta property="og:locale" content="es_ES" />
             <meta property="og:url" content={process.env.URL_START+asPath} />
-            <meta property="og:image" content={process.env.URL_START+"/logo512.png"} />
-            <meta property="og:image:secure_url" content={process.env.URL_START+"/logo512.png"} />
+            <meta property="og:image" content="https://image.freepik.com/vector-gratis/banner-desarrollo-aplicaciones_33099-1720.jpg" />
+            <meta property="og:image:secure_url" content="https://image.freepik.com/vector-gratis/banner-desarrollo-aplicaciones_33099-1720.jpg" />
             <meta property="og:image:width" content="320" />
             <meta property="og:image:height" content="240" />
             {/**TWITTER META */}
             <meta name="twitter:title" content="Desarrollo de aplicaciones móviles - Diaz web app" /> 
             <meta name="twitter:description" content="Desarrollo de aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado." />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content={process.env.URL_START+"/logo512.png"} />
+            <meta name="twitter:image" content="https://image.freepik.com/vector-gratis/banner-desarrollo-aplicaciones_33099-1720.jpg" />
             <meta name="twitter:label1" content="Tiempo de lectura" />
             <meta name="twitter:data1" content="3 minutos" />
             {/**LINK META */}
