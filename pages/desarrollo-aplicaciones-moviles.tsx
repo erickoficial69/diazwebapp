@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useContext, useEffect } from 'react'
 import { App_context } from '../context/wp_context/app_context'
+import IntroStyle from '../public/css/intro.style'
 
 const MobileApps=()=>{
   const {asPath} = useRouter()
@@ -69,6 +70,7 @@ const MobileApps=()=>{
                   </article>
                 </div>
         </section>
+        <IntroStyle />
     </>
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{

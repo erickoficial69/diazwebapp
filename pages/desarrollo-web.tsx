@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useContext, useEffect } from 'react'
 import { App_context } from '../context/wp_context/app_context'
+import IntroStyle from '../public/css/intro.style'
 
 const WebApps = ()=>{
   const {asPath} = useRouter()
@@ -110,7 +111,39 @@ const WebApps = ()=>{
                   </div>
           </article>
     </section>
-     
+     <style jsx >
+       {
+         `
+            #screen-two {
+              background: var(--shadow-color);
+              padding: 10px
+            }
+
+            .web-optimisation {
+              align-items: flex-start
+            }
+
+            .web-optimisation>div {
+              width: 100%;
+              text-align: center
+            }
+
+            .web-optimisation>div>h3 {
+              text-align: center;
+              padding: 5px 0;
+              color: var(--primary-color)
+            }
+
+            .web-optimisation>div>p {
+              padding: 5px
+            }
+
+            .web-optimisation>div>img {
+              max-height: 200px
+            }`
+       }
+     </style>
+     <IntroStyle/>
   </>
   
 }

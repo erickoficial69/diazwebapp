@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContext, useEffect } from 'react'
 import { App_context } from '../context/wp_context/app_context'
+import IntroStyle from '../public/css/intro.style'
 const Products_page = () => {
     const {asPath} = useRouter()
     const {app_dispatch} = useContext(App_context)
@@ -106,6 +107,7 @@ const Products_page = () => {
                 <img className="image_intro" width="200" height="250" src="/img/laravel-2.webp" alt="mobile dev" itemProp="image" loading="lazy" />
             </div>
         </section>
+        <IntroStyle/>
       </>
     }
 
