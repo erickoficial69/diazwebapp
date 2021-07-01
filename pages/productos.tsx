@@ -4,8 +4,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useContext, useEffect } from 'react'
+import IntroStyle from '../components/styled_components/intro.style'
 import { App_context } from '../context/wp_context/app_context'
-import IntroStyle from '../public/css/intro.style'
+
 const Products_page = () => {
     const {asPath} = useRouter()
     const {app_dispatch} = useContext(App_context)

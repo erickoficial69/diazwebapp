@@ -6,7 +6,7 @@ import { App_context } from '../context/wp_context/app_context'
 import { Post } from '../interfaces/app_interfaces'
 import Card_1 from '../components/post_cards/card_1'
 import Head from 'next/head'
-import IntroStyle from '../public/css/intro.style'
+import IntroStyle from '../components/styled_components/intro.style'
 
 const IndexPage = () => {
     const {app,app_dispatch} = useContext(App_context)
