@@ -10,21 +10,12 @@ function Myapp({ Component, pageProps }: AppProps) {
     <Head>
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="shortcut icon" href="/logo512.png" />
-        <link rel="apple-touch-icon" href="/logo512.png"/>
-        <link rel="preload" href="/css/index.css" as="style"/>
-        
+        <link rel="apple-touch-icon" href="/logo512.png"/>        
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="rgb(10,10,10)" />
-        <style dangerouslySetInnerHTML={{
-          __html: `</style>
-            <link
-              rel="stylesheet"
-              href="/css/index.css"
-              media="all"
-              onload="this.media = 'all';"
-            />
-            <style>`
-        }}></style>
+        
+        { /* @ts-ignore */ }
+        <link rel="preload" href="/css/index.css" as="style" rel="stylesheet" media="all" onload="this.media='all'" />
         <style jsx global >
           {
             `
