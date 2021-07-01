@@ -23,7 +23,7 @@ const the_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
     posts:[]
   })
   
-  const {asPath,isFallback,back} = useRouter()
+  const {asPath,isFallback} = useRouter()
   
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
