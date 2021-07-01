@@ -39,7 +39,7 @@
       "name": "Desarrollo de aplicaciones móviles - Diaz web app",
       "short_name": "DWA",
       "description": "Desarrollo de aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.",
-      "url": "/desarrollo-apps-moviles",
+      "url": "/desarrollo-aplicaciones-moviles",
       "icons": [{ "src": "logo.png", "sizes": "192x192" },{ "src": "logo512.png", "sizes": "512x512" }]
     }
   ]
