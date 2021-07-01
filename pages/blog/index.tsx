@@ -59,14 +59,14 @@ const Blog = ({wpresp,page_info}:Props)=>{
   return <>
       <Head>
         <title>Blog - Diaz web app</title>
-        <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
-        <meta name="description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de aplicaciones moviles, desarrollo de e-commerce, desarrollo tiendas online, desarrollo de software"/>
+        <meta name="description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         {/** OG META */}
         <meta property="og:title" content="Blog - diaz web app" />
         <meta property="og:site_name" content={'diaz web app'} />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta property="og:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START+asPath} />
         <meta property="og:image" content={process.env.URL_START+"/logo512.png"} />
@@ -75,7 +75,7 @@ const Blog = ({wpresp,page_info}:Props)=>{
         <meta property="og:image:height" content="240" />
         {/**TWITTER META */}
         <meta name="twitter:title" content="Blog - diaz web app" /> 
-        <meta name="twitter:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="twitter:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={process.env.URL_START+"/logo512.png"} />
         <meta name="twitter:label1" content="Tiempo de lectura" />

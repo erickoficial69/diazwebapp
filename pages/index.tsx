@@ -18,13 +18,13 @@ const IndexPage = () => {
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
         <meta name="author" content="diaz web app" />
         <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
-        <meta name="description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta name="description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         {/** OG META */}
         <meta property="og:title" content="Diaz web app - desarrollo de aplicaciones a la medida" />
         <meta property="og:site_name" content={'diaz web app'} />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta property="og:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START} />
         <meta property="og:image" content={process.env.URL_START+"/logo512.png"} />
@@ -33,7 +33,7 @@ const IndexPage = () => {
         <meta property="og:image:height" content="240" />
         {/**TWITTER META */}
         <meta name="twitter:title" content="Diaz web app - desarrollo de aplicaciones a la medida" /> 
-        <meta name="twitter:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta name="twitter:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={process.env.URL_START+"/logo512.png"} />
         <meta name="twitter:label1" content="Tiempo de lectura" />
@@ -53,7 +53,7 @@ const IndexPage = () => {
                 <h1 itemProp="name" >Aplicaciones que responden a tus clientes</h1>
 
                 <p itemProp="description">
-                    Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente.
+                    Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente.
                     <br/>
                     Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
                     
