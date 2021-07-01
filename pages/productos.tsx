@@ -22,19 +22,19 @@ const Products_page = () => {
         {/** OG META */}
         <meta property="og:title" content="Desarrollo de aplicaciones móviles - Diaz web app" />
         <meta property="og:site_name" content={'diaz web app'} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="warticle" />
         <meta property="og:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START+asPath} />
-        <meta property="og:image" content={process.env.URL_START+"/logo.png"} />
-        <meta property="og:image:secure_url" content={process.env.URL_START+"/logo.png"} />
+        <meta property="og:image" content={process.env.URL_START+"/logo512.png"} />
+        <meta property="og:image:secure_url" content={process.env.URL_START+"/logo512.png"} />
         <meta property="og:image:width" content="320" />
         <meta property="og:image:height" content="240" />
         {/**TWITTER META */}
         <meta name="twitter:title" content="Desarrollo de aplicaciones móviles - Diaz web app" /> 
         <meta name="twitter:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={process.env.URL_START+"/logo.png"} />
+        <meta name="twitter:image" content={process.env.URL_START+"/logo512.png"} />
         <meta name="twitter:label1" content="Tiempo de lectura" />
         <meta name="twitter:data1" content="3 minutos" />
         {/**LINK META */}

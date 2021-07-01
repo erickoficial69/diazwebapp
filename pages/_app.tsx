@@ -9,8 +9,8 @@ function Myapp({ Component, pageProps }: AppProps) {
   return <App_provider>
     <Head>
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="shortcut icon" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png"/>
+        <link rel="shortcut icon" href="/logo512.png" />
+        <link rel="apple-touch-icon" href="/logo512.png"/>
         <link rel="stylesheet" href="/css/index.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="rgb(10,10,10)" />
