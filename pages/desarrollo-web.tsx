@@ -140,7 +140,13 @@ const WebApps = ()=>{
 
             .web-optimisation>div>img {
               max-height: 200px
-            }`
+            }
+            @media(min-width:720px) {
+              .web-optimisation>div {
+                  width: 33.33%
+              }
+            }
+            `
        }
      </style>
      <IntroStyle/>
