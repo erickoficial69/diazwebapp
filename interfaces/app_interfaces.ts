@@ -116,7 +116,6 @@ export type WPResp={
     
 }
 export type StatePosts={
-    posts:any[]
     page: number
     per_page: number
     

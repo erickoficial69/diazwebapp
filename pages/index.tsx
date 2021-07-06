@@ -7,10 +7,20 @@ import { Post } from '../interfaces/app_interfaces'
 import Card_1 from '../components/post_cards/card_1'
 import Head from 'next/head'
 import IntroStyle from '../components/styled_components/intro.style'
+import { get_all_posts } from '../controlers/app_controller'
 
 const IndexPage = () => {
     const {app,app_dispatch} = useContext(App_context)
+    const get_posts = async()=>{
+        if(!app.posts.total || app.posts.total == '0'){
+            app_dispatch({type:'loader_request',payload:true})
+            const resp = await get_all_posts({rest_base:'posts',per_page:6})
+            app_dispatch({type:'get_all_posts',payload:resp})
+        return
+        }
+    }
     useEffect(()=>{
+        get_posts()
         app_dispatch({type:'loader_app',payload:false})
     },[])
     return <>
@@ -83,19 +93,26 @@ const IndexPage = () => {
     </section>
 
     <div style={{textAlign:'center',width:'100%'}} >
-        <a style={{width:'70px',margin:'20px auto'}} className="icon-button" href='#news' >
+        <a style={{width:'70px',margin:'20px auto',cursor:'pointer'}} className="icon-button" href='#news' >
             <Arrow_circle /> <b>Más</b>
         </a>
     </div>
-    
-    {app.posts.total?
     <section id="news" >
-        <h2>Últimas noticias</h2>          
-       <div className="container_posts_1" >
-            {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
-       </div>
+        <h2>Últimas noticias</h2>  
+    {
+        app.loader_request?(
+            <b>Loading</b>
+        ):(
+            app.posts.total && parseInt(app.posts.total) > 0?
+                <>     
+                    <div className="container_posts_1" >
+                            {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
+                    </div>
+                </>
+            :<b>No hay noticias</b>
+        )
+        }
     </section>
-    :null}
 
     <IntroStyle/>
   </>

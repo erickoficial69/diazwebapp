@@ -11,9 +11,9 @@ const IntroStyle = ()=><style jsx global >{
     animation: intro .7s ease
 }
 
-.intro:nth-child(2)>div {
+.intro:nth-child(2){
     animation-delay: .5s;
-    background: var(--shadow-color)
+    background: var(--theme-color)
 }
 
 .intro>span {
@@ -25,7 +25,8 @@ const IntroStyle = ()=><style jsx global >{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%
+    height: 100%;
+    z-index:-1;
 }
 
 .intro>div .image_intro {

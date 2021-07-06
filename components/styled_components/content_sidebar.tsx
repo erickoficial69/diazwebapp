@@ -1,91 +1,86 @@
-type Params={
-    show_cats:boolean
-}
-export const Styled_sidebar = ({show_cats}:Params)=>(
+
+export const Styled_sidebar = ()=>(
     <style jsx global>
       {
-         `
-         main > section:nth-child(2){
-            padding: 45px 2px;
+         ` 
+         main > aside{
+           display:grid;
+           grid-template-columns:1fr;
+           gap:10px;
+           width:95vw;
+           margin: 0 auto;
          }
-         main > section > h1, main > section > p{
-           text-align:center;
-         }
-         main > section > p{
-           padding:10px;
-         }
-          main > aside{
-            background:var(--primary-color);
-          }
-          main > aside ul{
-            list-style:none;
-          }
-          main > aside > .aside_cats{
-            background:var(--background-color);
-            position:fixed;
-            width:250px;
-            height:100%;
-            overflow:auto;
-            top:0;
-            left:${show_cats?'0':'-100%'};
-            transition:all .3s ease;
-          }
-          main > aside > .aside_cats a{
-            display:block;
-          }
-          main > section,main > footer{
-            padding:0 5px;
-          }
-          @media(min-width:960px){
-            main > aside{
-              background: var(--background-color);
-              overflow:auto;
-              padding: 15px 0;
-            }
-        
-            main > section:nth-child(2){
-                padding:10px 2px;
+         main > aside ul{
+                list-style:none;
+                background:var(--theme-color);
+                margin-top:10px;
+                border-radius:10px;
+                padding:0;
+                padding-bottom:5px;
               }
+          main > aside ul > p{
+            padding:5px;
+            border-bottom:1px solid var(--shadow-color);
+            text-align:center;
+            text-transform:uppercase;
+            color:var(--secondary-color);
+          }
+          main > aside ul a{
+            padding:10px;
+          }
+          main > aside ul a:hover{
+            color:var(--primary-color);
+          }
+          @media(min-width:512px){
             main > aside{
-              z-index:99;
-            }
-            main > aside .aside_cats{
-              flex-flow:column;
-              width:200px;
-              left:unset;
-              position:relative;
-            }
-            main > section,main > footer{
-              margin-left:200px;
-              width:calc(100% - 200px);
-            }
-            .container_posts_1{
-              grid-template-columns:repeat(6,12vw);
-              grid-auto-rows:12vw;
+              grid-template-columns:repeat(2,1fr);
             }
           }
-          @media(min-width:1080px){
-            main > section,main > footer{
-              max-width:1200px;
+          @media(min-width:640px){
+            main > aside{
+              grid-template-columns:repeat(3,1fr);
             }
           }
-          @media(min-width:1280px){
-            main{
-              max-width:1200px;
-            }
-            .container_posts_1{
-              grid-template-columns:repeat(6,155px);
-              grid-auto-rows:155px;
+          @media(min-width:800px){
+            main > aside{
+              grid-template-columns:repeat(4,1fr);
             }
           }
-          @media(min-width:1366px){
-            main{
-              max-width:1280px;
-            }
-            .container_posts_1{
-              grid-template-columns:repeat(6,170px);
-              grid-auto-rows:170px;
-            }
+          @media(min-width:960px) {
+              main{
+                  display:grid;
+                  grid-template-columns:1fr 250px;
+                  gap:10px;
+              }
+              header .toolbar, main, main > section {
+                  width: 99%;
+              }
+              main > aside{
+                height:max-content;
+                grid-template-columns:1fr;
+                width:99%;
+                margin-right:1%;
+              }
+             
+              main > section{
+                grid-column: 1 / span 1;
+              }
+              .container_posts_1 {
+                  grid-template-columns: repeat(3, 1fr);
+                  padding: 1vw;
+                  border-radius: 10px
+              }
+          }
+          
+          @media(min-width:1280px) {
+              .container_posts_1 {
+                  grid-template-columns: repeat(6, 1fr);
+                  gap: 5px;
+                  padding: 5px
+              }
+              main, header .toolbar{
+                max-width:1200px;
+              }
           }
          `
        } 

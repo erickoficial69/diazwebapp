@@ -1,4 +1,4 @@
-import { App, Post, WPResp, NextPosts } from "../interfaces/app_interfaces"
+import { App, Post, WPResp } from "../interfaces/app_interfaces"
 import {initialApp} from '../context/wp_context/app_context'
 import { wp_post_types } from "../wpconfig"
 
@@ -85,15 +85,3 @@ export const get_posts_paths = async ()=>{
     }
     return paths
 }
-
-export const next_posts = async({page,setState,statePost,rest_base,params}:NextPosts)=>{
-    if(params){
-        const wpresp = await get_posts_by_taxonomy({rest_base,per_page:statePost.per_page,page,taxonomy:params.taxonomy,term:params.term})
-        setState({...statePost, posts:wpresp.data, page:page?page:statePost.page})
-        return
-    }
-    const wpresp = await get_all_posts({rest_base,per_page:statePost.per_page,page})
-    setState({...statePost, posts:wpresp.data, page:page?page:statePost.page})
-    return
-    
-  }

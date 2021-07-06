@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import CatsMenu from '../../components/cats_menu'
 import { App_context } from '../../context/wp_context/app_context'
 import { get_post, get_posts_paths, get_post_type } from '../../controlers/app_controller'
@@ -14,7 +14,6 @@ type Props={
 }
 const The_Post = ({post,page_info}:Props)=>{
   const {app_dispatch} = useContext(App_context)
-  const [show_cats,setShow_Cats] = useState<boolean>(false)
   const {isFallback,asPath} = useRouter()
   if(isFallback) return <section></section>
   
@@ -28,12 +27,6 @@ const The_Post = ({post,page_info}:Props)=>{
     return <section><b>No hay datos en este momento</b></section>
   }
   
-  const toggle_element = (e:any)=>{
-    const li:HTMLElement = e.target
-    const ul_items = li.parentElement?.children[1]
-    ul_items?.classList.toggle('view_items')
-   
-  }
   useEffect(()=>{
     app_dispatch({type:'loader_app',payload:false})
   },[asPath])
@@ -67,17 +60,15 @@ const The_Post = ({post,page_info}:Props)=>{
         <link rel="shortlink" href={process.env.URL_START+asPath} />
         <link rel="canonical" href={process.env.URL_START+asPath} />
       </Head>
-    <aside>
-      <ul className="aside_mobile_toolbar" >
-        <li>Filtrar por categorias</li>
-        <li onClick={()=>setShow_Cats(!show_cats)} ><b>{show_cats?'Close':'Categorias'}</b></li>
-      </ul>
-      <CatsMenu show_cats={show_cats} page_info={page_info} setShow_Cats={setShow_Cats} toggle_element={toggle_element} />
-    </aside>
+    
     <section >
       <h1>{post.title.rendered}</h1>
-      <article dangerouslySetInnerHTML={{__html:post.content.rendered}} ></article>
+      <article style={{wordBreak:'break-all'}} dangerouslySetInnerHTML={{__html:post.content.rendered}} ></article>
     </section>
+
+    <aside>
+      <CatsMenu page_info={page_info} />
+    </aside>
   </>
   
 }

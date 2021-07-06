@@ -17,23 +17,14 @@ type Props={
   static_params:any
 }
 const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
-  const {app_dispatch} = useContext(App_context)
-  const [show_cats,setShow_Cats] = useState<boolean>(false)
+  const {app,app_dispatch} = useContext(App_context)
   const [currentPage,setCurrentPage] = useState<StatePosts>({
     page:1,
-    per_page:24,
-    posts:wpresp?wpresp.data:[]
+    per_page:24
   })
   
   const {asPath,isFallback} = useRouter()
   
-  const toggle_element = (e:any)=>{
-    const li:HTMLElement = e.target
-    const ul_items = li.parentElement?.children[1]
-    ul_items?.classList.toggle('view_items')
-   
-  }
-
   if(isFallback) return <section><b>Loading...</b></section>
   
   if(!page_info || !wpresp){
@@ -47,8 +38,12 @@ const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
   }
   
   const fetch_change = async()=>{
+    app_dispatch({
+      type:'loader_request',
+      payload:true
+    })
     const newdata = await get_posts_by_taxonomy({rest_base:page_info.rest_base,taxonomy:static_params.taxonomy,term:static_params.term,per_page:currentPage.per_page})
-    setCurrentPage({...currentPage, posts:newdata.data})
+    app_dispatch({type:'get_all_posts',payload:newdata})
   }
 
   useEffect(()=>{
@@ -87,27 +82,29 @@ const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
         <link rel="shortlink" href={process.env.URL_START+asPath} />
         <link rel="canonical" href={process.env.URL_START+asPath} />
       </Head>
-    <aside>
-      <ul className="aside_mobile_toolbar" >
-        <li>Filtrar por categorias</li>
-        <li onClick={()=>setShow_Cats(!show_cats)} ><b>{show_cats?'Close':'Categorias'}</b></li>
-      </ul>
-      <CatsMenu show_cats={show_cats} page_info={page_info} setShow_Cats={setShow_Cats} toggle_element={toggle_element} />
-
-    </aside>
-    <section id="news" >         
-       {
-         wpresp.total?(
+    
+    <section>         
+    {
+      app.loader_request?(
+        <h1>Loading...</h1>
+      ):(
+        wpresp.total && parseInt(wpresp.total) > 0?(
+          <section id="news" >         
           <div className="container_posts_1" >
-              {currentPage.posts.map((post:Post)=><Card_1 post={post} key={post.id} />)}
+                {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
           </div>
-         ):null
-       }
-    </section>
-    <section>
+        </section>
+        ):<section>No hay datos</section>
+      )
+    }
+    
+    
     <Pagination statePost={currentPage} setState={setCurrentPage} response={wpresp} rest_base={page_info.rest_base} params={static_params} />
 
-    </section>     
+    </section>   
+    <aside>
+      <CatsMenu page_info={page_info} />
+    </aside>
   </>
   
 }
