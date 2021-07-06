@@ -4,9 +4,9 @@ import Head from 'next/head'
 import { useContext, useState, useEffect } from 'react'
 import CatsMenu from '../../components/cats_menu'
 import { App_context } from '../../context/wp_context/app_context'
-import { get_all_posts, get_post, get_post_type } from '../../controlers/app_controller'
+import { get_post, get_posts_paths, get_post_type } from '../../controlers/app_controller'
 import { get_terms } from '../../controlers/taxonomies_controles'
-import { Post, WPResp } from '../../interfaces/app_interfaces'
+import { Post } from '../../interfaces/app_interfaces'
 
 type Props={
   post?:Post
@@ -16,8 +16,17 @@ const The_Post = ({post,page_info}:Props)=>{
   const {app_dispatch} = useContext(App_context)
   const [show_cats,setShow_Cats] = useState<boolean>(false)
   const {isFallback,asPath} = useRouter()
-  if(isFallback) return <section><b>Loading...</b></section>
-  if(!page_info || !post) return <section><b>No hay datos en este momento</b></section>
+  if(isFallback) return <section></section>
+  
+  if(!page_info || !post){
+    useEffect(()=>{
+      app_dispatch({
+        type:'loader_app',
+        payload:false
+      })
+    },[asPath])
+    return <section><b>No hay datos en este momento</b></section>
+  }
   
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
@@ -72,29 +81,27 @@ const The_Post = ({post,page_info}:Props)=>{
   </>
   
 }
+
 export const getStaticPaths:GetStaticPaths = async(_:GetStaticPathsContext)=>{
-  try{
-    const {data}:WPResp = await get_all_posts({rest_base:'posts'})
-    const paths = data.map((post:Post)=>({params:{slug:post.slug}}))
-    return {paths,fallback:true}
-  }catch(err){
-    return {paths:[{params:{slug:'_'}}],fallback:true}
-  }
+  
+  const paths = await get_posts_paths()
+  
+  return {paths,fallback:true}
 }
 export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
-  try{
-      const {slug}:any = params
-      if(slug !== '_'){
-        const post = await get_post({rest_base:'posts',slug})
-        let page_info = await get_post_type({type:'post'}) 
-        page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
-        
-        return {props:{post,page_info},revalidate:1}
-      }
-      return {props:{},revalidate:1}
-  }catch(err){
-      return {props:{},revalidate:1}
-  }
+try{
+    const {rest_base,slug}:any = params
+    if(slug !== '_' && rest_base !== '_' ){
+      let page_info = await get_post_type({slug:rest_base}) 
+      const post = await get_post({rest_base:page_info.rest_base,slug})
+      page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
+      
+      return {props:{post,page_info},revalidate:1}
+    }
+    return {props:{},revalidate:1}
+}catch(err){
+    return {props:{},revalidate:1}
+}
 }
 
 export default The_Post

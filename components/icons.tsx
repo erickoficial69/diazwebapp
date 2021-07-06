@@ -1,6 +1,6 @@
 export const Icon_Menu = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/menu-outline.svg" alt="menu icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/menu-outline.svg" alt="menu icon" />
     )
 }
 
@@ -24,33 +24,33 @@ export const Blog = ()=>{
 
 export const Facebook = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-facebook.svg" alt="facebook icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-facebook.svg" alt="facebook icon" />
     )
 }
 
 export const Instagram = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-instagram.svg" alt="instagram icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-instagram.svg" alt="instagram icon" />
     )
 }
 export const Mail = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/mail-outline.svg" alt="mail icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/mail-outline.svg" alt="mail icon" />
     )
 }
 export const Mobile = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/phone-portrait-outline.svg" alt="mobile icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/phone-portrait-outline.svg" alt="mobile icon" />
     )
 }
 export const Pwa = ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-pwa.svg" alt="pwa icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/logo-pwa.svg" alt="pwa icon" />
     )
 }
 export const Cube= ()=>{
     return (
-        <img width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/cube-outline.svg" alt="api icon" />
+        <img loading="lazy" width="24px" height="24px" itemProp="image" className="icons" src="/icons_svg/cube-outline.svg" alt="api icon" />
     )
 }
 

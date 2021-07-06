@@ -1,29 +1,40 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
+import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import { useContext, useState, useEffect } from 'react'
 import CatsMenu from '../../components/cats_menu'
+import Pagination from '../../components/pagination'
 import Card_1 from '../../components/post_cards/card_1'
 import { App_context } from '../../context/wp_context/app_context'
 import { get_all_posts, get_post_type } from '../../controlers/app_controller'
 import { get_terms } from '../../controlers/taxonomies_controles'
-import { Post, WPResp } from '../../interfaces/app_interfaces'
+import { Post, StatePosts, WPResp } from '../../interfaces/app_interfaces'
+import { wp_post_types } from '../../wpconfig'
 
 type Props={
   wpresp?:WPResp
   page_info:any
 }
 const Blog = ({wpresp,page_info}:Props)=>{
-  const {app,app_dispatch} = useContext(App_context)
+  const {app_dispatch} = useContext(App_context)
   const [show_cats,setShow_Cats] = useState<boolean>(false)
-  const [currentPage,setCurrentPage] = useState<any>({
+  const [statePosts,setStatePosts] = useState<StatePosts>({
     page:1,
-    total:24,
-    posts:[]
+    per_page:24,
+    posts:wpresp?wpresp.data:[]
   })
   const {isFallback,asPath} = useRouter()
-  if(isFallback) return <section><b>Loading...</b></section>
-  if(!wpresp || !page_info) return <section><b>No hay datos en este momento</b></section>
+  if(isFallback) return <section></section>
+  
+  if(!page_info || !wpresp){
+    useEffect(()=>{
+      app_dispatch({
+        type:'loader_app',
+        payload:false
+      })
+    },[asPath])
+    return <section><b>No hay datos en este momento</b></section>
+  }
 
   const toggle_element = (e:any)=>{
     const li:HTMLElement = e.target
@@ -32,29 +43,8 @@ const Blog = ({wpresp,page_info}:Props)=>{
    
   }
   
-  const next = async(param?:number)=>{
-    if(param){
-      setCurrentPage({...currentPage, page:param})
-    }
-    if(currentPage.page == 1){
-        const wpresp = await get_all_posts({rest_base:'posts',per_page:currentPage.total,page:param})
-        app_dispatch({
-          type:'get_all_posts',
-          payload:wpresp
-        })
-        return
-    }
-    if(wpresp.total_pages && currentPage.page > 1 && currentPage.page <= parseInt(wpresp.total_pages)){
-        const wpresp = await get_all_posts({rest_base:'posts',per_page:currentPage.total,page:param})
-        app_dispatch({
-          type:'get_all_posts',
-          payload:wpresp
-        })
-    }
-  }
   useEffect(()=>{
     app_dispatch({type:'loader_app',payload:false})
-    next() 
   },[])
   return <>
       <Head>
@@ -97,59 +87,42 @@ const Blog = ({wpresp,page_info}:Props)=>{
 
     <p>Lo que necesitas saber sobre desarrollo de software, comercio en linea y tecnología</p>          
    </section>
-   {app.posts.total?(
+   {wpresp.total?(
       <section id="news" >         
        <div className="container_posts_1" >
-            {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
+            {statePosts.posts.map((post:Post)=><Card_1 post={post} key={post.id} />)}
        </div>
     </section>
     ):<section>No hay datos</section>
     }
     <section>
-      <div className="pagination_container">
-          {
-            wpresp.total_pages?
-              currentPage.page > 1?(
-                  <button className="icon-button" onClick={()=>next(currentPage.page-1)} style={{padding:"3px 6px"}} >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>Anterior</title><path d="M240,424V328c116.4,0,159.39,33.76,208,96,0-119.23-39.57-240-208-240V88L64,256Z" style={{width:'32px',height:'32px',fill:'none',stroke:'#000',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
-                  </button>
-              ):(
-                <button className="icon-button" style={{padding:"3px 6px"}} >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>Anterior</title><path d="M240,424V328c116.4,0,159.39,33.76,208,96,0-119.23-39.57-240-208-240V88L64,256Z" style={{width:'32px',height:'32px',fill:'none',stroke:'#000',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
-                  </button>
-              )
-            :null
-          }
-          {
-            wpresp.total_pages?
-              currentPage.page >= 1 && currentPage.page < parseInt(wpresp.total_pages) ?(
-                  <button className="icon-button" onClick={()=>next(currentPage.page+1)} style={{padding:"3px 6px"}} >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>Siguiente</title><path d="M448,256,272,88v96C103.57,184,64,304.77,64,424c48.61-62.24,91.6-96,208-96v96Z" style={{width:'32px',height:'32px',fill:'none',stroke:'#000',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
-                  </button>
-              ):currentPage.page >= 1 && currentPage.page == parseInt(wpresp.total_pages)?(
-                <button className="icon-button" style={{padding:"3px 6px"}} >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>Siguiente</title><path d="M448,256,272,88v96C103.57,184,64,304.77,64,424c48.61-62.24,91.6-96,208-96v96Z" style={{width:'32px',height:'32px',fill:'none',stroke:'#000',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
-                  </button>
-              ):null
-            :null
-          }
-      </div>
+    <Pagination statePost={statePosts} setState={setStatePosts} response={wpresp} rest_base={page_info.rest_base} />
     </section>
   </>
   
 }
 
-export const getStaticProps:GetStaticProps = async(_:GetStaticPropsContext)=>{
+export const getStaticPaths:GetStaticPaths = async(_:GetStaticPathsContext)=>{
+  const paths = wp_post_types.map((type:any)=>({params:{rest_base:type.rest_base}}))
+  return {paths,fallback:true}
+  
+}
+export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContext)=>{
+  const {rest_base}:any = params
+  
   try{
-      
-      const wpresp:WPResp = await get_all_posts({rest_base:'posts',per_page:24})
-      let page_info = await get_post_type({type:'post'}) 
-      page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
-      
-      return {props:{
-        wpresp,
-        page_info
-      },revalidate:1}
+    if(rest_base && rest_base !== '_'){
+      const wpresp = await get_all_posts({rest_base:rest_base,per_page:24})
+      if(wpresp && wpresp.data.length > 0){
+        let page_info = await get_post_type({slug:wpresp.data[0].type}) 
+        page_info = {...page_info,taxonomies:await get_terms(page_info.taxonomies)}
+        return {props:{
+          wpresp,
+          page_info
+        },revalidate:1}
+      }  
+    }
+    return {props:{},revalidate:1}
   }catch(err){
       return {props:{},revalidate:1}
   }

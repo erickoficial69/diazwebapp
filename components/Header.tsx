@@ -20,7 +20,7 @@ export const Header = () => {
                     <Link href="/productos" >
                         <a onClick={()=>{document.location.pathname!='/productos'?app_dispatch({type:'loader_app',payload:true}):null}} className="icon-button" ><Code_slash/> <b>Productos</b></a>
                     </Link>
-                    <Link href="/blog" >
+                    <Link href="/posts" >
                         <a onClick={()=>{document.location.pathname!='/blog'?app_dispatch({type:'loader_app',payload:true}):null}} className="icon-button" ><Blog/> <b>Blog</b></a>
                     </Link>
                 </nav>
