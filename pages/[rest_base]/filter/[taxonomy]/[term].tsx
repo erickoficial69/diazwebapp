@@ -17,7 +17,7 @@ type Props={
   static_params:any
 }
 const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
-  const {app,app_dispatch} = useContext(App_context)
+  const {app_dispatch} = useContext(App_context)
   const [show_cats,setShow_Cats] = useState<boolean>(false)
   const [currentPage,setCurrentPage] = useState<StatePosts>({
     page:1,
