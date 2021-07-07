@@ -85,7 +85,7 @@ export const CriticalCSS = ()=>(
             padding: 0;
         }
         
-        header .toolbar, main > section {
+        header .toolbar {
             width: 90vw;
             margin:0 auto;
         }
@@ -121,7 +121,7 @@ export const CriticalCSS = ()=>(
             }
         }
         @media(min-width:960px) {
-            header .toolbar, main > section {
+            header .toolbar{
                 width: 99%;
             }
         }
