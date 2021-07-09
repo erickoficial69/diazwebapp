@@ -77,7 +77,7 @@ const Blog = ({wpresp,page_info}:Props)=>{
 
     <p>Lo que necesitas saber sobre desarrollo de software, comercio en linea y tecnología</p>          
     <div>
-    <iframe data-aa="1701393" src="//acceptable.a-ads.com/1701393" scrolling="no" style="border:0px; padding:0; width:100%; height:100%; overflow:hidden" allowtransparency="true"></iframe>
+    <iframe data-aa="1701393" src="//acceptable.a-ads.com/1701393" scrolling="no" style={{border:0,padding:0,overflow:'hidden','width:100%'}} allowtransparency="true"></iframe>
     </div>
     <div id="news" >  
     {
