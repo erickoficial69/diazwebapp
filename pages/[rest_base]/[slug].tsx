@@ -63,6 +63,7 @@ const The_Post = ({post,page_info}:Props)=>{
     
     <section >
       <h1>{post.title.rendered}</h1>
+      <iframe data-aa="1701393" src="//acceptable.a-ads.com/1701393" scrolling="no" style={{border:0,padding:0,overflow:'hidden',width:'100%'}} allowTransparency></iframe>
       <article style={{wordBreak:'break-all'}} dangerouslySetInnerHTML={{__html:post.content.rendered}} ></article>
     </section>
 
