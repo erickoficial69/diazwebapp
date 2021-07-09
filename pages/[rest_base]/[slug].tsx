@@ -69,6 +69,22 @@ const The_Post = ({post,page_info}:Props)=>{
     <aside>
       <CatsMenu page_info={page_info} />
     </aside>
+    <style jsx>
+      {
+        `
+        section > h1 {text-align:center;}
+        section > article{
+          padding:10px;
+          margin:auto;
+        }
+        section > article p > img{
+          width:100%;
+          height:auto;
+        }
+
+        `
+      }
+    </style>
   </>
   
 }
