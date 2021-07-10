@@ -20,7 +20,7 @@ const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
   const {app,app_dispatch} = useContext(App_context)
   const [currentPage,setCurrentPage] = useState<StatePosts>({
     page:1,
-    per_page:24
+    per_page:12
   })
   
   const {asPath,isFallback} = useRouter()
@@ -136,7 +136,7 @@ export const getStaticProps:GetStaticProps = async({params}:GetStaticPropsContex
   const {rest_base,taxonomy,term}:any = params
   
   if(taxonomy!=='_' && rest_base!=='_'){
-    const wpresp = await get_posts_by_taxonomy({rest_base:rest_base,taxonomy,term,per_page:24})
+    const wpresp = await get_posts_by_taxonomy({rest_base:rest_base,taxonomy,term,per_page:12})
     if(wpresp && wpresp.data.length > 0){
       let page_info = await get_post_type({slug:wpresp.data[0].type}) 
       

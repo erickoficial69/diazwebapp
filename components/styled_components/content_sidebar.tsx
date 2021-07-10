@@ -25,8 +25,11 @@ export const Styled_sidebar = ()=>(
             text-transform:uppercase;
             color:var(--secondary-color);
           }
+          main > aside ul li{
+            margin:10px 5px;
+          }
           main > aside ul a{
-            padding:10px;
+            display:block;
           }
           main > aside ul a:hover{
             color:var(--primary-color);
