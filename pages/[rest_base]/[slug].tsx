@@ -78,7 +78,7 @@ const The_Post = ({post,page_info}:Props)=>{
           padding:10px;
           margin:auto;
         }
-        section > article p > img{
+        section > article p > img, .size-full{
           width:100%;
           height:auto;
         }
