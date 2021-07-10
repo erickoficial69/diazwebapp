@@ -78,9 +78,9 @@ const The_Post = ({post,page_info}:Props)=>{
           padding:10px;
           margin:auto;
         }
-        img{
-          max-width:100%;
-          height:auto;
+        article img,.aligncenter .size-full{
+          max-width:100% !important;
+          height:auto !important;
         }
 
         `
