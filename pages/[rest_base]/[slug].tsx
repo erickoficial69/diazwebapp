@@ -70,7 +70,7 @@ const The_Post = ({post,page_info}:Props)=>{
     <aside>
       <CatsMenu page_info={page_info} />
     </aside>
-    <style jsx>
+    <style jsx global>
       {
         `
         section > h1 {text-align:center;}
@@ -78,8 +78,8 @@ const The_Post = ({post,page_info}:Props)=>{
           padding:10px;
           margin:auto;
         }
-        article img,.aligncenter, .size-full{
-          max-width:100% !important;
+        section img, section .aligncenter, section .size-full{
+          max-width:300px% !important;
           height:auto !important;
         }
 
