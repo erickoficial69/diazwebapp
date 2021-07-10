@@ -79,7 +79,7 @@ const The_Post = ({post,page_info}:Props)=>{
           margin:auto;
         }
         section img, section .aligncenter, section .size-full{
-          max-width:300px% !important;
+          max-width:300px !important;
           height:auto !important;
         }
 
