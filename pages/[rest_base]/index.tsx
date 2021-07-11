@@ -70,6 +70,8 @@ const Blog = ({wpresp,page_info}:Props)=>{
         {/**LINK META */}
         <link rel="shortlink" href={process.env.URL_START+asPath} />
         <link rel="canonical" href={process.env.URL_START+asPath} />
+        {/**FACEBBOK */}
+        <meta property="ia:markup_url" content={process.env.URL_START+asPath} />
       </Head>
     
   <section>

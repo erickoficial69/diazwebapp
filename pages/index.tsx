@@ -51,6 +51,7 @@ const IndexPage = () => {
         {/**LINK META */}
         <link rel="shortlink" href={process.env.URL_START} />
         <link rel="canonical" href={process.env.URL_START} />
+        <meta property="ia:markup_url" content={process.env.URL_START} />
     </Head>
     <section style={{maxWidth:'unset'}} className="intro" itemScope itemType="http://schema.org/Service">
         <span></span>

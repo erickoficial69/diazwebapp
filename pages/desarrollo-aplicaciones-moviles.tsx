@@ -41,6 +41,7 @@ const MobileApps=()=>{
             {/**LINK META */}
             <link rel="shortlink" href={process.env.URL_START+asPath} />
             <link rel="canonical" href={process.env.URL_START+asPath} />
+            <meta property="ia:markup_url" content={process.env.URL_START+asPath} />
           </Head>
 
           <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">

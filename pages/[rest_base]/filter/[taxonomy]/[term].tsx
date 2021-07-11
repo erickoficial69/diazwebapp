@@ -81,6 +81,8 @@ const The_Posts_Term = ({page_info,wpresp,static_params}:Props)=>{
         {/**LINK META */}
         <link rel="shortlink" href={process.env.URL_START+asPath} />
         <link rel="canonical" href={process.env.URL_START+asPath} />
+        {/**FACEBBOK */}
+        <meta property="ia:markup_url" content={process.env.URL_START+asPath} />
       </Head>
     
     <section>         

@@ -16,7 +16,8 @@ function Myapp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="rgb(15,15,15)" />
         <link href="/index.css" rel="stylesheet" />
-        
+        <meta property="fb:pages" content="325128641454324" />
+        <meta property="fb:app_id" content="539696167476713" />
       </Head>
       <CriticalCSS />
         <Header {...pageProps} />
