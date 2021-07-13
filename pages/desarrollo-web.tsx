@@ -122,14 +122,16 @@ const WebApps = ()=>{
             }
 
             .web-optimisation {
-              align-items: flex-start
+              align-items: flex-start;
+              max-width:1200px;
+              margin:0 auto;
             }
 
             .web-optimisation>div {
               width: 100%;
               text-align: center
             }
-
+            
             .web-optimisation>div>h3 {
               text-align: center;
               padding: 5px 0;

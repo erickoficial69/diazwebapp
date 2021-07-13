@@ -99,14 +99,14 @@ const IndexPage = () => {
         </a>
     </div>
     <section id="news" >
-        <h2>Últimas noticias</h2>  
+        <h2 style={{textAlign:'center',margin:'20px 0'}} >Últimas noticias</h2>  
     {
         app.loader_request?(
             <b>Loading</b>
         ):(
             app.posts.total && parseInt(app.posts.total) > 0?
                 <>     
-                    <div className="container_posts_1" >
+                    <div style={{maxWidth:'1200px'}} className="container_posts_1" >
                             {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
                     </div>
                 </>
