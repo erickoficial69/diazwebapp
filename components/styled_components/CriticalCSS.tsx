@@ -94,30 +94,30 @@ export const CriticalCSS = ()=>(
             box-shadow:unset;
             border:unset;
         }
-        footer>div {
+        footer .toolbar div {
             min-width: 310px;
             text-align: center;
-            padding: 10px 0
+            padding: 10px 0;
         }
 
-        footer>div>p {
-            padding: 5px
+        footer .toolbar div > p {
+            padding: 5px;
         }
 
-        footer>div>div>a {
+        footer .toolbar > div > div > a {
             padding: 5px;
             border: 1px solid var(--primary-color);
             border-radius: 5px
         }
         @media(min-width:720px) {
-            footer>div {
+            footer .toolbar > div {
                 width: 50%
             }
             header b, header>.toolbar>a {
                 display: flex
             }
             nav {
-                width: auto
+                width: auto;
             }
         }
         @media(min-width:960px) {
@@ -126,8 +126,8 @@ export const CriticalCSS = ()=>(
             }
         }
         @media(min-width:1280px) {
-            .intro>div, footer>div, header .toolbar {
-                max-width: 1200px
+            .intro>div, footer .toolbar, header .toolbar {
+                max-width: 1200px;
             }
         }
         
