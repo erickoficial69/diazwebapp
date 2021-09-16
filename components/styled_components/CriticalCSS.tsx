@@ -110,6 +110,11 @@ export const CriticalCSS = ()=>(
             border-radius: 5px
         }
         @media(min-width:720px) {
+            footer .toolbar{
+                display:grid;
+                grid-template-rows:1fr 1fr;
+                place-items:center;place-content:center;
+            }
             footer .toolbar > div {
                 width: 50%
             }

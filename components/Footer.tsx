@@ -11,7 +11,7 @@ export const Footer = () => {
                     </p>
 
                     <h4 style={{textAlign:'center',margin:'5px auto'}}>Contácto</h4>
-                    <div className="flex-wrap" style={{justifyContent:'flex-start'}} >
+                    <div className="flex-wrap" style={{justifyContent:'center'}} >
                         <a className="icon-button" target='blank' href="https://facebook.com/diazwebapp">
                             <Facebook/> Facebook
                         </a>
@@ -30,7 +30,7 @@ export const Footer = () => {
 
                         <h4 style={{textAlign:'center',margin:'5px auto'}}>Contácto</h4>
 
-                        <div className="flex-wrap" style={{justifyContent:'flex-start'}}>
+                        <div className="flex-wrap" style={{justifyContent:'center'}}>
                             <a className="icon-button" target='blank' href="https://facebook.com/erickoficial69">
                                 <Facebook/> Facebook
                             </a>
