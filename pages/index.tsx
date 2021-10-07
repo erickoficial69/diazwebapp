@@ -1,10 +1,15 @@
-
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Intro } from '../components/intro'
+import { WP_RESP_POSTS } from '../interfaces/wp_rest'
+import Image from 'next/image'
 
+type StaticProps={
+  wp_response:WP_RESP_POSTS
+}
 
-const IndexPage = () => {
-   
+const IndexPage = ({wp_response}:StaticProps) => {
+
     return <>
     <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
@@ -42,12 +47,66 @@ const IndexPage = () => {
         text2="Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
         url_logo="/img/developer3.webp"
          /> 
+        <div className="gallery">
 
+        {
+          wp_response?(
+            wp_response.total >0?(
+              wp_response.posts.map((post)=>(                
+                <Image 
+                width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
+                height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.height:100} 
+                key={post.id} 
+                placeholder="blur"
+                blurDataURL="/img/loading.svg"
+                src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.source_url:"/logo512.png"} />
+              ))
+            ):"no hay datos"
+          ):null
+        }
+
+        </div>
+        <style jsx>{
+          `
+          .gallery{
+            width:100%;
+            position:relative;
+            display:flex;
+            justify-content:space-around;
+          }`
+        }</style>
     </section>
-
 
   </>
 }
 
+export const getStaticProps:GetStaticProps=async()=>{
+  try{
+    const req = await fetch(process.env.API+"/wp/v2/posts?_embed=true&per_page=4")
+    const total:any = req.headers.get('x-wp-total')
+    const totalpages:any = req.headers.get('x-wp-totalpages')
+    
+    const response = await req.json()
+  
+    const wp_response:WP_RESP_POSTS={
+      total,
+      totalpages,
+      current:response.length,
+      posts:response
+    }
+    
+    return {
+      props:{
+        wp_response
+      },
+      revalidate:1
+    }
+  }catch(err){
+    return{
+      props:{},
+      revalidate:1
+    }
+  }
+}
 
 export default IndexPage
