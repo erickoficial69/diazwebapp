@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 
-import {Intro} from '../components/intro'
+import {Intro} from '../../components/intro'
 
 const MobileApps=()=>{
   const {asPath} = useRouter()

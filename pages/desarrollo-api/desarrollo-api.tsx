@@ -1,4 +1,4 @@
-
+import Image from 'next/image'
 import Head from 'next/head'
 
 const Apis = ()=>{
@@ -9,10 +9,10 @@ const Apis = ()=>{
       </Head>
 
       <section className="intro flex-wrap" >
-        <img loading="lazy" src="/img/api.webp" alt="apis development" />
+        <Image width="200" height="200" placeholder="blur" layout="fixed" blurDataURL="/img/loading.svg" src="/img/api.webp" alt="apis development" />
         <article>
         <h1>Desarrollo Api's</h1>
-          <p style={{maxWidth:'1024px',margin:'0 auto',textAlign:'center'}} itemProp="description">
+          <p style={{margin:'0 auto',textAlign:'center'}} itemProp="description">
                 Proximamente Real time, Rest full api, graphql apis y más.
           </p>
         </article>
