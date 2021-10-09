@@ -82,7 +82,7 @@ const IndexPage = ({wp_response}:StaticProps) => {
 
 export const getStaticProps:GetStaticProps=async()=>{
   try{
-    const req = await fetch(process.env.API+"/wp/v2/posts?_embed=true&per_page=4")
+    const req = await fetch(process.env.API+"/wp/v2/posts?_embed=true&per_page=20")
     const total:any = req.headers.get('x-wp-total')
     const totalpages:any = req.headers.get('x-wp-totalpages')
     
