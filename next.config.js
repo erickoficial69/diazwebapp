@@ -1,10 +1,15 @@
-const withOffline = require('next-offline')
-module.exports = withOffline({
+const withPWA = require('next-pwa')
+
+module.exports = withPWA({
   images: {
-    domains: ['0.0.0.0','localhost','apuestanweb.com','apuestanweb.ml'],
+    domains: ['0.0.0.0','localhost','apuestanweb.com','localhost:8080'],
   },
   env:{
-    API:process.env.API || 'http://localhost:5000/wp-json',
+    API:process.env.API || 'http://localhost:8080/wp-json',
     URL_START:process.env.URL_START || 'http://localhost:3000',
+  },
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development'
   }
 })
