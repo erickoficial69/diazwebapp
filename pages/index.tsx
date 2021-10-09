@@ -1,15 +1,16 @@
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Intro } from '../components/intro'
 import { WP_RESP_POSTS } from '../interfaces/wp_rest'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { get_posts } from '../controllers/post.controller'
 
-type StaticProps={
-  wp_response:WP_RESP_POSTS
-}
-
-const IndexPage = ({wp_response}:StaticProps) => {
-
+const IndexPage = () => {
+    const [data,setData] = useState<WP_RESP_POSTS>()
+    useEffect(()=>{
+      let resp:any = get_posts()
+      setData(resp)
+    },[])
     return <>
     <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
@@ -50,9 +51,9 @@ const IndexPage = ({wp_response}:StaticProps) => {
         <div className="gallery">
 
         {
-          wp_response?(
-            wp_response.total >0?(
-              wp_response.posts.map((post)=>(                
+          data?(
+            data.total >0?(
+              data.posts.map((post)=>(                
                 <div>
                   <Image 
                 width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
@@ -89,35 +90,6 @@ const IndexPage = ({wp_response}:StaticProps) => {
     </section>
 
   </>
-}
-
-export const getStaticProps:GetStaticProps=async()=>{
-  try{
-    const req = await fetch(process.env.API+"/wp/v2/posts?_embed=true&per_page=20")
-    const total:any = req.headers.get('x-wp-total')
-    const totalpages:any = req.headers.get('x-wp-totalpages')
-    
-    const response = await req.json()
-  
-    const wp_response:WP_RESP_POSTS={
-      total,
-      totalpages,
-      current:response.length,
-      posts:response
-    }
-    
-    return {
-      props:{
-        wp_response
-      },
-      revalidate:1
-    }
-  }catch(err){
-    return{
-      props:{},
-      revalidate:1
-    }
-  }
 }
 
 export default IndexPage
