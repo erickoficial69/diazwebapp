@@ -7,9 +7,12 @@ import { get_posts } from '../controllers/post.controller'
 
 const IndexPage = () => {
     const [data,setData] = useState<WP_RESP_POSTS>()
-    useEffect(()=>{
-      let resp:any = get_posts()
+    const get_data = async ()=>{
+      let resp:any = await get_posts()
       setData(resp)
+    }
+    useEffect(()=>{
+      get_data()
     },[])
     return <>
     <Head>
