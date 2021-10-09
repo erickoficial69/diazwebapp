@@ -53,13 +53,18 @@ const IndexPage = ({wp_response}:StaticProps) => {
           wp_response?(
             wp_response.total >0?(
               wp_response.posts.map((post)=>(                
-                <Image 
+                <div>
+                  <Image 
                 width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
                 height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.height:100} 
                 key={post.id} 
                 placeholder="blur"
                 blurDataURL="/img/loading.svg"
                 src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.source_url:"/logo512.png"} />
+                <p>
+                  {post.title.rendered}
+                </p>
+                </div>
               ))
             ):"no hay datos"
           ):null
@@ -71,9 +76,15 @@ const IndexPage = ({wp_response}:StaticProps) => {
           .gallery{
             width:100%;
             position:relative;
+            flex-flow:row wrap;
             display:flex;
             justify-content:space-around;
-          }`
+          }
+          .gallery > div{
+            width:25%;
+            margin:2px;
+          }
+          `
         }</style>
     </section>
 

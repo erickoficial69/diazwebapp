@@ -9,7 +9,7 @@ export type WP_POST={
     status: string,
     type: string,
     link: string,
-    title: [Object],
+    title: {rendered:string},
     content: [Object],
     excerpt: [Object],
     author: number,
