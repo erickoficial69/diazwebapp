@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
+
 import Head from 'next/head'
 
 const Apis = ()=>{
@@ -20,7 +20,5 @@ const Apis = ()=>{
   </>
   
 }
-export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
-  return {props:{},revalidate:1}
-} 
+
 export default Apis

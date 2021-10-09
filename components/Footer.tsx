@@ -2,7 +2,6 @@ import { Facebook, Instagram, Mail } from "./icons"
 
 export const Footer = () => {
     return (
-        <footer id="contact" className="flex-wrap" >
            <div className="toolbar">
                 <div>
                     <h3>Diaz web app</h3>
@@ -10,13 +9,13 @@ export const Footer = () => {
                         Plataforma dedicada al desarrollo de aplicaciones web, aplicaciones móviles y otros tipos de software, para gestionar e impulsar todo tipo de prendimiento, negocios y empresas a través del desarrollo tecnológico.
                     </p>
 
-                    <h4 style={{textAlign:'center',margin:'5px auto'}}>Contácto</h4>
-                    <div className="flex-wrap" style={{justifyContent:'center'}} >
-                        <a className="icon-button" target='blank' href="https://facebook.com/diazwebapp">
-                            <Facebook/> Facebook
+                    <h3>Contácto</h3>
+                    <div className="social_menu_small">
+                        <a className="icon_btn" target='blank' href="https://facebook.com/diazwebapp">
+                            <Facebook/> <p>Facebook</p>
                         </a>
-                        <a className="icon-button" target='blank' href="mailto:diazwebapp@gmail.com">
-                            <Mail/> Gmail
+                        <a className="icon_btn" target='blank' href="mailto:diazwebapp@gmail.com">
+                            <Mail/> <p>Gmail</p>
                         </a>
                     </div>
                 </div>
@@ -28,21 +27,20 @@ export const Footer = () => {
                             Emprendedor, desarrollador de software y administrador de sistemas. Fundador y representante de la plataforma <b>Diaz web app</b>
                         </p>
 
-                        <h4 style={{textAlign:'center',margin:'5px auto'}}>Contácto</h4>
+                        <h3>Contácto</h3>
 
-                        <div className="flex-wrap" style={{justifyContent:'center'}}>
-                            <a className="icon-button" target='blank' href="https://facebook.com/erickoficial69">
-                                <Facebook/> Facebook
+                        <div className="social_menu_small" >
+                            <a className="icon_btn" target='blank' href="https://facebook.com/erickoficial69">
+                                <Facebook/> <p>Facebook</p>
                             </a>
-                            <a className="icon-button" target='blank' href="https://instagram.com/erickoficial69">
-                                <Instagram/> Instagram
+                            <a className="icon_btn" target='blank' href="https://instagram.com/erickoficial69">
+                                <Instagram/> <p>Instagram</p>
                             </a>
-                            <a className="icon-button" target='blank' href="mailto:erickoficial69@gmail.com">
-                                <Mail/> Gmail
+                            <a className="icon_btn" target='blank' href="mailto:erickoficial69@gmail.com">
+                                <Mail/> <p>Gmail</p>
                             </a>
                         </div>
                 </div>
            </div>
-        </footer>
     )
 }

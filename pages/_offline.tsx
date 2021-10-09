@@ -1,7 +1,5 @@
-
+import { Pwa } from '../components/icons'
 import Head from 'next/head'
-import { Intro } from '../components/intro'
-
 
 const IndexPage = () => {
    
@@ -35,14 +33,8 @@ const IndexPage = () => {
         <link rel="canonical" href={process.env.URL_START} />
         <meta property="ia:markup_url" content={process.env.URL_START} />
     </Head>
-    <section>
-        <Intro
-        title="Aplicaciones que responden a tus clientes"
-        text1="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente."
-        text2="Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
-        url_logo="/img/developer3.webp"
-         /> 
-
+    <section style={{maxWidth:'unset'}} >
+       <Pwa color="var(--primary-color)"/>
     </section>
 
 

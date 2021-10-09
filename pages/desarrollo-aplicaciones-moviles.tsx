@@ -1,18 +1,10 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
-import Image from 'next/image'
-import { useContext, useEffect } from 'react'
-import IntroStyle from '../components/styled_components/intro.style'
-import { App_context } from '../context/wp_context/app_context'
+
+import {Intro} from '../components/intro'
 
 const MobileApps=()=>{
   const {asPath} = useRouter()
-  const {app_dispatch} = useContext(App_context)
-
-  useEffect(()=>{
-    app_dispatch({type:'loader_app',payload:false})
-  },[])
   return <>
           <Head>
             <title >Desarrollo de aplicaciones móviles - Diaz web app</title>
@@ -44,37 +36,17 @@ const MobileApps=()=>{
             <meta property="ia:markup_url" content={process.env.URL_START+asPath} />
           </Head>
 
-          <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-            <span></span>
-              <div className="flex-wrap">
-                <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/laravel-2.webp" alt="monile dev" itemProp="image"/>
-
-                  <article>
-                      <h1 itemProp="name" >Desarrollo de aplicaciones móviles</h1>
-                    
-                      <p itemProp="description">
-                          Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado.
-                          <br/>
-                          Tenemos alto conocimiento en entornos de desarrollo <b>Multi Plataforma</b> enfocados en <b>Android {'&'} Ios</b>, Utilizamos:
-                        <br/>
-                      </p>
-                      <span className="flex-wrap">
-                        <a href="#">
-                            <Image width="80px" height="80px" loading="lazy" className="icons" src="/icons_svg/ionic.svg" alt="ionic" />
-                            <p>Ionic</p>
-                        </a>
-                        <a href="#">
-                            <Image width="80px" height="80px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react native" />
-                            <p >React Native</p>
-                        </a>
-                      </span>
-                  </article>
-                </div>
+          <section>
+            <Intro 
+            title="Desarrollo de aplicaciones móviles"
+            text1="Desarrollamos aplicaciones móviles para particulares, empresas y comercios con tecnología de punta y el mejor rendimiento del mercado."
+            text2="Tenemos alto conocimiento en entornos de desarrollo <b>Multi Plataforma</b> enfocados en <b>Android - Ios</b>"
+            url_logo="/img/laravel-2.webp"
+            />
+          
         </section>
-        <IntroStyle/>
+       
     </>
 }
-export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
-  return {props:{},revalidate:1}
-} 
+
 export default MobileApps

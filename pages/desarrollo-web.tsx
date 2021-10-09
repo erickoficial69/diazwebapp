@@ -1,18 +1,10 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useContext, useEffect } from 'react'
-import IntroStyle from '../components/styled_components/intro.style'
-import { App_context } from '../context/wp_context/app_context'
+import { Intro } from '../components/intro'
 
 const WebApps = ()=>{
   const {asPath} = useRouter()
-  const {app_dispatch} = useContext(App_context)
-
-  useEffect(()=>{
-    app_dispatch({type:'loader_app',payload:false})
-  },[])
   return <>
       <Head>
         <title>Desarrollo de Aplicaciones web - Diaz web app</title>
@@ -45,51 +37,22 @@ const WebApps = ()=>{
         <meta property="ia:markup_url" content={process.env.URL_START+asPath} />
       </Head>
 
-      <section className="intro flex-wrap" itemScope itemType="http://schema.org/Service">
-        <span></span>
-          <div className="flex-wrap">  
-          <svg className="image_intro" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>HTML5</title><path fill="var(--primary-color)" d="M64,32,98.94,435.21,255.77,480,413,435.15,448,32ZM372,164H188l4,51H368L354.49,366.39,256,394.48l-98.68-28L150.54,289H198.8l3.42,39.29L256,343.07l53.42-14.92L315,264H148L135.41,114.41l240.79,0Z"/></svg>
-
-                <article itemProp="name" >
-                    
-                    <h1>Aplicaciones web que sí generan visitas</h1>
-                    
-                    <p itemProp="description">
-                      Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing aplicando:
-                      
-                      <b>Ténicas SEO</b> <b>Server Side Rendering (SSR)</b>
-                      
-                      <br/>
-                      y un entorno de desarrllo con tecnologia de vanguardia 
-                    </p>
-                      <span className="flex-wrap">
-                        <a href="#">
-                          <Image width="70px" height="70px" loading="lazy" className="icons" src="/icons_svg/next.js.svg" alt="next js" />
-                          <p>Next js</p>
-                        </a>
-                        <a href="#">
-                          <Image width="70px" height="70px" loading="lazy" className="icons" src="/icons_svg/react.js.svg" alt="react js" />
-                          <p >React js</p>
-                        </a>
-                      </span>
-                </article>
-          </div>
-      </section>
-   
-      <section id='screen-two' itemScope itemType="http://schema.org/Service">
-      <meta itemProp="serviceType" content="Home cleaning" />
-          <div itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
-
-            <h2 style={{textAlign:'center'}} itemProp="name">
-                SEO y Datos Estructurados
-            </h2>
-
-          </div> 
+      <section>
+        <Intro
+          title="Aplicaciones web que sí generan visitas"
+          text1="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing aplicando:"
+          text2="Ténicas SEO Server Side Rendering (SSR) y un entorno de desarrllo con tecnologia de vanguardia."
+          url_logo="/img/web-design.webp"
+         /> 
+        
+      
           
-          <article className="flex-wrap web-optimisation" itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog" >
-
+          <article className="web-optimisation" >
+                <h2>
+                    SEO y Datos Estructurados
+                </h2>
                   <div>
-                    <Image width="250px" height="230px" loading="lazy" src="/img/seo-skills.webp" alt="seo" />
+                    <Image width="250px" height="230px" placeholder="blur" blurDataURL="/img/loading.svg" src="/img/seo-skills.webp" alt="seo" />
                   </div>
 
                   <div>
@@ -116,48 +79,47 @@ const WebApps = ()=>{
      <style jsx >
        {
          `
-            #screen-two {
-              background: var(--shadow-color);
-              padding: 10px
-            }
 
             .web-optimisation {
-              align-items: flex-start;
-              max-width:1200px;
-              margin:0 auto;
-            }
-
-            .web-optimisation>div {
-              width: 100%;
-              text-align: center
+              display:grid;
+              text-align:center;
+              gap:10px;
+              padding:10px ;
+              margin:5px auto;
             }
             
-            .web-optimisation>div>h3 {
-              text-align: center;
-              padding: 5px 0;
-              color: var(--primary-color)
+            .web-optimisation h2, .web-optimisation h3{
+              margin:10px auto;
+              color:var(--primary-color);
+              text-shadow:1px 1px var(--theme-color);
             }
-
-            .web-optimisation>div>p {
-              padding: 5px
+            @media(min-width:680px) {
+              .web-optimisation {
+                  grid-template-columns: 1fr 1fr ;
+                  place-items:center;
+                  place-content:center;
+              }
+              
+              .web-optimisation h2{
+                grid-column:1 / span 2;
+              }
             }
-
-            .web-optimisation>div>img {
-              max-height: 200px
-            }
-            @media(min-width:720px) {
-              .web-optimisation>div {
-                  width: 33.33%
+            @media(min-width:960px) {
+              .web-optimisation {
+                  grid-template-columns: 1fr 1fr 260px;
+              }
+              .web-optimisation > div:nth-child(2){
+                order:3;
+              }
+              .web-optimisation h2{
+                grid-column:1 / span 3;
               }
             }
             `
        }
      </style>
-     <IntroStyle/>
   </>
   
 }
-export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
-  return {props:{},revalidate:1}
-} 
+
 export default WebApps
