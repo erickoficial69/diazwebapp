@@ -1,28 +1,15 @@
-import { Arrow_circle, Cube, Mobile, Pwa } from '../components/icons'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useContext, useEffect } from 'react'
-import { App_context } from '../context/wp_context/app_context'
-import { Post } from '../interfaces/app_interfaces'
-import Card_1 from '../components/post_cards/card_1'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import IntroStyle from '../components/styled_components/intro.style'
-import { get_all_posts } from '../controlers/app_controller'
+import { Intro } from '../components/intro'
+import { WP_RESP_POSTS } from '../interfaces/wp_rest'
+import Image from 'next/image'
 
-const IndexPage = () => {
-    const {app,app_dispatch} = useContext(App_context)
-    const get_posts = async()=>{
-        if(!app.posts.total || app.posts.total == '0'){
-            app_dispatch({type:'loader_request',payload:true})
-            const resp = await get_all_posts({rest_base:'posts',per_page:6})
-            app_dispatch({type:'get_all_posts',payload:resp})
-        return
-        }
-    }
-    useEffect(()=>{
-        get_posts()
-        app_dispatch({type:'loader_app',payload:false})
-    },[])
+type StaticProps={
+  wp_response:WP_RESP_POSTS
+}
+
+const IndexPage = ({wp_response}:StaticProps) => {
+
     return <>
     <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
@@ -53,71 +40,73 @@ const IndexPage = () => {
         <link rel="canonical" href={process.env.URL_START} />
         <meta property="ia:markup_url" content={process.env.URL_START} />
     </Head>
-    <section style={{maxWidth:'unset'}} className="intro" itemScope itemType="http://schema.org/Service">
-        <span></span>
-        <div className="flex-wrap" >   
-        <meta itemProp="serviceType" content="apps development" />
-        <Image className="image_intro" width="200px" height="200px" loading="lazy" src="/img/developer3.webp" alt="Desarrollo de de aplicaciones y paginas web" itemProp="image"/>
+    <section>
+        <Intro
+        title="Aplicaciones que responden a tus clientes"
+        text1="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente."
+        text2="Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
+        url_logo="/img/developer3.webp"
+         /> 
+        <div className="gallery">
 
-        <article itemProp="provider" itemScope itemType="http://schema.org/LocalBusiness">
-
-                <h1 itemProp="name" >Aplicaciones que responden a tus clientes</h1>
-
-                <p itemProp="description">
-                    Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente.
-                    <br/>
-                    Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.
-                    
-                </p>
-                <span className="flex-wrap box_products " >
-                    <Link href="/desarrollo-aplicaciones-moviles" >
-                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
-                            <Mobile/>
-                            <p>Mobile Apps</p>
-                        </a>
-                    </Link>
-                    <Link href="/desarrollo-web" >
-                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
-                            <Pwa/>
-                            <p>Web Apps</p>
-                        </a>
-                    </Link>
-                    <Link href="/desarrollo-api" >
-                        <a onClick={()=>{document.location.pathname!='/'?app_dispatch({type:'loader_app',payload:true}):null}} >
-                            <Cube/>
-                            <p>Api's</p>
-                        </a>
-                    </Link>
-                </span>
-        </article>
-        </div> 
-    </section>
-
-    <div style={{textAlign:'center',width:'100%'}} >
-        <a style={{width:'70px',margin:'20px auto',cursor:'pointer'}} className="icon-button" href='#news' >
-            <Arrow_circle /> <b>Más</b>
-        </a>
-    </div>
-    <section id="news" >
-        <h2 style={{textAlign:'center',margin:'20px 0'}} >Últimas noticias</h2>  
-    {
-        app.loader_request?(
-            <b>Loading</b>
-        ):(
-            app.posts.total && parseInt(app.posts.total) > 0?
-                <>     
-                    <div style={{maxWidth:'1200px'}} className="container_posts_1" >
-                            {app.posts.data.map((post:Post)=><Card_1 post={post} key={post.id} />)}
-                    </div>
-                </>
-            :<b>No hay noticias</b>
-        )
+        {
+          wp_response?(
+            wp_response.total >0?(
+              wp_response.posts.map((post)=>(                
+                <Image 
+                width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
+                height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.height:100} 
+                key={post.id} 
+                placeholder="blur"
+                blurDataURL="/img/loading.svg"
+                src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.source_url:"/logo512.png"} />
+              ))
+            ):"no hay datos"
+          ):null
         }
+
+        </div>
+        <style jsx>{
+          `
+          .gallery{
+            width:100%;
+            position:relative;
+            display:flex;
+            justify-content:space-around;
+          }`
+        }</style>
     </section>
 
-    <IntroStyle/>
   </>
 }
 
+export const getStaticProps:GetStaticProps=async()=>{
+  try{
+    const req = await fetch(process.env.API+"/wp/v2/posts?_embed=true&per_page=4")
+    const total:any = req.headers.get('x-wp-total')
+    const totalpages:any = req.headers.get('x-wp-totalpages')
+    
+    const response = await req.json()
+  
+    const wp_response:WP_RESP_POSTS={
+      total,
+      totalpages,
+      current:response.length,
+      posts:response
+    }
+    
+    return {
+      props:{
+        wp_response
+      },
+      revalidate:1
+    }
+  }catch(err){
+    return{
+      props:{},
+      revalidate:1
+    }
+  }
+}
 
 export default IndexPage

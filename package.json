@@ -6,14 +6,15 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build && cp .next/service-worker.js public/",
-    "export": "rm public/service-worker.js && next export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start ",
     "type-check": "tsc"
   },
   "dependencies": {
-    "next": ">=11.1.2",
-    "next-offline": ">=4.0.6",
+    "amphtml-validator": "^1.0.35",
+    "next": "^11.1.2",
+    "next-pwa": "^5.3.1",
     "react": ">=17.0.1",
     "react-dom": ">=17.0.1",
     "socket.io-client": ">=3.0.5"
@@ -23,7 +24,7 @@
     "@types/react": ">=16.9.16",
     "@types/react-dom": ">=16.9.4",
     "@types/socket.io-client": ">=1.4.34",
-    "typescript": "4.0"
+    "typescript": "^4.4.3"
   },
   "license": "MIT"
 }
