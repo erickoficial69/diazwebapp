@@ -92,7 +92,7 @@ const IndexPage = ({data}:Props) => {
 }
 
 export const getStaticProps:GetStaticProps=async()=>{
-  let data = await get_posts({per_page:10,page:1})
+  let data = await get_posts({per_page:16,page:1})
   return {
     props:{data},
     revalidate:1
