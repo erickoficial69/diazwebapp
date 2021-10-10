@@ -2,8 +2,7 @@ import Head from 'next/head'
 import { Intro } from '../components/intro'
 import { WP_RESP_POSTS } from '../interfaces/wp_rest'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { get_posts, wp_response_posts } from '../controllers/post.controller'
+import { get_posts } from '../controllers/post.controller'
 import { GetStaticProps } from 'next'
 
 type Props={
