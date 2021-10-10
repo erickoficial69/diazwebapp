@@ -8,7 +8,7 @@ import { get_posts, wp_response_posts } from '../controllers/post.controller'
 const IndexPage = () => {
     const [data,setData] = useState<WP_RESP_POSTS>(wp_response_posts)
     const get_data = async ()=>{
-      let resp:any = await get_posts({per_page:10,page:1})
+      let resp:any = await get_posts({per_page:16,page:1})
       setData(resp)
     }
     useEffect(()=>{
