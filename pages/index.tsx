@@ -3,17 +3,13 @@ import { Intro } from '../components/intro'
 import { WP_RESP_POSTS } from '../interfaces/wp_rest'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { get_posts } from '../controllers/post.controller'
+import { get_posts, wp_response_posts } from '../controllers/post.controller'
+import { GetStaticProps } from 'next'
 
-const IndexPage = () => {
-    const [data,setData] = useState<WP_RESP_POSTS>()
-    const get_data = async ()=>{
-      let resp:any = await get_posts()
-      setData(resp)
-    }
-    useEffect(()=>{
-      get_data()
-    },[])
+type Props={
+  data:WP_RESP_POSTS
+}
+const IndexPage = ({data}:Props) => {
     return <>
     <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
@@ -54,26 +50,27 @@ const IndexPage = () => {
         <div className="gallery">
 
         {
-          data?(
-            data.total >0?(
-              data.posts.map((post)=>(                
-                <div>
-                  <Image 
-                width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
-                height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.height:100} 
-                key={post.id} 
-                placeholder="blur"
-                blurDataURL="/img/loading.svg"
-                src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.source_url:"/logo512.png"} />
-                <p>
-                  {post.title.rendered}
-                </p>
-                </div>
-              ))
-            ):"no hay datos"
+          data.req_status_number===0?(
+              <div className="loading">cargando...</div>
+            ):data.req_status_number===200?(
+              data.total >0?(
+                data.posts.map((post)=>(                
+                  <div>
+                    <Image 
+                  width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.width:100} 
+                  height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.height:100} 
+                  key={post.id} 
+                  placeholder="blur"
+                  blurDataURL="/img/loading.svg"
+                  src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia']?.[0].media_details.sizes.thumbnail.source_url:"/logo512.png"} />
+                  <p>
+                    {post.title.rendered}
+                  </p>
+                  </div>
+                ))
+              ):"no hay datos"
           ):null
         }
-
         </div>
         <style jsx>{
           `
@@ -95,4 +92,11 @@ const IndexPage = () => {
   </>
 }
 
+export const getStaticProps:GetStaticProps=async()=>{
+  let data = await get_posts({per_page:10,page:1})
+  return {
+    props:{data},
+    revalidate:1
+  }
+}
 export default IndexPage
