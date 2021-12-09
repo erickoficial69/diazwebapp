@@ -32,7 +32,7 @@
       "name": "desarrollo de paginas web - Diaz web app",
       "short_name": "DWA",
       "description": "Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing.",
-      "url": "/desarrollo-web",
+      "url": "/paginas-web",
       "icons": [{ "src": "logo.png", "sizes": "192x192" },{ "src": "logo512.png", "sizes": "512x512" }]
     },
     {

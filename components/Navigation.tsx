@@ -19,7 +19,7 @@ export const Navigation = ({show,setShow}:Props) => {
                     </Link>  
                 </div>     
                 <hr/>        
-                <Link href="/desarrollo-web" >
+                <Link href="/paginas-web" >
                     <a className="icon_btn" onClick={()=>setShow(false)}><IconHTHM5/> <b>Paginas web</b></a>
                 </Link>
                 <Link href="/desarrollo-aplicaciones-moviles" >
