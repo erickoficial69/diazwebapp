@@ -5,7 +5,7 @@ const Apis = ()=>{
   
   return <>
       <Head>
-        <meta name="description" content="Desarrollo de aplicaciones web particulares, tiendas online y corporativas, optimizadas en seo y performance" />
+        <meta name="description" content="desarrollo de paginas web particulares, tiendas online y corporativas, optimizadas en seo y performance" />
       </Head>
 
       <section className="intro flex-wrap" >

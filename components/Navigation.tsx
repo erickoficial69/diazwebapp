@@ -20,7 +20,7 @@ export const Navigation = ({show,setShow}:Props) => {
                 </div>     
                 <hr/>        
                 <Link href="/desarrollo-web" >
-                    <a className="icon_btn" onClick={()=>setShow(false)}><IconHTHM5/> <b>Desarrollo web</b></a>
+                    <a className="icon_btn" onClick={()=>setShow(false)}><IconHTHM5/> <b>Paginas web</b></a>
                 </Link>
                 <Link href="/desarrollo-aplicaciones-moviles" >
                     <a className="icon_btn" onClick={()=>setShow(false)}><Mobile/> <b>Desarrollo movil</b></a>

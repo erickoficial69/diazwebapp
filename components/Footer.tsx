@@ -6,7 +6,7 @@ export const Footer = () => {
                 <div>
                     <h3>Diaz web app</h3>
                     <p>
-                        Plataforma dedicada al desarrollo de aplicaciones web, aplicaciones móviles y otros tipos de software, para gestionar e impulsar todo tipo de prendimiento, negocios y empresas a través del desarrollo tecnológico.
+                        Plataforma dedicada al desarrollo de paginas web, apps móviles y otros tipos de software, para gestionar e impulsar todo tipo de prendimiento, negocios y empresas a través del desarrollo tecnológico.
                     </p>
 
                     <h3>Contácto</h3>

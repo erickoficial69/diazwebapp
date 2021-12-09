@@ -1,26 +1,26 @@
 import Head from 'next/head'
 import { Intro } from '../components/intro'
-import { WP_RESP_POSTS } from '../interfaces/wp_rest'
+/* import { WP_RESP_POSTS } from '../interfaces/wp_rest'
 import Image from 'next/image'
 import { get_posts } from '../controllers/post.controller'
 import { GetStaticProps } from 'next'
-
-type Props={
+ */
+/* type Props={
   data:WP_RESP_POSTS
-}
-const IndexPage = ({data}:Props) => {
+} */
+const IndexPage = () => {
     return <>
     <Head>
         <title>Diaz web app - desarrollo de aplicaciones a la medida</title>
         <meta name="author" content="diaz web app" />
-        <meta name="keywords" content="diaz web app, desarrollo web, desarrollo de e-commerce, desarrollo de tiendas online"/>
-        <meta name="description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta name="keywords" content="diaz web app, paginas web, apps moviles"/>
+        <meta name="description" content="Desarrollo de páginas web, apps moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         {/** OG META */}
         <meta property="og:title" content="Diaz web app - desarrollo de aplicaciones a la medida" />
         <meta property="og:site_name" content={'diaz web app'} />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta property="og:description" content="Desarrollo de páginas web, apps moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START} />
         <meta property="og:image" content={process.env.URL_START+"/logo512.png"} />
@@ -29,7 +29,7 @@ const IndexPage = ({data}:Props) => {
         <meta property="og:image:height" content="240" />
         {/**TWITTER META */}
         <meta name="twitter:title" content="Diaz web app - desarrollo de aplicaciones a la medida" /> 
-        <meta name="twitter:description" content="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
+        <meta name="twitter:description" content="Desarrollo de páginas web, apps moviles y soluciones tecnologicas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={process.env.URL_START+"/logo512.png"} />
         <meta name="twitter:label1" content="Tiempo de lectura" />
@@ -42,11 +42,11 @@ const IndexPage = ({data}:Props) => {
     <section>
         <Intro
         title="Aplicaciones que responden a tus clientes"
-        text1="Desarrollo de aplicaciones web, moviles y soluciones tecnologicas adaptadas a la necesidad del cliente."
-        text2="Con Diaz Web App, puedes extender tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
+        text1="Desarrollo de páginas web, apps moviles y soluciones tecnologicas adaptadas a la necesidad del cliente."
+        text2="Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
         url_logo="/img/developer3.webp"
          /> 
-        <div className="gallery">
+        {/* <div className="gallery">
 
         {
           data.req_status_number===0?(
@@ -85,17 +85,17 @@ const IndexPage = ({data}:Props) => {
             margin:2px;
           }
           `
-        }</style>
+        }</style> */}
     </section>
 
   </>
 }
 
-export const getStaticProps:GetStaticProps=async()=>{
+/* export const getStaticProps:GetStaticProps=async()=>{
   let data = await get_posts({per_page:16,page:1})
   return {
     props:{data},
     revalidate:1
   }
-}
+} */
 export default IndexPage

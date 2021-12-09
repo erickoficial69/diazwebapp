@@ -7,16 +7,16 @@ const WebApps = ()=>{
   const {asPath} = useRouter()
   return <>
       <Head>
-        <title>Desarrollo de Aplicaciones web - Diaz web app</title>
+        <title>desarrollo de paginas web - Diaz web app</title>
         <meta name="author" content="diaz web app" />
         <meta name="keywords" content="diaz web app, desarrollo de aplicaciones moviles, applicaciones para e-commerce, applicaciones para tiendas online"/>
-        <meta name="description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="description" content="Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         {/** OG META */}
-        <meta property="og:title" content="Desarrollo de aplicaciones móviles - Diaz web app" />
+        <meta property="og:title" content="Desarrollo de apps móviles - Diaz web app" />
         <meta property="og:site_name" content={'diaz web app'} />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta property="og:description" content="Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:url" content={process.env.URL_START+asPath} />
         <meta property="og:image" content="https://image.freepik.com/vector-gratis/banner-desarrollo-sitios-web_33099-1687.jpg" />
@@ -24,8 +24,8 @@ const WebApps = ()=>{
         <meta property="og:image:width" content="320" />
         <meta property="og:image:height" content="240" />
         {/**TWITTER META */}
-        <meta name="twitter:title" content="Desarrollo de aplicaciones móviles - Diaz web app" /> 
-        <meta name="twitter:description" content="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
+        <meta name="twitter:title" content="Desarrollo de apps móviles - Diaz web app" /> 
+        <meta name="twitter:description" content="Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://image.freepik.com/vector-gratis/banner-desarrollo-sitios-web_33099-1687.jpg" />
         <meta name="twitter:label1" content="Tiempo de lectura" />
@@ -40,7 +40,7 @@ const WebApps = ()=>{
       <section>
         <Intro
           title="Aplicaciones web que sí generan visitas"
-          text1="Desarrollamos aplicaciones web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing aplicando:"
+          text1="Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing aplicando:"
           text2="Ténicas SEO Server Side Rendering (SSR) y un entorno de desarrllo con tecnologia de vanguardia."
           url_logo="/img/web-design.webp"
          /> 
