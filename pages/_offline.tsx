@@ -2,14 +2,14 @@
 
 const IndexPage = () => {
    
-    return <>
+    return <main>
     
-    <section style={{maxWidth:'unset'}} >
+    <section>
        <h1>No tienes conexión a internet</h1>
     </section>
 
 
-  </>
+  </main>
 }
 
 

@@ -15,7 +15,7 @@ export const Intro = ({title,url_logo,text1,text2}:Props)=>{
         <div className="intro">
             
             <div className="bg_intro" >
-                <Image layout="fill" placeholder="blur" blurDataURL="/img/loading.svg" src='/img/api.svg' alt={title} />
+                <Image layout="responsive" width="200" height="200" placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB5JREFUOE9jZKAQMFKon2HUAIbRMAAmotF0MBjCAAAmmAARpxPWkQAAAABJRU5ErkJggg==" src='/img/api.svg' alt={title} />
             </div>
             
             <h1 itemProp="name" >{title}</h1>
@@ -30,7 +30,7 @@ export const Intro = ({title,url_logo,text1,text2}:Props)=>{
                 layout="responsive"
                 />
             ) : (
-                <Image className="image_intro" width={250} height={200} placeholder="blur" blurDataURL="/img/loading.svg"  src={url_logo} alt={title} />
+                <Image className="image_intro" width={250} height={200} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB5JREFUOE9jZKAQMFKon2HUAIbRMAAmotF0MBjCAAAmmAARpxPWkQAAAABJRU5ErkJggg=="  src={url_logo} alt={title} />
             )}
             </div>
 
@@ -54,6 +54,9 @@ export const Intro = ({title,url_logo,text1,text2}:Props)=>{
                     .bg_intro{
                         z-index:-2;
                         opacity:0.2;
+                        position:absolute;
+                        width:200px;
+                        height:200px;
                     }
                     .intro > h1{
                         margin:20px auto;

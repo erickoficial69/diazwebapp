@@ -1,4 +1,4 @@
-import {Cube,IconDwa, IconHTHM5, Mobile} from './icons'
+import {IconDwa} from './icons'
 import Link from 'next/link'
 
 type Props={
@@ -18,15 +18,13 @@ export const Navigation = ({show,setShow}:Props) => {
                         </a>
                     </Link>  
                 </div>     
-                <hr/>        
-                <Link href="/paginas-web" >
-                    <a className="icon_btn" onClick={()=>setShow(false)}><IconHTHM5/> <b>Paginas web</b></a>
+                <hr/>  
+                <Link href="/frontend" >
+                    <a className="icon_btn" onClick={()=>setShow(false)}><b>frontend</b></a>
                 </Link>
-                <Link href="/desarrollo-aplicaciones-moviles" >
-                    <a className="icon_btn" onClick={()=>setShow(false)}><Mobile/> <b>Desarrollo movil</b></a>
-                </Link>
-                <Link href="/desarrollo-api" >
-                    <a className="icon_btn" onClick={()=>setShow(false)} ><Cube/> <b>Api's</b></a>
+
+                <Link href="/servicios" >
+                    <a className="icon_btn" onClick={()=>setShow(false)}><b>servicios</b></a>
                 </Link>
 
             </nav>
@@ -60,6 +58,8 @@ export const Navigation = ({show,setShow}:Props) => {
                         }
                         nav > a b{
                             margin-left:5px;
+                            font-size:18px;
+                            text-transform:capitalize;
                         }
                         nav > a:hover{
                             border-color:1px solid var(--primary-color);

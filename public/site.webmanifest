@@ -1,7 +1,7 @@
 {
   "short_name": "DWA",
   "name": "Diaz Web App",
-  "description": "Desarrollo de páginas web, apps moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión",
+  "description": "Desarrollo de páginas web, aplicaciones moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión",
   "icons": [
     {
       "src": "logo512.png",
@@ -24,7 +24,7 @@
     {
       "name": "Diaz Web App",
       "short_name": "DWA",
-      "description": "Desarrollo de páginas web, apps moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.",
+      "description": "Desarrollo de páginas web, aplicaciones moviles y soluciones tecnologiocas adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión.",
       "url": "/",
       "icons": [{ "src": "logo.png", "sizes": "192x192" },{ "src": "logo512.png", "sizes": "512x512" }]
     },
@@ -32,7 +32,7 @@
       "name": "desarrollo de paginas web - Diaz web app",
       "short_name": "DWA",
       "description": "Desarrollamos páginas web para particulares y comercios. Optimizadas en rendimiento listas para aplicar estrategias de marketing.",
-      "url": "/paginas-web",
+      "url": "/desarrollo-aplicaciones-web",
       "icons": [{ "src": "logo.png", "sizes": "192x192" },{ "src": "logo512.png", "sizes": "512x512" }]
     },
     {

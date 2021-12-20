@@ -18,13 +18,13 @@ export const Arrow_circle = ({color,width,height}:Props)=>{
     )
 }
 
-export const Code_slash = ({color,width,height}:Props)=>{
+export const Icon_Code_Slash = ({color,width,height}:Props)=>{
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={width?width:24} height={height?height:24} viewBox="0 0 512 512"><title>ionicons-v5-m</title><polyline points="160 368 32 256 160 144" style={{fill:'none',stroke:'rgb(80, 95, 228)',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><polyline points="352 368 480 256 352 144" style={{fill:'none',stroke:color?color:'white',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><line x1="304" y1="96" x2="208" y2="416" style={{fill:'none',stroke:'rgb(80, 95, 228)',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width={width?width:24} height={height?height:24} viewBox="0 0 512 512"><title>ionicons-v5-m</title><polyline points="160 368 32 256 160 144" style={{fill:'none',stroke:color?color:'rgb(80, 95, 228)',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><polyline points="352 368 480 256 352 144" style={{fill:'none',stroke:color?color:'white',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><line x1="304" y1="96" x2="208" y2="416" style={{fill:'none',stroke:color?color:'rgb(80, 95, 228)',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
     )
 }
 
-export const Blog = ({color,width,height}:Props)=>{
+export const Icon_Blog = ({color,width,height}:Props)=>{
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width?width:24} height={height?height:24} viewBox="0 0 512 512"><title>ionicons-v5-l</title><rect x="96" y="48" width="320" height="416" rx="48" ry="48" style={{fill:'none',stroke:color?color:'white',strokeLinejoin:'round',strokeWidth:'32px'}}/><line x1="176" y1="128" x2="336" y2="128" style={{fill:'none',stroke:color?color:'white',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><line x1="176" y1="208" x2="336" y2="208" style={{fill:'none',stroke:color?color:'white',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/><line x1="176" y1="288" x2="256" y2="288" style={{fill:'none',stroke:color?color:'white',strokeLinecap:'round',strokeLinejoin:'round',strokeWidth:'32px'}}/></svg>
     )
@@ -78,7 +78,7 @@ export const IconDwa = ({width,height}:Props)=>{
         <Image placeholder={width && width>41?"blur":"empty"} width={width?width:100} height={height?height:100} src={dwa_image} alt="Diaz web app" />
     )
 }
-export const IconHTHM5 = ({width,height,color}:Props)=>{
+export const IconHTML5 = ({width,height,color}:Props)=>{
     return(
         <svg xmlns="http://www.w3.org/2000/svg" width={width?width:24} height={height?height:24} viewBox="0 0 512 512"><path style={{fill:color?color:'white'}} d="M64,32,98.94,435.21,255.77,480,413,435.15,448,32ZM372,164H188l4,51H368L354.49,366.39,256,394.48l-98.68-28L150.54,289H198.8l3.42,39.29L256,343.07l53.42-14.92L315,264H148L135.41,114.41l240.79,0Z"/></svg>
     )

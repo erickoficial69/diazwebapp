@@ -1,4 +1,4 @@
-export type WP_POST={
+export type WP_PAGE={
     id: number
     date: string
     date_gmt: string,
@@ -16,13 +16,10 @@ export type WP_POST={
     featured_media: number,
     comment_status: string,
     ping_status: string,
-    sticky: boolean,
-    template: string,
+    parent:number,
+    menu_order: number,
     format: string,
     meta: [],
-    categories: [],
-    tags: [],
-    deportes: [],
     _links: [Object],
     _embedded: {
         author: [
@@ -96,21 +93,6 @@ export type WP_POST={
               source_url: string,
               _links: [Object]
             }
-          ] | undefined,
-          
-        ["wp:term"]:[
-            [
-              {
-                id: number,
-                link: string,
-                name: string,
-                slug: string,
-                taxonomy: string,
-                _links: [Object]
-              }
-            ],
-            [],
-            []
-          ] | undefined  
+          ] | undefined,  
     }
   }

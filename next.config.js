@@ -5,8 +5,8 @@ module.exports = withPWA({
     domains: ['0.0.0.0','localhost','apuestanweb.com','localhost:8080'],
   },
   env:{
-    API:process.env.API || 'http://localhost:8080/wp-json',
-    URL_START:process.env.URL_START || 'http://localhost:3000',
+    API:process.env.API || 'http://localhost:8080',
+    DOMAIN:process.env.DOMAIN || 'http://localhost:3000',
   },
   pwa: {
     dest: 'public',
