@@ -19,9 +19,9 @@ export const Blog_grid = ({posts}:Props)=>{
                                         alt={post.title.rendered}
                                         placeholder="blur"
                                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB5JREFUOE9jZKAQMFKon2HUAIbRMAAmotF0MBjCAAAmmAARpxPWkQAAAABJRU5ErkJggg=="
-                                        width={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia'][0].media_details.width:300} 
-                                        height={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia'][0].media_details.height:300} 
-                                        src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url:'/logo512.png'}
+                                        width={300} 
+                                        height={300} 
+                                        src={post._embedded['wp:featuredmedia']?post._embedded['wp:featuredmedia'][0].source_url:'/logo512.png'}
                                     />
                                 <span>
                                   <h2>{post.title.rendered}</h2> 
