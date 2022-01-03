@@ -21,7 +21,7 @@ const Custom_post = ({post}:Props)=>{
                 <meta property="og:site_name" content={'diaz web app'} />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={post.excerpt.rendered.replace("<p>","").replace("</p>","")} />
-                <meta property="og:locale" content="es_SP" />
+                <meta property="og:locale" content="es_ES" />
                 <meta property="og:url" content={process.env.DOMAIN+asPath} />
                 <meta property="og:image" content={process.env.DOMAIN + "/logo512.png"} />
                 <meta property="og:image:secure_url" content={process.env.DOMAIN + "/logo512.png"} />

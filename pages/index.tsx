@@ -22,7 +22,7 @@ const Index = ({blog}:Props) => {
       <meta property="og:site_name" content={'diaz web app'} />
       <meta property="og:type" content="website" />
       <meta property="og:description" content="Desarrollador de páginas web, aplicaciones moviles y otros tipos de software adaptadas a la necesidad del cliente. Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión." />
-      <meta property="og:locale" content="es_SP" />
+      <meta property="og:locale" content="es_ES" />
       <meta property="og:url" content={process.env.DOMAIN} />
       <meta property="og:image" content={process.env.DOMAIN + "/logo512.png"} />
       <meta property="og:image:secure_url" content={process.env.DOMAIN + "/logo512.png"} />
