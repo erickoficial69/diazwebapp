@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import { Intro } from '../components/intro'
-import Link from 'next/dist/client/link'
-import { IconHTML5, Icon_Code_Slash } from '../components/icons'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import { get_posts } from '../controllers/post.controller'
 import { WP_RESP_POSTS } from '../interfaces/wp_rest'
@@ -52,37 +50,20 @@ const Index = ({blog}:Props) => {
         text2="Con Diaz Web App, puedes expandir tu negocio y llegar a más clientes en cualquier parte del mundo, en cualquier dispositivo y en cualquier conexión."
         url_logo="/img/developer3.webp"
       />
-      {
-        blog.total>0?(
-          <Blog_grid posts={blog.posts} />
-        ):(<h4>No hay datos</h4>)
-      }
+      
       <div className='body_post' >
         
         <h2 className="has-text-align-center">Un desarrollador / Multiples servicios</h2>
 
-        <div className="link_grid">
-          <div>
             <p>
               Desarrollador con suficientes conocimiento y experiencia para desarrollar multiples aplicaciones en entornos distintos o similares.
             </p>
-          </div>
-          <div>
-            <Link href="http://localhost:3000/servicios/desarrollador-web/" >
-                <a href="http://localhost:3000/servicios/desarrollador-web/" title="Desarrollador web" >
-                  <IconHTML5 width={80} height={80} color="#ff5100"/>
-                  <b>Desarrollador web</b>
-                </a>
-            </Link>
-            <Link href="http://localhost:3000/desarrollador-de-apps/">
-                <a href="http://localhost:3000/desarrollador-de-apps/" title="desarrollador de apps">
-                  <Icon_Code_Slash width={80} height={80} color='var(--primary-color)' />
-                  <b>Desarrollador de apps</b>
-                </a>
-            </Link>
-          </div>
-        </div>
-
+        
+        {
+          blog.total>0?(
+            <Blog_grid posts={blog.posts} />
+          ):(<h4>No hay datos</h4>)
+        }
         <h2 className="has-text-align-center">Ventajas sobre otros desarrolladores </h2>
 
 
@@ -104,27 +85,7 @@ const Index = ({blog}:Props) => {
 
         <p><b>Modelo ágil de gestión</b> del ciclo de vida del producto, desde la conceptualización, la codificación simultánea de frontend y backend, implementación, control de calidad y más.</p>
 
-        <h2>Asesorate antes de elegir un desarrollador de software</h2>
-
-        <p>Existen varios puntos a tomar en cuenta a la hora de elegir a un desarrollador para tu proyecto, en este caso solo nos enfocaremos brevemente en 2.</p>
-
-        <h3>Desarrollador de Software y desarrollador de aplicaciones</h3>
-
-        <p>Aunque hay muchas similitudes, la tarea principal de un 
-          <Link href="http://localhost:3000/servicios/" >
-                <a href="http://localhost:3000/servicios/" title="desarrollador de aplicaciones" >
-                  <b> desarrollador de aplicaciones </b>
-                </a>
-            </Link> 
-            esta enfocada en desarrollar una aplicacion web o una aplicacion movil siguiendo los parametros del cliente o de su equipo de trabajo, haciendo uso de su entorno de desarrollo y herramientas preferidas.</p>
-
-        <p>En cambio un
-            <Link href="http://localhost:3000/" >
-                <a href="http://localhost:3000/" title="desarrollador de Software" >
-                  <b> desarrollador de software </b>
-                </a>
-            </Link>
-             no solo es capaz de programar dichas aplicaciones, adicionalmente esta más capacitado para estructurar un proyecto entero guiando al cliente sobre tecnologias y metodologias para llevar a cabo el proyecto final, como por ejemplo hosting, servicios cloud, lenguajes de programacion adecuados para ciertos proyectos, estructura de software para dispositivos moviles, aplicaciones web, escritorio entre otras.</p>
+        
       </div>
     </section>
   <style jsx >
@@ -139,6 +100,12 @@ const Index = ({blog}:Props) => {
       }
       p{
         padding:10px;
+      }
+      p > b{
+        color:var(--primary-color);
+      }
+      p > a{
+        text-decoration:underline;
       }
       .link_grid{
         display:grid;
@@ -193,8 +160,8 @@ const Index = ({blog}:Props) => {
   </main>
 }
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
-  const blog = await get_posts({per_page:12,page:1,taxonomy_name:"categories",term_id:28})
-  console.log(blog.total)
+  const blog = await get_posts({per_page:12,page:1,taxonomy_name:'categories',term_id:1})
+  
   return {
     props:{blog},
     revalidate:1

@@ -40,7 +40,7 @@ const Custom_post = ({post}:Props)=>{
                 <meta name="googlebot" content="index, follow" />
                 <meta property="ia:markup_url" content={process.env.DOMAIN+asPath} />
                 {/*Wordpress style*/}
-                <link rel="stylesheet" href="http://localhost:8080/wp-includes/css/dist/block-library/style.min.css" />
+                
                </Head>
             <section >
                 <h1>{post.title.rendered}</h1>

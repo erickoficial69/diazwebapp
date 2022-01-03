@@ -19,10 +19,6 @@ export const Navigation = ({show,setShow}:Props) => {
                     </Link>  
                 </div>     
                 <hr/>  
-                <Link href="/frontend" >
-                    <a className="icon_btn" onClick={()=>setShow(false)}><b>frontend</b></a>
-                </Link>
-
                 <Link href="/servicios" >
                     <a className="icon_btn" onClick={()=>setShow(false)}><b>servicios</b></a>
                 </Link>
