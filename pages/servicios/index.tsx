@@ -79,11 +79,21 @@ const Servicios = ({blog}:Props) => {
 
 export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
   const blog = await get_posts({per_page:24,page:1,taxonomy_name:'categories',term_id:1})
+ 
+    if(blog.req_status_number == 200 && blog.posts.length > 0){
+        return {
+            props:{ blog },
+            revalidate:1
+        }
+    }
+    return {
+        redirect:{
+            destination:"/404",
+            permanent:false,
+            statusCode:301
+        }
+    }
   
-  return {
-    props:{blog},
-    revalidate:1
-  }
 }
 
 export default Servicios
