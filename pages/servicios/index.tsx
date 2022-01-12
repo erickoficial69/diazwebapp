@@ -88,7 +88,7 @@ export const getStaticProps:GetStaticProps=async(_:GetStaticPropsContext)=>{
     }
     return {
         redirect:{
-            destination:"/404",
+            destination:"/",
             permanent:false,
             statusCode:301
         }
