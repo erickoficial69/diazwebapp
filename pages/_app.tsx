@@ -15,7 +15,6 @@ function Myapp({ Component, pageProps }: AppProps) {
     <meta name='apple-mobile-web-app-title' content='DWA' />
     <meta name='format-detection' content='telephone=yes' />
     <meta name='mobile-web-app-capable' content='yes' />
-    <meta name="google-site-verification" content="3WWyyLTBukNVNXqyAq5JcDFLuT87iTbLo6uG3PFOtbw" />
     <meta name='msapplication-TileColor' content='#2B5797' />
     <meta name='msapplication-tap-highlight' content='no' />
         <link rel="manifest" href="/site.webmanifest" />

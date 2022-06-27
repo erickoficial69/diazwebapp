@@ -10,7 +10,7 @@ export const Header = () => {
                 <Link href="/" >
                     <a className="logo-header" >
                         <IconDwa width={32} height={32} />
-                        <b>Diaz web</b>
+                        <b>Diaz web app</b>
                     </a>
                 </Link>
                 <span style={{display:'flex',alignItems:'center',flexFlow:'row nowrap'}} >
