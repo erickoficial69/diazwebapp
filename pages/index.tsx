@@ -42,6 +42,32 @@ const Index = ({blog}:Props) => {
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
       <meta property="ia:markup_url" content={process.env.DOMAIN} />
+
+      {/* JSON-JD*/}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LibrarySystem",
+          "name": "Diaz web app",
+          "alternateName": "dwa",
+          "url": "https://diazweb.tk",
+          "logo": "https://diazweb.tk/logo512.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+584144013973",
+            "contactType": "technical support",
+            "contactOption": "TollFree",
+            "areaServed": "VE",
+            "availableLanguage": "es"
+          },
+          "sameAs": [
+            "https://www.facebook.com/diazwebapp",
+            "https://www.twitter.com/diazwebapp"
+          ]
+        }) }}
+      />
+      
     </Head>
     <section>
       <Intro
