@@ -1,8 +1,5 @@
 import Image from 'next/image'
 
-import { useAmp } from 'next/amp'
-export const config = { amp: 'hybrid' }
-
 type Props={
     title:string,
     url_logo:string
@@ -10,7 +7,7 @@ type Props={
     text2?:string
 }
 export const Intro = ({title,url_logo,text1,text2}:Props)=>{
-    const isAmp = useAmp()
+    
     return (
         <div className="intro">
             
