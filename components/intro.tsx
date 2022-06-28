@@ -21,17 +21,8 @@ export const Intro = ({title,url_logo,text1,text2}:Props)=>{
             <h1 itemProp="name" >{title}</h1>
 
             <div className="container_img">
-            {isAmp ? (
-                <amp-img
-                width="250"
-                height="200"
-                src="/img/developer3.webp"
-                alt="Desarrollo de de aplicaciones y paginas web"
-                layout="responsive"
-                />
-            ) : (
                 <Image className="image_intro" width={250} height={200} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB5JREFUOE9jZKAQMFKon2HUAIbRMAAmotF0MBjCAAAmmAARpxPWkQAAAABJRU5ErkJggg=="  src={url_logo} alt={title} />
-            )}
+            
             </div>
 
             <div>
