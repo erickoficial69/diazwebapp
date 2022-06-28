@@ -48,7 +48,7 @@ const Index = ({blog}:Props) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LibrarySystem",
+          "@type": "Organization",
           "name": "Diaz web app",
           "alternateName": "dwa",
           "url": "https://diazweb.tk",
