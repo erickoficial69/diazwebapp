@@ -9,6 +9,36 @@ type Props={
   blog:WP_RESP_POSTS
 }
 
+/*
+OTHER SCHEMA TEST
+{ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Diaz web",
+ "legalName" : "Diaz web app",
+ "url": "http://www.diazweb.tk",
+ "logo": "https://diazweb.tk/logo512.png",
+ "foundingDate": "2021",
+ "founder": [
+ {
+ "@type": "Person",
+ "name": "Erick Diaz",
+ "email": "mailto:erickoficial69@gmail.com",
+  "telephone": "(+58) 4144013973",
+  "jobTitle": "web developer"
+ }
+ ],
+ "contactPoint": {
+ "@type": "ContactPoint",
+ "contactType": "customer support",
+ "telephone": "[+584144013973]",
+ "email": "diazwebapp@gmail.com"
+ },
+ "sameAs": [ 
+ "http://www.facebook.com/diazwebapp",
+ "http://www.twitter.com/diazwebapp"
+ ]}
+*/
+ 
 const Index = ({blog}:Props) => {
   
   return <main>
@@ -46,26 +76,33 @@ const Index = ({blog}:Props) => {
       {/* JSON-JD*/}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Diaz web app",
-          "alternateName": "dwa",
-          "url": "https://diazweb.tk",
-          "logo": "https://diazweb.tk/logo512.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+584144013973",
-            "contactType": "technical support",
-            "contactOption": "TollFree",
-            "areaServed": "VE",
-            "availableLanguage": "es"
-          },
-          "sameAs": [
-            "https://www.facebook.com/diazwebapp",
-            "https://www.twitter.com/diazwebapp"
-          ]
-        }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ 
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Diaz web",
+        "legalName" : "Diaz web app",
+        "url": "http://www.diazweb.tk",
+        "logo": "https://diazweb.tk/logo512.png",
+        "foundingDate": "2021",
+        "founder": [
+        {
+        "@type": "Person",
+        "name": "Erick Diaz",
+        "email": "mailto:erickoficial69@gmail.com",
+         "telephone": "(+58) 4144013973",
+         "jobTitle": "web developer"
+        }
+        ],
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "[+584144013973]",
+        "email": "diazwebapp@gmail.com"
+        },
+        "sameAs": [ 
+        "http://www.facebook.com/diazwebapp",
+        "http://www.twitter.com/diazwebapp"
+        ]}) }}
       />
       
     </Head>
