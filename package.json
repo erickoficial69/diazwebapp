@@ -5,12 +5,11 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "export": "next export",
-    "start": "next start ",
-    "type-check": "tsc"
-  },
+  "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+  "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "next": "^11.1.2",
     "next-pwa": "^5.3.1",
